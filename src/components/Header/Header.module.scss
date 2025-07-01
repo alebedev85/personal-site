@@ -12,34 +12,3 @@
   color: var(--lightest-slate);
   width: 48%;
 }
-
-.nav {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-
-  a {
-    color: var(--accent);
-    text-decoration: none;
-    font-size: 0.95rem;
-    transition: color 0.2s;
-
-    &:hover {
-      font-size: 1rem;
-    }
-  }
-}
-
-.socials {
-  display: flex;
-  gap: 1rem;
-  a {
-    font-size: 1.3rem;
-    color: var(--light-slate);
-    transition: color 0.2s;
-
-    &:hover {
-      color: var(--accent);
-    }
-  }
-}

@@ -1,7 +1,7 @@
 
 import Skills from '../Skills/Skills';
 // import Projects from '../Projects/Projects';
-import Contact from '../Contact/Contact';
+import Contact from '../contacts/Contacts';
 import styles from "./MainContent.module.scss"
 
 const MainContent = () => {
