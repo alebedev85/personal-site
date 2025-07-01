@@ -1,11 +1,16 @@
-import styles from './Hero.module.scss';
+import styles from "./Hero.module.scss";
 
-const Hero = () => (
-  <section id="about" className={styles.hero}>
-    <h1>Привет, я Андрей</h1>
-    <p>Фронтенд-разработчик, специализируюсь на React и TypeScript</p>
-    <a href="#projects" className={styles.button}>Посмотреть проекты</a>
-  </section>
-);
+const Hero = () => {
+  return (
+    <section id="hero" className={styles.hero}>
+      <p className={styles.preTitle}>Привет, меня зовут</p>
+      <h1 className={styles.name}>Андрей Лебедев</h1>
+      <h2 className={styles.subtitle}>Я фронтенд разработчик</h2>
+      <p className={styles.description}>
+        Создаю интерфейсы, которые работают
+      </p>
+    </section>
+  );
+};
 
 export default Hero;

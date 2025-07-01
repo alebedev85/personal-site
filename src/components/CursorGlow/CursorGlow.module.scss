@@ -1,0 +1,16 @@
+.cursorGlow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 1200px;
+  height: 1200px;
+  margin-left: -600px; /* Чтобы центр был на курсоре */
+  margin-top: -600px;
+  border-radius: 50%;
+  pointer-events: none;
+  background: radial-gradient(circle, rgba(29, 78, 216, 0.15), transparent 80%);
+
+  mix-blend-mode: screen;
+  z-index: 9999;
+  transition: transform 0.1s ease-out;
+}
