@@ -20,6 +20,16 @@ body {
   line-height: 1.5;
 }
 
+::selection {
+  background-color: #64ffda;
+  color: #0a192f;
+}
+
+::-moz-selection {
+  background-color: #64ffda;
+  color: #0a192f;
+}
+
 .layout {
   position: relative;
   max-width: 1280px;

@@ -1,13 +1,13 @@
 import CursorGlow from "./components/CursorGlow/CursorGlow";
 import MainContent from "./components/MainContent/MainContent";
-import Sidebar from "./components/Sidebar/Sidebar";
+import Header from "./components/Header/Header";
 
 function App() {
   return (
     <>
       <CursorGlow />
       <div className="layout">
-        <Sidebar />
+        <Header />
         <MainContent />
       </div>
     </>

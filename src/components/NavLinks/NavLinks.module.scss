@@ -1,0 +1,53 @@
+.nav {
+  display: none;
+
+  @media (min-width: 1024px) {
+    display: block;
+    margin-top: 4rem;
+    width: max-content;
+  }
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 0;
+  text-decoration: none;
+
+  &.active .text {
+    color: var(--accent);
+  }
+
+  &:hover .indicator,
+  &:focus-visible .indicator {
+    width: 4rem;
+    background-color: var(--accent);
+  }
+
+  &:hover .text,
+  &:focus-visible .text {
+    color: var(--accent);
+  }
+}
+
+.indicator {
+  margin-right: 1rem;
+  height: 1px;
+  width: 2rem;
+  background-color: var(--dark-accent);
+  transition: all 0.3s ease;
+}
+
+.text {
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--dark-accent);
+  transition: color 0.3s ease;
+}
