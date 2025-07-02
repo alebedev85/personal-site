@@ -1,13 +1,13 @@
 import { FaGithub, FaLinkedin, FaTelegramPlane } from 'react-icons/fa';
 import type { ReactElement } from 'react';
 
-export interface contact {
+export interface IContact {
   href: string;
   label: string;
   icon: ReactElement;
 }
 
-export const contacts: contact[] = [
+export const contacts: IContact[] = [
   {
     href: 'https://github.com/yourusername',
     label: 'GitHub',

@@ -16,13 +16,13 @@ import {
   SiWebpack,
 } from "react-icons/si";
 
-export interface skill {
+export interface ISkill {
   label: string;
   icon: ReactElement;
   link: string;
 }
 
-export const skills: skill[] = [
+export const skills: ISkill[] = [
   {
     label: "HTML",
     icon: <FaHtml5 />,

@@ -1,0 +1,126 @@
+.cardLink {
+  position: relative;
+  display: grid;
+  gap: 1rem;
+  padding-bottom: 0.25rem;
+  grid-template-columns: repeat(8, 1fr);
+  /* добавим автоматическую высоту строк, чтобы равнялись высоты столбцов */
+  grid-auto-rows: 1fr;
+  transition: opacity 0.3s ease;
+
+  &:hover {
+    opacity: 1 !important;
+  }
+
+  &:hover .iconArrow {
+    transform: translateY(-0.25rem) translateX(0.25rem);
+  }
+}
+
+.background {
+  position: absolute;
+  inset: -1rem; // чуть больше -inset-x-6 и -inset-y-4 из оригинала (примерно)
+  z-index: 0;
+  border-radius: var(--radius);
+  background-color: rgba(var(--slate-rgb), 0.05);
+  box-shadow: inset 0 1px 0 rgba(148, 163, 184, 0.1), 0 0 1px var(--accent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.cardLink:hover .background {
+  opacity: 1;
+}
+
+.image {
+  grid-column: 1 / span 2;
+  order: 1;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: var(--radius);
+  border: 2px solid rgba(204, 214, 246, 0.1); // lightest-slate с прозрачностью
+  transition: border-color 0.3s;
+
+  &:hover {
+    border-color: rgba(100, 255, 218, 0.3); // accent с прозрачностью
+  }
+}
+
+.content {
+  z-index: 10;
+  grid-column: 3 / span 6; /* сместил с 2 на 3, чтобы левая картинка была шире (2 столбца), контент с 3-го */
+  order: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* центрируем содержимое по высоте */
+}
+
+h3 {
+  font-family: var(--font-main);
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.25;
+  color: var(--lightest-slate);
+  margin: 0;
+}
+
+.titleLink {
+  display: inline-flex;
+  align-items: baseline;
+  color: var(--lightest-slate);
+  text-decoration: none;
+  transition: color 0.3s;
+
+  &:hover,
+  &:focus-visible {
+    color: var(--accent);
+  }
+}
+
+.iconArrow {
+  width: 1rem;
+  height: 1rem;
+  margin-left: 0.25rem;
+  transition: transform 0.3s;
+  transform: translateY(1px);
+  flex-shrink: 0;
+}
+
+.description {
+  margin-top: 0.5rem;
+  font-family: var(--font-main);
+  font-size: 0.875rem;
+  line-height: 1.4;
+  color: var(--slate);
+}
+
+.techList {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+}
+
+.techItem {
+  margin-right: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.techBadge {
+  display: inline-flex;
+  align-items: center;
+  background-color: rgba(
+    100,
+    255,
+    218,
+    0.1
+  ); // легкий фон акцента с прозрачностью
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius);
+}
