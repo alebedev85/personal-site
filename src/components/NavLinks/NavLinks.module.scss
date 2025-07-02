@@ -19,16 +19,14 @@ ul {
   padding: 0.75rem 0;
   text-decoration: none;
 
-  &.active .text {
-    color: var(--accent);
-  }
-
+  &.active .indicator,
   &:hover .indicator,
   &:focus-visible .indicator {
     width: 4rem;
     background-color: var(--accent);
   }
 
+  &.active .text,
   &:hover .text,
   &:focus-visible .text {
     color: var(--accent);
@@ -44,7 +42,7 @@ ul {
 }
 
 .text {
-  font-size: 0.75rem;
+  font-size: 1rem;
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 0.1em;
