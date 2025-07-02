@@ -6,9 +6,13 @@ import styles from "./Projects.module.scss";
 const Projects = () => (
   <section id="projects" className={styles.projects}>
     <h2>Проекты: </h2>
-    {projects.map((projectData: IProject, index) => (
-      <ProjectCard key={index} {...projectData} />
-    ))}
+    <ul className={styles.projectsList}>
+      {projects.map((projectData: IProject, index) => (
+        <li key={index}>
+          <ProjectCard {...projectData} />
+        </li>
+      ))}
+    </ul>
   </section>
 );
 
