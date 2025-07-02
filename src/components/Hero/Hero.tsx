@@ -5,9 +5,9 @@ const Hero = () => {
     <section id="hero" className={styles.hero}>
       <a className={styles.preTitle} href="#hero">Привет, меня зовут</a>
       <h1 className={styles.name}>Андрей Лебедев</h1>
-      <h2 className={styles.subtitle}>Я фронтенд разработчик</h2>
+      <p className={styles.subtitle}>Я фронтенд-разработчик</p>
       <p className={styles.description}>
-        Создаю интерфейсы, которые работают
+        Создаю интерфейсы, которыми хочется пользоваться
       </p>
     </section>
   );

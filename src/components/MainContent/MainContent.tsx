@@ -1,15 +1,14 @@
-
-import Skills from '../Skills/Skills';
+import About from "../About/About";
+import Skills from "../Skills/Skills";
 // import Projects from '../Projects/Projects';
-import Contact from '../contacts/Contacts';
-import styles from "./MainContent.module.scss"
+import styles from "./MainContent.module.scss";
 
 const MainContent = () => {
   return (
     <main className={styles.content}>
+      <About />
       <Skills />
       {/* <Projects /> */}
-      <Contact />
     </main>
   );
 };

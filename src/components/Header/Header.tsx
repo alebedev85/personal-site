@@ -1,16 +1,16 @@
 import Hero from "../Hero/Hero";
 import NavLinks from "../NavLinks/NavLinks";
-import Contacts from "../contacts/Contacts";
+import Contacts from "../Contacts/Contacts";
 import styles from "./Header.module.scss";
 
 const Header = () => {
   return (
     <header className={styles.header}>
       <div className={styles.top}>
-        <Hero/>
-        <NavLinks/>
+        <Hero />
+        <NavLinks />
       </div>
-      <Contacts/>
+      <Contacts />
     </header>
   );
 };

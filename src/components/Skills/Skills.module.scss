@@ -1,0 +1,40 @@
+.skills {
+  h2 {
+    color: var(--accent);
+  }
+}
+
+.skillList {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); // чуть больше, чтобы влез текст
+  gap: 1.5rem;
+  padding: 0;
+  list-style: none;
+}
+
+.skillItem {
+  display: flex;
+  align-items: center; // ← значок и текст в строку
+  justify-content: flex-start; // ← выравнивание по левому краю
+  font-size: 0.9rem;
+  text-align: left;
+  transition: color 0.3s;
+
+  a {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem; // ← расстояние между иконкой и текстом
+    color: var(--slate);
+    text-decoration: none;
+
+    &:hover {
+      color: var(--accent);
+    }
+  }
+
+  .icon {
+    font-size: 2rem;
+    margin-bottom: 0; // ← убираем вертикальное выравнивание
+  }
+}
