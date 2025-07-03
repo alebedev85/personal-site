@@ -7,7 +7,8 @@ import styles from "./ProjectCard.module.scss";
 const ProjectCard = ({
   title,
   description,
-  url,
+  projectLink,
+    gitHubLink,
   technologies,
   imgSrc,
   imgAlt,
@@ -15,10 +16,11 @@ const ProjectCard = ({
   const [isLinkHovered, setIsLinkHovered] = useState(false);
   return (
     <a
-      href={url}
+      href={gitHubLink}
       target="_blank"
       rel="noreferrer noopener"
-      aria-label={`${title} (opens in a new tab)`}
+      title="GitHub link"
+      aria-label={`GitHub link ${title} (opens in a new tab)`}
       className={`${styles.cardLink} ${
         isLinkHovered ? styles.linkHovered : ""
       }`}
@@ -44,16 +46,17 @@ const ProjectCard = ({
 
         <a
           className={styles.link}
-          href={"#"}
+          href={projectLink}
           target="_blank"
           rel="noopener noreferrer"
-          aria-label={`${"#"} (откроется в новой вкладке)`}
+          title="Project link"
+          aria-label={`Project link${title} (откроется в новой вкладке)`}
           onMouseEnter={() => setIsLinkHovered(true)}
           onMouseLeave={() => setIsLinkHovered(false)}
           onClick={(e) => e.stopPropagation()}
         >
           <HiLink className={styles.icon} />
-          <span>{"label"}</span>
+          <span>{"Website"}</span>
         </a>
 
         <ul className={styles.techList} aria-label="Technologies used:">
