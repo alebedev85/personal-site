@@ -3,7 +3,7 @@ import { useActiveSection } from "../../hooks/useActiveSection";
 
 const links = [
   { href: "#about", label: "Обо мне" },
-  { href: "#experience", label: "Навыки" },
+  { href: "#skills", label: "Навыки" },
   { href: "#projects", label: "Проекты" },
 ];
 
