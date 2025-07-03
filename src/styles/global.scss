@@ -44,7 +44,9 @@ a {
   font-family: var(--font-mono);
   text-decoration: none;
   font-size: 1rem;
-  &:hover {
+
+  &:hover,
+  &:focus-visible {
     color: var(--accent);
   }
 }
@@ -54,6 +56,15 @@ h2 {
   margin-bottom: 1rem;
   padding: 0;
   color: var(--accent);
+}
+
+h3 {
+  font-family: var(--font-main);
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.25;
+  color: var(--lightest-slate);
+  margin: 0;
 }
 
 p {

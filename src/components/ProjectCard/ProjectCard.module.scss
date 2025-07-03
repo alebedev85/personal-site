@@ -4,32 +4,36 @@
   gap: 1rem;
   padding-bottom: 0.25rem;
   grid-template-columns: repeat(8, 1fr);
-  /* добавим автоматическую высоту строк, чтобы равнялись высоты столбцов */
   grid-auto-rows: 1fr;
   transition: opacity 0.3s ease;
 
-  &:hover {
+  &:hover,
+  &:focus-visible {
     opacity: 1 !important;
+
+    .background {
+      opacity: 1;
+    }
   }
 
-  &:hover .iconArrow {
+  &:hover:not(.linkHovered) .iconArrow {
     transform: translateY(-0.25rem) translateX(0.25rem);
+  }
+
+  &:hover:not(.linkHovered) .title {
+    color: var(--accent);
   }
 }
 
 .background {
   position: absolute;
-  inset: -1rem; // чуть больше -inset-x-6 и -inset-y-4 из оригинала (примерно)
+  inset: -1rem;
   z-index: 0;
   border-radius: var(--radius);
   background-color: rgba(var(--slate-rgb), 0.05);
   box-shadow: inset 0 1px 0 rgba(148, 163, 184, 0.1), 0 0 1px var(--accent);
   opacity: 0;
   transition: opacity 0.3s ease;
-}
-
-.cardLink:hover .background {
-  opacity: 1;
 }
 
 .image {
@@ -39,43 +43,25 @@
   height: auto;
   object-fit: cover;
   border-radius: var(--radius);
-  border: 2px solid rgba(204, 214, 246, 0.1); // lightest-slate с прозрачностью
+  border: 2px solid rgba(204, 214, 246, 0.1);
   transition: border-color 0.3s;
-
-  &:hover {
-    border-color: rgba(100, 255, 218, 0.3); // accent с прозрачностью
-  }
 }
 
 .content {
   z-index: 10;
-  grid-column: 3 / span 6; /* сместил с 2 на 3, чтобы левая картинка была шире (2 столбца), контент с 3-го */
+  grid-column: 3 / span 6;
   order: 2;
   display: flex;
   flex-direction: column;
-  justify-content: center; /* центрируем содержимое по высоте */
+  justify-content: center;
 }
 
-h3 {
-  font-family: var(--font-main);
-  font-weight: 500;
-  font-size: 1rem;
-  line-height: 1.25;
-  color: var(--lightest-slate);
-  margin: 0;
-}
-
-.titleLink {
+.title {
   display: inline-flex;
   align-items: baseline;
   color: var(--lightest-slate);
   text-decoration: none;
   transition: color 0.3s;
-
-  &:hover,
-  &:focus-visible {
-    color: var(--accent);
-  }
 }
 
 .iconArrow {
@@ -95,6 +81,29 @@ h3 {
   color: var(--slate);
 }
 
+.link {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--lightest-slate);
+  text-decoration: none;
+  transition: color 0.3s;
+
+  &:hover,
+  &:focus-visible {
+    color: var(--accent);
+  }
+}
+
+.icon {
+  margin-right: 0.25rem;
+  width: 0.75rem;
+  height: 0.75rem;
+  flex-shrink: 0;
+}
+
 .techList {
   margin-top: 0.5rem;
   display: flex;
@@ -111,12 +120,7 @@ h3 {
 .techBadge {
   display: inline-flex;
   align-items: center;
-  background-color: rgba(
-    100,
-    255,
-    218,
-    0.1
-  ); // легкий фон акцента с прозрачностью
+  background-color: rgba(100, 255, 218, 0.1);
   color: var(--accent);
   font-family: var(--font-mono);
   font-size: 0.75rem;
