@@ -8,7 +8,7 @@
   margin-top: -600px;
   border-radius: 50%;
   pointer-events: none;
-  background: radial-gradient(circle, rgba(29, 78, 216, 0.15), transparent 80%);
+  background: radial-gradient(circle, rgba(var(--glow-rgb)), transparent 80%);
 
   mix-blend-mode: screen;
   z-index: 9999;

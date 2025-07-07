@@ -19,7 +19,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #73C0FC;
+  background-color: var(--lightest-slate);;
   transition: 0.4s;
   border-radius: 30px;
 
@@ -66,5 +66,5 @@
   z-index: 1;
   width: 24px;
   height: 24px;
-  fill: #73C0FC;
+  fill: var(--lightest-slate);
 }

@@ -9,7 +9,7 @@ type initialStateType = {
 };
 
 const initialState: initialStateType = {
-  theme: "light",
+  theme: "dark",
   language: "ru",
 };
 

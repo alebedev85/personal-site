@@ -1,14 +1,27 @@
 :root {
   --font-main: "Inter", sans-serif;
   --font-mono: "Fira Code", monospace;
+  --radius: 6px;
 
-  --bg: #0a192f;
+  --glow-rgb: 29, 78, 216, 0.15;
+  --bg-rgb: 10, 25, 47;
+  --bg: rgb(var(--bg-rgb));
   --slate-rgb: 136, 146, 176;
   --slate: rgb(var(--slate-rgb));
   --light-slate: #a8b2d1;
   --lightest-slate: #ccd6f6;
   --accent: #64ffda;
   --dark-accent: #628f89;
+}
 
-  --radius: 6px;
+:root[theme="light"] {
+  --glow-rgb: 35, 218, 138, 0.7;
+  --bg-rgb: 233, 239, 248;
+  --bg: rgb(var(--bg-rgb));
+  --slate-rgb: 71, 85, 105;
+  --slate: rgb(var(--slate-rgb));
+  --light-slate: #475569;
+  --lightest-slate: #1e293b;
+  --dark-accent: #87bfb7;
+  --accent: #1db793;
 }
