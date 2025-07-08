@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import CursorGlow from "./components/CursorGlow/CursorGlow";
 import Header from "./components/Header/Header";
 import MainContent from "./components/MainContent/MainContent";
-import ToggleControls from "./components/ToggleControls/ToggleControls";
+import Toggles from "./components/Toggles/Toggles";
 import type { RootState } from "./store";
 
 function App() {
@@ -12,11 +12,11 @@ function App() {
   useEffect(() => {
     document.documentElement.setAttribute("theme", theme);
   }, [theme]);
-  
+
   return (
     <>
       <CursorGlow />
-      <ToggleControls />
+      <Toggles />
       <div className="layout">
         <Header />
         <MainContent />
