@@ -1,7 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-
-type ThemeType = "light" | "dark";
-type LanguageType = "ru" | "en";
+import type { LanguageType, ThemeType } from "../../types";
 
 type initialStateType = {
   theme: ThemeType;
@@ -23,19 +21,8 @@ const themeSlice = createSlice({
     toggleLanguage: (state) => {
       state.language = state.language === "ru" ? "en" : "ru";
     },
-    setTheme: (state, action: { payload: ThemeType }) => {
-      state.theme = action.payload;
-    },
-    setLanguage: (state, action: { payload: LanguageType }) => {
-      state.language = action.payload;
-    },
   },
 });
 
 export default themeSlice.reducer;
-export const {
-  toggleTheme,
-  toggleLanguage,
-  setTheme,
-  setLanguage,
-} = themeSlice.actions;
+export const { toggleTheme, toggleLanguage } = themeSlice.actions;

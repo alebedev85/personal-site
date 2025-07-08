@@ -1,0 +1,8 @@
+{
+  "hero": {
+    "preTitle": "Hi, my name is",
+    "name": "Andrey Lebedev",
+    "subtitle": "I'm a frontend developer",
+    "description": "I create interfaces you want to use"
+  }
+}
