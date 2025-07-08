@@ -4,6 +4,10 @@
   display: inline-block;
   width: 64px;
   height: 34px;
+
+  &:focus-within .slider {
+    border-color: var(--accent);
+  }
 }
 
 .input {
@@ -19,18 +23,21 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: var(--lightest-slate);;
+  background-color: var(--lightest-slate);
   transition: 0.4s;
   border-radius: 30px;
+  border: 2px solid transparent;
+  transition: background-color 0.4s;
+  box-sizing: border-box;
 
   &::before {
     position: absolute;
-    content: '';
+    content: "";
     height: 30px;
     width: 30px;
     border-radius: 20px;
-    left: 2px;
-    bottom: 2px;
+    left: 0px;
+    bottom: 0px;
     z-index: 2;
     background-color: var(--accent);
     transition: 0.4s;
