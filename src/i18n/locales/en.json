@@ -33,5 +33,37 @@
   },
   "skills":{
     "title": "Skills"
-  }
+  },
+  "projects": {
+    "title": "Projects",
+    "calendar": {
+      "title": "Game Calendar",
+      "description": "An interactive web app for scheduling games using a calendar layout. Features drag & drop, task creation, image upload, and Firebase sync."
+    },
+    "trello": {
+      "title": "Task Planner",
+      "description": "A task management web app where users can move tasks between columns like To Do, In Progress, Done."
+    },
+    "piano": {
+      "title": "Virtual Piano",
+      "description": "A 3-octave virtual piano with note visualization and keyboard/mouse control support."
+    },
+    "horses": {
+      "title": "Four Horses Club",
+      "description": "Responsive site built from a Figma design using pure JavaScript and OOP. No frameworks."
+    },
+    "githubSearch": {
+      "title": "GitHub User Search",
+      "description": "An interactive GitHub user search app using the GitHub API."
+    },
+    "countries": {
+      "title": "Country Catalog",
+      "description": "A country catalog with region filtering and name search."
+    }
+  },
+  "footer": {
+  "description": "The design was prototyped in Figma and hand-coded in Visual Studio Code. The site is built with React using Redux Toolkit for state management, written in TypeScript, and styled with SCSS modules. The build is handled by Vite. The project is deployed on Vercel. The source code is available on",
+  "font": "Primary font — Inter",
+  "rights": "Andrey Lebedev. All rights reserved"
+}
 }
