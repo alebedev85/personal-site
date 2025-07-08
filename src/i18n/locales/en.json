@@ -4,5 +4,34 @@
     "name": "Andrey Lebedev",
     "subtitle": "I'm a frontend developer",
     "description": "I create interfaces you want to use"
+  },
+  "nav": {
+    "about": "About Me",
+    "skills": "Skills",
+    "projects": "Projects",
+    "ariaLabel": "Page section navigation"
+  },
+  "about": {
+    "title": "About Me:",
+    "description": {
+      "part1": "I am a frontend developer with two years of experience, passionate about creating user-friendly and aesthetically pleasing interfaces. I participated in two startups:",
+      "part2": "- a service for automatic resume distribution,",
+      "part3": "- issuing virtual cards. I constantly learn new technologies and tools, strive to grow and solve real problems. I am looking for interesting and useful projects where I can create quality and meaningful products."
+    },
+    "links": {
+      "reaction": {
+        "ariaLabel": "Re-Action (opens in a new tab)",
+        "title": "Re-Action",
+        "text": "Re-Action"
+      },
+      "wellcards": {
+        "ariaLabel": "Wellcards (opens in a new tab)",
+        "title": "Wellcards",
+        "text": "Wellcards"
+      }
+    }
+  },
+  "skills":{
+    "title": "Skills"
   }
 }

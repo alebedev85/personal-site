@@ -1,37 +1,36 @@
 import styles from "./About.module.scss";
+import { useTranslation } from "react-i18next";
 
 export default function About() {
+  const { t } = useTranslation();
+
   return (
     <section id="about" className={styles.about}>
       <h2 className={styles.title}>
-        Обо мне:
+        {t("about.title")}
       </h2>
       <p className={styles.text}>
-        Я фронтенд-разработчик с двухлетним опытом, увлечённый созданием удобных
-        и эстетичных пользовательских интерфейсов. Участвовал в двух стартапах:{` `}
+        {t("about.description.part1")}{" "}
         <a
           href="https://service.re-action.online"
           target="_blank"
           rel="noreferrer noopener"
-          aria-label={`Re-Action (opens in a new tab)`}
-          title="Re-Action"
+          aria-label={t("about.links.reaction.ariaLabel")}
+          title={t("about.links.reaction.title")}
         >
-          Re-Action
+          {t("about.links.reaction.text")}
         </a>{" "}
-        - сервис для автоматической рассылки резюме,{" "}
+        {t("about.description.part2")}{" "}
         <a
           href="https://wellcards.co"
           target="_blank"
           rel="noreferrer noopener"
-          aria-label={`Wellcards (opens in a new tab)`}
-          title="Wellcards"
+          aria-label={t("about.links.wellcards.ariaLabel")}
+          title={t("about.links.wellcards.title")}
         >
-          Wellcards
+          {t("about.links.wellcards.text")}
         </a>{" "}
-        - выпуск виртуальных карт. Постоянно изучаю новые технологии и
-        инструменты, стремлюсь развиваться и решать реальные задачи. Ищу
-        интересные и полезные проекты, в которых можно создавать качественный и
-        значимый продукт.
+        {t("about.description.part3")}
       </p>
     </section>
   );
