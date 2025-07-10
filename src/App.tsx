@@ -1,9 +1,8 @@
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import CursorGlow from "./components/CursorGlow/CursorGlow";
-import Header from "./components/Header/Header";
 import MainContent from "./components/MainContent/MainContent";
-import Toggles from "./components/Toggles/Toggles";
+import { Layout } from "./pages/Layout/Layout";
 import type { RootState } from "./store";
 
 function App() {
@@ -16,11 +15,9 @@ function App() {
   return (
     <>
       <CursorGlow />
-      <Toggles />
-      <div className="layout">
-        <Header />
+      <Layout>
         <MainContent />
-      </div>
+      </Layout>
     </>
   );
 }

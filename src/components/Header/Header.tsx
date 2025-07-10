@@ -2,10 +2,15 @@ import Hero from "../Hero/Hero";
 import NavLinks from "../NavLinks/NavLinks";
 import Contacts from "../Contacts/Contacts";
 import styles from "./Header.module.scss";
+import clsx from "clsx";
 
-const Header = () => {
+type HeaderProps = {
+  className?: string;
+};
+
+const Header = ({ className }: HeaderProps) => {
   return (
-    <header className={styles.header}>
+    <header className={clsx(styles.header, className)}>
       <div className={styles.top}>
         <Hero />
         <NavLinks />

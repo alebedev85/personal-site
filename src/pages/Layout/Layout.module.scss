@@ -1,0 +1,20 @@
+.layout{
+  max-width: 1280px;
+  padding: 0 3rem;
+  margin: auto;
+}
+
+.main {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header {
+  width: 48%;
+}
+
+.mainContent {
+  width: 52%;
+}
