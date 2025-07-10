@@ -1,12 +1,15 @@
+@use "../../styles/breakpoints.scss" as *;
+
 .header {
-  position: sticky;
-  top: 0;
-  left: 0;
-  height: 100vh;
   background-color: var(--bg);
   padding: 3rem 0 6rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   color: var(--lightest-slate);
+
+  @media (max-width: ($bp-tablet)) {
+    display: block;
+    padding-bottom: 3rem;
+  }
 }
