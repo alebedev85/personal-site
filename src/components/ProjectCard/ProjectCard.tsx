@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { HiLink } from "react-icons/hi";
 import { MdArrowOutward } from "react-icons/md";
-import type { IProject } from "../../data/projects";
+import type { IProject } from "../../types";
 import styles from "./ProjectCard.module.scss";
 
 const ProjectCard = ({
@@ -60,7 +60,7 @@ const ProjectCard = ({
         </a>
 
         <ul className={styles.techList} aria-label="Technologies used:">
-          {technologies.map((tech) => (
+          {technologies.map((tech:string) => (
             <li key={tech} className={styles.techItem}>
               <div className={styles.techBadge}>{tech}</div>
             </li>
