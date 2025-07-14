@@ -1,3 +1,4 @@
+@use "../../../styles/breakpoints.scss" as *;
 .languageToggle {
   display: flex;
   gap: 1rem;
@@ -17,8 +18,11 @@
   &:focus-visible {
     color: var(--accent);
   }
-}
 
+  @media (max-width: ($bp-mobile)) {
+    font-size: 1.3rem;
+  }
+}
 .active {
   border-bottom: 2px solid var(--accent);
 }

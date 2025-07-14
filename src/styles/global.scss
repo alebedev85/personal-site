@@ -16,7 +16,6 @@ body {
   color: var(--lightest-slate);
   font-family: var(--font-main);
   font-feature-settings: "ss07", "cv11";
-  font-size: 16px;
   line-height: 1.5;
 }
 
@@ -40,28 +39,4 @@ a {
   &:focus-visible {
     color: var(--accent);
   }
-}
-
-h2 {
-  margin: 0;
-  margin-bottom: 1rem;
-  padding: 0;
-  color: var(--accent);
-}
-
-h3 {
-  font-family: var(--font-main);
-  font-weight: 500;
-  font-size: 1rem;
-  line-height: 1.25;
-  color: var(--lightest-slate);
-  margin: 0;
-}
-
-p {
-  margin: 0;
-  padding: 0;
-  color: var(--light-slate);
-  font-size: 1.1rem;
-  line-height: 1.6;
 }

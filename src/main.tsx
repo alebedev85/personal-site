@@ -6,6 +6,7 @@ import App from "./App.tsx";
 import i18n from "./i18n";
 import { store } from "./store";
 import "./styles/global.scss";
+import "./styles/typography.scss";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>

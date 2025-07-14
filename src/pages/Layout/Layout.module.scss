@@ -1,7 +1,7 @@
 @use "../../styles/breakpoints.scss" as *;
 .layout {
   max-width: 1280px;
-  padding: 0 3rem;
+  padding: 3rem;
   margin: auto;
 }
 
@@ -34,6 +34,20 @@
   }
 
   .mainContent {
-  width: 100%;
+    width: 100%;
+  }
 }
+
+@media (max-width: ($bp-mobile)) {
+  .layout {
+    padding: 1.5rem;
+  }
+
+  .header {
+    width: 100%;
+  }
+
+  .mainContent {
+    width: 100%;
+  }
 }

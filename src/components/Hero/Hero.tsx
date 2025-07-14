@@ -6,7 +6,7 @@ const Hero = () => {
   
   return (
     <section className={styles.hero}>
-      <p className={styles.preTitle}>{t("hero.preTitle")}</p>
+      <span className={styles.preTitle}>{t("hero.preTitle")}</span>
       <h1 className={styles.name}>{t("hero.name")}</h1>
       <p className={styles.subtitle}>{t("hero.subtitle")}</p>
       <p className={styles.description}>{t("hero.description")}</p>
