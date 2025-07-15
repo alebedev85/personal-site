@@ -8,7 +8,7 @@ const ProjectCard = ({
   title,
   description,
   projectLink,
-    gitHubLink,
+  gitHubLink,
   technologies,
   imgSrc,
   imgAlt,
@@ -26,6 +26,12 @@ const ProjectCard = ({
       }`}
     >
       <div className={styles.background}></div>
+      <h3>
+        <span className={styles.title}>
+          {title}{" "}
+          <MdArrowOutward className={styles.iconArrow} aria-hidden="true" />
+        </span>
+      </h3>
       <img
         src={imgSrc}
         alt={imgAlt}
@@ -35,13 +41,6 @@ const ProjectCard = ({
         className={styles.image}
       />
       <div className={styles.content}>
-        <h3>
-          <span className={styles.title}>
-            {title}{" "}
-            <MdArrowOutward className={styles.iconArrow} aria-hidden="true" />
-          </span>
-        </h3>
-
         <p className={styles.description}>{description}</p>
 
         <a
@@ -60,7 +59,7 @@ const ProjectCard = ({
         </a>
 
         <ul className={styles.techList} aria-label="Technologies used:">
-          {technologies.map((tech:string) => (
+          {technologies.map((tech: string) => (
             <li key={tech} className={styles.techItem}>
               <div className={styles.techBadge}>{tech}</div>
             </li>
