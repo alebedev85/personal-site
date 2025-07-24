@@ -1,5 +1,5 @@
-import { FaGithub, FaLinkedin, FaTelegramPlane } from 'react-icons/fa';
-import type { ReactElement } from 'react';
+import type { ReactElement } from "react";
+import { FaGithub, FaGoogle, FaTelegramPlane } from "react-icons/fa";
 
 export interface IContact {
   href: string;
@@ -9,18 +9,18 @@ export interface IContact {
 
 export const contacts: IContact[] = [
   {
-    href: 'https://github.com/yourusername',
-    label: 'GitHub',
+    href: "mailto:alebedev424@gmail.com",
+    label: "GMail",
+    icon: <FaGoogle />,
+  },
+  {
+    href: "https://github.com/alebedev85",
+    label: "GitHub",
     icon: <FaGithub />,
   },
   {
-    href: 'https://linkedin.com/in/yourusername',
-    label: 'LinkedIn',
-    icon: <FaLinkedin />,
-  },
-  {
-    href: 'https://t.me/yourusername',
-    label: 'Telegram',
+    href: "https://t.me/andrei_lebedev",
+    label: "Telegram",
     icon: <FaTelegramPlane />,
   },
 ];
