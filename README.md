@@ -1,69 +1,51 @@
-# React + TypeScript + Vite
+# 💼 Personal Portfolio Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Современный одностраничный сайт-портфолио фронтенд-разработчика, созданный с нуля на **React + TypeScript**. Этот проект демонстрирует мои навыки в создании адаптивных интерфейсов, архитектуре компонентов, управлении состоянием и пользовательском UI/UX.
 
-Currently, two official plugins are available:
+![Скриншот сайта](./preview.png)
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🔍 Особенности
 
-## Expanding the ESLint configuration
+- ⚛️ React 19+, TypeScript, Vite
+- 🎨 SCSS-модули и CSS-переменные
+- 🌗 Переключение темы (светлая / тёмная) через Redux
+- 🌍 Поддержка мультиязычности (i18n-ready)
+- 🧭 Фиксированная левая колонка с навигацией и соцсетями
+- ✨ Эффект свечения вокруг курсора
+- 📱 Полностью адаптивный дизайн
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🛠️ Стек технологий
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+| Категория       | Технологии                            |
+|-----------------|----------------------------------------|
+| Язык            | TypeScript                            |
+| Фреймворк       | React 19+                              |
+| Сборка          | Vite                                  |
+| Стилизация      | SCSS-модули, CSS variables             |
+| Состояние       | Redux Toolkit                         |
+| Локализация     | i18next (если включено)                |
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+---
+
+## 🧱 Архитектура
+
+Проект построен по принципам **Feature-Sliced Design (FSD)**:
+- Разделение UI, логики и состояния
+- Использование кастомных хуков и переиспользуемых компонентов
+- Изоляция тем, языков и маршрутов
+
+---
+
+## 🚀 Установка и запуск
+
+```bash
+git clone https://github.com/yourusername/portfolio-site.git
+cd portfolio-site
+yarn install
+yarn dev
 ```
+Сайт будет доступен по адресу: http://localhost:5173
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
