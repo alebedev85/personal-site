@@ -32,10 +32,10 @@
     }
   },
   "skills":{
-    "title": "Skills"
+    "title": "Skills:"
   },
   "projects": {
-    "title": "Projects",
+    "title": "Projects:",
     "calendar": {
       "title": "Game Calendar",
       "description": "An interactive web app for scheduling games using a calendar layout. Features drag & drop, task creation, image upload, and Firebase sync."

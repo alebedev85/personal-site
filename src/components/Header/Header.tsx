@@ -1,8 +1,8 @@
+import clsx from "clsx";
+import Contacts from "../Contacts/Contacts";
 import Hero from "../Hero/Hero";
 import NavLinks from "../NavLinks/NavLinks";
-import Contacts from "../Contacts/Contacts";
 import styles from "./Header.module.scss";
-import clsx from "clsx";
 
 type HeaderProps = {
   className?: string;

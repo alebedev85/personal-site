@@ -6,12 +6,12 @@ import styles from "./MainContent.module.scss";
 
 const MainContent = () => {
   return (
-    <main className={styles.content}>
+    <div className={styles.content}>
       <About />
       <Skills />
       <Projects />
       <Footer />
-    </main>
+    </div>
   );
 };
 

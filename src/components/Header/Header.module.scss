@@ -1,8 +1,8 @@
 @use "../../styles/breakpoints.scss" as *;
 
 .header {
-  background-color: var(--bg);
   padding-top: 3rem;
+  padding-bottom: 3rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

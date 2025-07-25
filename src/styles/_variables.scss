@@ -14,7 +14,9 @@
 
   --glow-rgb: 29, 78, 216, 0.15;
   --bg-rgb: 10, 25, 47;
+  --bg-rgb-t: 10, 25, 47, 0.8;
   --bg: rgb(var(--bg-rgb));
+  --bg-transparent: rgba(--bg-rgb-t);
   --slate-rgb: 136, 146, 176;
   --slate: rgb(var(--slate-rgb));
   --light-slate: #a8b2d1;

@@ -8,7 +8,7 @@ const Projects = () => {
 
   return (
     <section id="projects" className={styles.projects}>
-      <h2>{t("projects.title")}:</h2>
+      <h2>{t("projects.title")}</h2>
       <ul className={styles.projectsList}>
         {projects.map((project) => (
           <li key={project.id}>

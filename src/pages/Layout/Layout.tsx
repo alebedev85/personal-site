@@ -10,11 +10,13 @@ type LayoutProps = {
 export const Layout = ({ children }: LayoutProps) => {
   return (
     <div className={styles.layout}>
-      <Toggles />
-      <div className={styles.main}>
-        <Header className={styles.header} />
-        <main className={styles.mainContent}>{children}</main>
+      <div className={styles.togglesWrapper}>
+        <Toggles />
       </div>
+      <div className={styles.sidebar}>
+        <Header />
+      </div>
+      <main className={styles.mainContent}>{children}</main>
     </div>
   );
 };

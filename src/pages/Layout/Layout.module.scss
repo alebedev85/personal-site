@@ -1,53 +1,57 @@
 @use "../../styles/breakpoints.scss" as *;
 .layout {
   max-width: 1280px;
-  padding: 3rem;
+  padding: 5rem 3rem 3rem;
   margin: auto;
 }
 
-.main {
-  position: relative;
+.togglesWrapper {
   width: 100%;
-  display: flex;
-  justify-content: space-between;
+  position: fixed;
+  top: 0px;
+  left: 0;
+  z-index: 1000;
+  background-color: var(--bg);
 }
 
-.header {
+.sidebar {
   width: 48%;
-  position: sticky;
-  top: 0;
+  height: calc(100vh - 5rem);
+  position: fixed;
+  top: 5rem;
   left: 0;
-  height: 100vh;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 6rem;
 }
 
 .mainContent {
+  margin-left: 48%;
   width: 52%;
+  height: 100%;
 }
 
 @media (max-width: ($bp-tablet)) {
   .main {
     flex-direction: column;
   }
-  .header {
+  .sidebar {
+    display: block;
+    width: 100%;
     position: static;
     height: auto;
+    padding-top: 1rem;
+    padding-right: 0;
   }
 
   .mainContent {
     width: 100%;
+    margin-left: 0;
   }
 }
 
 @media (max-width: ($bp-mobile)) {
   .layout {
     padding: 1.5rem;
-  }
-
-  .header {
-    width: 100%;
-  }
-
-  .mainContent {
-    width: 100%;
   }
 }
