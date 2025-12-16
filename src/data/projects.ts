@@ -1,5 +1,13 @@
 export const projects = [
   {
+    id: "boogorok",
+    projectLink: "https://boogorok.vercel.app/",
+    gitHubLink: "https://github.com/alebedev85/hotel-booking",
+    technologies: ["React", "Redux-toolkit", "Next.js", "Prisma ORM", "PostgreSQL", "JWT", "RTK Query", "Thunk"],
+    imgSrc: "/assets/images/boogorok.png",
+    imgAlt: "boogorok",
+  },
+  {
     id: "calendar",
     projectLink: "https://alebedev85.github.io/the-wassermans-games/",
     gitHubLink: "https://github.com/alebedev85/the-wassermans-games",

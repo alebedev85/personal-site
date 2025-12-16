@@ -16,7 +16,7 @@
     "description": {
       "part1": "I am a frontend developer with two years of experience, passionate about creating user-friendly and aesthetically pleasing interfaces. I participated in two startups:",
       "part2": "- a service for automatic resume distribution,",
-      "part3": "- issuing virtual cards. I constantly learn new technologies and tools, strive to grow and solve real problems. I am looking for interesting and useful projects where I can create quality and meaningful products."
+      "part3": "- issuing virtual cards. I constantly learn new technologies and tools, strive to grow and solve real problems. I would be glad to collaborate on interesting and meaningful projects where I can help create high-quality and impactful products."
     },
     "links": {
       "reaction": {
@@ -36,6 +36,10 @@
   },
   "projects": {
     "title": "Projects:",
+    "boogorok": {
+      "title": "Hotels booking",
+      "description": "A web application mockup for searching and booking hotels. Developed with Next.js 14+ (App Router) featuring server-side authentication, theme management, a responsive interface, and integration with PostgreSQL (via Neon.tech) using Prisma ORM."
+    },
     "calendar": {
       "title": "Game Calendar",
       "description": "An interactive web app for scheduling games using a calendar layout. Features drag & drop, task creation, image upload, and Firebase sync."
