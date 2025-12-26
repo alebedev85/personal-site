@@ -12,6 +12,12 @@
   left: 0;
   z-index: 1000;
   background-color: var(--bg);
+  
+
+  @media (max-width: ($bp-mobile)) {
+    background: none;
+    backdrop-filter: blur(4px);
+  }
 }
 
 .sidebar {
