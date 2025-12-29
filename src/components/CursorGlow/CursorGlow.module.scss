@@ -13,4 +13,8 @@
   mix-blend-mode: screen;
   z-index: 9999;
   transition: transform 0.1s ease-out;
+
+  @media (max-width: ($bp-mobile)) {
+    display: none;
+  }
 }
