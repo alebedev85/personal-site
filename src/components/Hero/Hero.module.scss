@@ -1,28 +1,19 @@
 @use "../../styles/breakpoints.scss" as *;
 
-.hero {
+.header {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  margin-bottom: 4rem;
-}
+  justify-content: space-between;
+  color: var(--lightest-slate);
 
-.preTitle {
-  color: var(--accent);
-  font-size: 1rem;
-}
+  @media (max-width: ($bp-tablet)) {
+    display: block;
+    padding-bottom: 3rem;
+  }
 
-.subtitle {
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-
-.description {
-  max-width: 20rem;
-}
-
-@media (max-width: ($bp-mobile)) {
-  h1 {
-    font-size: 2rem;
+  @media (max-width: ($bp-mobile)) {
+    padding-bottom: 0;
   }
 }

@@ -1,16 +1,22 @@
-import { useTranslation } from "react-i18next";
+import clsx from "clsx";
+import Contacts from "../Contacts/Contacts";
+import About from "../About/About";
+import NavLinks from "../NavLinks/NavLinks";
 import styles from "./Hero.module.scss";
 
-const Hero = () => {
-  const { t } = useTranslation();
-  
+type HeaderProps = {
+  className?: string;
+};
+
+const Hero = ({ className }: HeaderProps) => {
   return (
-    <section className={styles.hero}>
-      <span className={styles.preTitle}>{t("hero.preTitle")}</span>
-      <h1 className={styles.name}>{t("hero.name")}</h1>
-      <p className={styles.subtitle}>{t("hero.subtitle")}</p>
-      <p className={styles.description}>{t("hero.description")}</p>
-    </section>
+    <div className={clsx(styles.header, className)}>
+      <div className={styles.top}>
+        <About />
+        <NavLinks />
+      </div>
+      <Contacts />
+    </div>
   );
 };
 

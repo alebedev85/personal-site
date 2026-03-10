@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import Header from "../../components/Header/Header";
+import Hero from "../../components/Hero/Hero";
 import Toggles from "../../components/Toggles/Toggles";
 import styles from "./Layout.module.scss";
 
@@ -14,7 +14,7 @@ export const Layout = ({ children }: LayoutProps) => {
         <Toggles />
       </div>
       <div className={styles.sidebar}>
-        <Header />
+        <Hero />
       </div>
       <main className={styles.mainContent}>{children}</main>
     </div>
