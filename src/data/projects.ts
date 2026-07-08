@@ -1,7 +1,7 @@
 export const projects = [
   {
   id: "linguaboost",
-  projectLink: "https://linguaboost.vercel.app/", // замени на свой реальный домен, если отличается
+  projectLink: "https://linguaboost-beta.vercel.app", // замени на свой реальный домен, если отличается
   gitHubLink: "https://github.com/alebedev85/linguaboost", // замени на свой точный путь к репозиторию
   technologies: ["React", "Redux-toolkit", "Next.js", "TypeScript", "Axios", "SCSS Modules", "Gemini API", "FLUX.1-schnell"],
   imgSrc: "/assets/images/linguaboost.png",
