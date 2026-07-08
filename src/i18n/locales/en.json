@@ -31,11 +31,15 @@
       }
     }
   },
-  "skills":{
+  "skills": {
     "title": "Skills:"
   },
   "projects": {
     "title": "Projects:",
+    "linguaboost": {
+      "title": "Smart Language Trainer",
+      "description": "An interactive web application for learning English vocabulary featuring full AI integration. Developed with automated contextual examples and British pronunciation generation (Gemini API), visual association creation (FLUX.1-schnell), real-time progress tracking, and a responsive PWA interface."
+    },
     "boogorok": {
       "title": "Hotels booking",
       "description": "A web application mockup for searching and booking hotels. Developed with Next.js 14+ (App Router) featuring server-side authentication, theme management, a responsive interface, and integration with PostgreSQL (via Neon.tech) using Prisma ORM."
@@ -66,8 +70,8 @@
     }
   },
   "footer": {
-  "description": "The design was prototyped in Figma and hand-coded in Visual Studio Code. The site is built with React using Redux Toolkit for state management, written in TypeScript, and styled with SCSS modules. The build is handled by Vite. The project is deployed on Vercel. The source code is available on",
-  "font": "Primary font — Inter",
-  "rights": "Andrey Lebedev. All rights reserved"
-}
+    "description": "The design was prototyped in Figma and hand-coded in Visual Studio Code. The site is built with React using Redux Toolkit for state management, written in TypeScript, and styled with SCSS modules. The build is handled by Vite. The project is deployed on Vercel. The source code is available on",
+    "font": "Primary font — Inter",
+    "rights": "Andrey Lebedev. All rights reserved"
+  }
 }
