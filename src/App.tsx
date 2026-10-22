@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import CursorGlow from "./components/CursorGlow/CursorGlow";
 import MainContent from "./components/MainContent/MainContent";
-import { Layout } from "./pages/Layout/Layout";
+import { Layout } from "./components/Layout/Layout";
 import type { RootState } from "./store";
 
 function App() {

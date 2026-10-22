@@ -1,4 +1,6 @@
 import { useState } from "react";
+import Link from "next/link";
+import Image from "next/image";
 import { HiLink } from "react-icons/hi";
 import { MdArrowOutward } from "react-icons/md";
 import type { IProject } from "../../types";
@@ -15,35 +17,37 @@ const ProjectCard = ({
 }: IProject) => {
   const [isLinkHovered, setIsLinkHovered] = useState(false);
   return (
-    <a
-      href={gitHubLink}
-      target="_blank"
-      rel="noreferrer noopener"
-      title="GitHub link"
-      aria-label={`GitHub link ${title} (opens in a new tab)`}
+    <article
       className={`${styles.cardLink} ${
         isLinkHovered ? styles.linkHovered : ""
       }`}
     >
       <div className={styles.background}></div>
       <h3>
-        <span className={styles.title}>
+        <Link
+          className={styles.title}
+          href={gitHubLink}
+          target="_blank"
+          rel="noreferrer noopener"
+          title="GitHub link"
+          aria-label={`GitHub link ${title} (opens in a new tab)`}
+        >
           {title}{" "}
           <MdArrowOutward className={styles.iconArrow} aria-hidden="true" />
-        </span>
+        </Link>
       </h3>
-      <img
+      <Image
         src={imgSrc}
         alt={imgAlt}
-        loading="lazy"
         width={200}
         height={48}
+        sizes="(max-width: 768px) 100vw, 200px"
         className={styles.image}
       />
       <div className={styles.content}>
         <p className={styles.description}>{description}</p>
 
-        <a
+        <Link
           className={styles.link}
           href={projectLink}
           target="_blank"
@@ -52,11 +56,10 @@ const ProjectCard = ({
           aria-label={`Project link${title} (откроется в новой вкладке)`}
           onMouseEnter={() => setIsLinkHovered(true)}
           onMouseLeave={() => setIsLinkHovered(false)}
-          onClick={(e) => e.stopPropagation()}
         >
           <HiLink className={styles.icon} />
           <span>{"Website"}</span>
-        </a>
+        </Link>
 
         <ul className={styles.techList} aria-label="Technologies used:">
           {technologies.map((tech: string) => (
@@ -66,7 +69,7 @@ const ProjectCard = ({
           ))}
         </ul>
       </div>
-    </a>
+    </article>
   );
 };
 

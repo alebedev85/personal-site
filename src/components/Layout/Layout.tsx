@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
-import Hero from "../../components/Hero/Hero";
-import Toggles from "../../components/Toggles/Toggles";
+import Hero from "../Hero/Hero";
+import Toggles from "../Toggles/Toggles";
 import styles from "./Layout.module.scss";
 
 type LayoutProps = {

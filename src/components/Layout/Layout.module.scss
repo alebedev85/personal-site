@@ -1,4 +1,5 @@
 @use "../../styles/breakpoints.scss" as *;
+
 .layout {
   max-width: 1280px;
   padding: 5rem 3rem 3rem;
@@ -45,6 +46,7 @@
   .main {
     flex-direction: column;
   }
+
   .sidebar {
     display: block;
     width: 100%;
