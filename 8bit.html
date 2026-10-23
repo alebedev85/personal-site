@@ -1,0 +1,1170 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="ru" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Андрей Лебедев | 8-BIT RETRO ARCADE PORTFOLIO</title>
+<!-- Tailwind CSS v3 with Plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts: Complete 8-bit & Pixel Typography Suite -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&amp;family=VT323&amp;family=Silkscreen:wght@400;700&amp;family=Russo+One&amp;display=swap" rel="stylesheet">
+<!-- Tailwind Custom Configuration -->
+<script data-purpose="tailwind-config">
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            arcade: {
+              black: '#0a0a0c',
+              panel: '#13141c',
+              border: '#2a2b38',
+              yellow: '#ffd13b',
+              gold: '#ffaa00',
+              red: '#ff3344',
+              crimson: '#c41824',
+              cyan: '#00f0ff',
+              green: '#25e076',
+              orange: '#ff6b35',
+              lavenderBg: '#e8eaf6',
+              lavenderPanel: '#f3f4fa',
+              lavenderBorder: '#23293d',
+              lavenderDarkText: '#161b26'
+            }
+          },
+          fontFamily: {
+            pixel: ['"Press Start 2P"', 'monospace'],
+            vt: ['"VT323"', 'monospace'],
+            silk: ['"Silkscreen"', 'monospace'],
+            russo: ['"Russo One"', 'sans-serif']
+          },
+          boxShadow: {
+            'pixel-red': '4px 4px 0px #8b0000',
+            'pixel-yellow': '4px 4px 0px #b87a00',
+            'pixel-cyan': '4px 4px 0px #007788',
+            'pixel-dark': '4px 4px 0px #000000',
+            'pixel-light': '4px 4px 0px #1e2433',
+            'glow-cyan': '0 0 15px rgba(0, 240, 255, 0.45)',
+            'glow-red': '0 0 15px rgba(255, 51, 68, 0.5)'
+          }
+        }
+      }
+    }
+  </script>
+<!-- CSS: Arcade Retro Styles, Themes, Scanlines -->
+<style data-purpose="retro-fx">
+    /* Pixel crisp font rendering */
+    * {
+      image-rendering: pixelated;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* CRT Scanline Overlay */
+    .crt-overlay::before {
+      content: " ";
+      display: block;
+      position: fixed;
+      top: 0; left: 0; bottom: 0; right: 0;
+      background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.22) 50%);
+      background-size: 100% 4px;
+      z-index: 999;
+      pointer-events: none;
+      opacity: 0.6;
+    }
+
+    .theme-light .crt-overlay::before {
+      background: linear-gradient(rgba(232, 234, 246, 0) 50%, rgba(22, 27, 38, 0.08) 50%);
+      background-size: 100% 4px;
+      opacity: 0.45;
+    }
+
+    /* 3D Perspective Wireframe Horizon Grid */
+    .arcade-grid-perspective {
+      position: relative;
+      overflow: hidden;
+      perspective: 320px;
+    }
+    .arcade-grid-plane {
+      width: 200%;
+      height: 200px;
+      margin-left: -50%;
+      background-image: 
+        linear-gradient(to right, rgba(0, 240, 255, 0.28) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 209, 59, 0.25) 1px, transparent 1px);
+      background-size: 24px 24px;
+      transform: rotateX(68deg);
+      transform-origin: top center;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 15%, transparent 95%);
+      -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 15%, transparent 95%);
+    }
+
+    .theme-light .arcade-grid-plane {
+      background-image: 
+        linear-gradient(to right, rgba(0, 160, 210, 0.35) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(220, 60, 80, 0.35) 1px, transparent 1px);
+    }
+
+    /* 3D Layered Pixel Extrusion Text */
+    .arcade-title-3d {
+      color: #ffd13b;
+      text-shadow: 
+        3px 3px 0px #ff3344,
+        6px 6px 0px #9b111c,
+        8px 8px 0px #000;
+    }
+
+    .theme-light .arcade-title-3d {
+      color: #e69500;
+      text-shadow: 
+        3px 3px 0px #ff3344,
+        6px 6px 0px #4a1525,
+        8px 8px 0px #161b26;
+    }
+
+    .arcade-heading-orange {
+      color: #ffffff;
+      text-shadow: 
+        2px 2px 0px #ff6b35,
+        4px 4px 0px #d43b00,
+        6px 6px 0px #000;
+    }
+
+    .theme-light .arcade-heading-orange {
+      color: #161b26;
+      text-shadow: 
+        2px 2px 0px #ffaa00,
+        4px 4px 0px #e04400,
+        6px 6px 0px rgba(0,0,0,0.3);
+    }
+
+    /* Pixel stepped border boxes */
+    .pixel-box {
+      border: 3px solid #2a2b38;
+      box-shadow: 
+        inset 2px 2px 0px rgba(255, 255, 255, 0.12),
+        inset -2px -2px 0px rgba(0, 0, 0, 0.7),
+        4px 4px 0px #000000;
+    }
+
+    .theme-light .pixel-box {
+      border: 3px solid #161b26;
+      background-color: #f3f4fa;
+      box-shadow: 
+        inset 2px 2px 0px #ffffff,
+        inset -2px -2px 0px #c5cbdb,
+        4px 4px 0px #161b26;
+    }
+
+    .pixel-box-gold {
+      border: 3px solid #ffd13b;
+      box-shadow: 
+        inset 2px 2px 0px #fff4a3,
+        inset -2px -2px 0px #946000,
+        4px 4px 0px #000000;
+    }
+
+    .theme-light .pixel-box-gold {
+      border: 3px solid #161b26;
+      background-color: #faf9f2;
+      box-shadow: 
+        inset 2px 2px 0px #ffd13b,
+        inset -2px -2px 0px #cca01d,
+        4px 4px 0px #161b26;
+    }
+
+    .pixel-box-red {
+      border: 3px solid #ff3344;
+      box-shadow: 
+        inset 2px 2px 0px #ffa4aa,
+        inset -2px -2px 0px #7a0910,
+        4px 4px 0px #000000;
+    }
+
+    .theme-light .pixel-box-red {
+      border: 3px solid #ff3344;
+      background-color: #fdf2f4;
+      box-shadow: 
+        inset 2px 2px 0px #ffffff,
+        inset -2px -2px 0px #8b0c16,
+        4px 4px 0px #161b26;
+    }
+
+    /* Active Tab Glow & Border */
+    .nav-tab-active {
+      border: 2px solid #ffd13b !important;
+      background-color: rgba(255, 209, 59, 0.15) !important;
+      color: #ffd13b !important;
+      box-shadow: 0 0 10px rgba(255, 209, 59, 0.4), inset 1px 1px 0 #fff;
+    }
+
+    .theme-light .nav-tab-active {
+      border: 2px solid #161b26 !important;
+      background-color: #ded9fc !important;
+      color: #161b26 !important;
+      box-shadow: 3px 3px 0 #161b26, inset 1px 1px 0 #fff;
+    }
+
+    /* Blinking animation */
+    @keyframes arcade-blink {
+      0%, 49% { opacity: 1; }
+      50%, 100% { opacity: 0; }
+    }
+    .blink-cursor {
+      animation: arcade-blink 0.75s infinite steps(1);
+    }
+
+    /* Light Theme Global Text Adjustments */
+    .theme-light body {
+      background-color: #e8eaf6 !important;
+      color: #161b26 !important;
+    }
+    .theme-light header {
+      background-color: rgba(232, 234, 246, 0.95) !important;
+      border-color: #161b26 !important;
+    }
+    .theme-light .text-gray-300, 
+    .theme-light .text-gray-400 {
+      color: #3e475e !important;
+    }
+    .theme-light .bg-arcade-black {
+      background-color: #dedee9 !important;
+    }
+    .theme-light .bg-black\/30,
+    .theme-light .bg-black\/40 {
+      background-color: rgba(210, 214, 230, 0.5) !important;
+    }
+    .theme-light .bg-arcade-panel {
+      background-color: #f3f4fa !important;
+    }
+    .theme-light .border-arcade-border {
+      border-color: #bfc6d8 !important;
+    }
+    .theme-light .border-gray-800,
+    .theme-light .border-gray-700 {
+      border-color: #abb3c7 !important;
+    }
+    .theme-light .text-white {
+      color: #161b26 !important;
+    }
+    .theme-light .shadow-pixel-dark {
+      box-shadow: 4px 4px 0px #161b26 !important;
+    }
+  </style>
+</head>
+<body class="bg-arcade-black text-gray-200 font-pixel antialiased crt-overlay min-h-screen selection:bg-arcade-yellow selection:text-black transition-colors duration-200" id="retro-body">
+<!-- ========================================== -->
+<!-- TOP ARCADE SCOREBOARD (STICKY TOP-0 Z-50)  -->
+<!-- 1UP (LEFT), HI-SCORE (CENTER), 2UP (RIGHT) -->
+<!-- ========================================== -->
+<header class="sticky top-0 z-50 bg-[#0a0a0c]/95 border-b-2 border-arcade-yellow backdrop-blur-md px-3 sm:px-4 py-2 transition-colors select-none" data-purpose="arcade-top-scoreboard" id="arcade-header"><div class="max-w-[1280px] mx-auto flex flex-col gap-1 text-[11px] font-pixel tracking-wider select-none">
+<!-- ROW 1: 1UP (Left), HI-SCORE & Navigation (Center), 2UP (Right) -->
+<div class="flex items-center justify-between border-b border-arcade-border/50 pb-1">
+<!-- LEFT: 1UP theme button & active indicator -->
+<div class="flex items-center gap-2 cursor-pointer group" id="btn-1up" onclick="setArcadeTheme('dark')">
+<span class="font-bold tracking-widest text-arcade-red group-hover:brightness-125 transition-all text-[11px]" id="label-1up">1UP</span>
+<span class="w-2.5 h-2.5 bg-arcade-red inline-block blink-cursor shadow-[0_0_8px_#ff3344]" id="dot-1up"></span>
+</div>
+<!-- CENTER: HI-SCORE label and navigation links -->
+<div class="flex items-center gap-4">
+<span class="text-arcade-yellow text-[11px] uppercase tracking-widest font-bold font-pixel">HI-SCORE</span>
+</div>
+<!-- RIGHT: 2UP theme button -->
+<div class="flex items-center gap-1.5 cursor-pointer group" id="btn-2up" onclick="setArcadeTheme('light')">
+<span class="w-2.5 h-2.5 bg-arcade-cyan inline-block hidden shadow-[0_0_8px_#00f0ff]" id="dot-2up"></span>
+<span class="font-bold tracking-widest text-arcade-cyan group-hover:brightness-125 transition-all text-[11px]" id="label-2up">2UP</span>
+</div>
+</div>
+<!-- ROW 2: Score Number (Left), High Score Value (Center), Language Switcher (Right) -->
+<div class="flex items-center justify-between pt-0.5 text-[11px]">
+<!-- LEFT: Score 002026 -->
+<div class="text-gray-400 font-pixel tracking-widest">
+      002026
+    </div>
+<!-- CENTER: Dynamic HI-SCORE value -->
+<div class="text-center">
+<span class="text-white font-bold tracking-widest font-pixel transition-colors" id="hi-score-val">000000</span>
+</div>
+<!-- RIGHT: Language Switcher -->
+<div class="flex items-center gap-1 font-pixel leading-none text-gray-400">
+<button class="hover:text-arcade-yellow transition font-bold text-arcade-yellow underline text-[11px]" id="lang-ru" onclick="toggleLang('RU')">RU</button>
+<span class="text-gray-600">/</span>
+<button class="hover:text-arcade-yellow transition text-[11px]" id="lang-en" onclick="toggleLang('EN')">EN</button>
+</div>
+</div>
+</div></header>
+<!-- ========================================== -->
+<!-- MAIN DESKTOP 2-COLUMN CONTAINER (MAX 1280) -->
+<!-- ========================================== -->
+<div class="max-w-[1280px] mx-auto px-4 py-6">
+<div class="flex flex-col lg:flex-row gap-8 items-start relative">
+<!-- ======================================================== -->
+<!-- LEFT COLUMN: FIXED / STICKY HERO & NAVIGATION SIDEBAR   -->
+<!-- Width: ~380px to 420px                                  -->
+<!-- ======================================================== -->
+<aside class="w-full lg:w-[410px] lg:sticky lg:top-16 shrink-0 flex flex-col gap-5 z-20" data-purpose="desktop-left-sidebar">
+<!-- Main Arcade Hero Box -->
+<div class="pixel-box-gold bg-arcade-panel p-5 relative overflow-hidden shadow-pixel-dark"><!-- Top decorative cabinet banner -->
+<div class="flex items-center justify-between pb-3 mb-3 border-b-2 border-arcade-yellow/40 text-[9px] text-gray-400">
+<span class="text-arcade-yellow font-bold">★ <span class="player-label-dyn">PLAYER 1</span> CABINET ★</span>
+<span class="text-arcade-green font-bold">CREDITS: 09</span>
+</div>
+<!-- 3D Extruded Arcade Logo Centered -->
+<div class="py-2 text-center flex flex-col items-center justify-center">
+<div class="inline-flex items-center gap-2 px-2 py-0.5 bg-arcade-black border border-arcade-yellow/40 text-arcade-yellow text-[8px] uppercase tracking-wider mb-2 mx-auto">
+<span class="">NEWBEEREN ENGINE V2.0</span>
+</div>
+<h1 class="font-russo text-4xl uppercase tracking-wider arcade-title-3d leading-none text-center">
+    АНДРЕЙ<br><span class="text-white text-3xl">ЛЕБЕДЕВ</span>
+</h1>
+<div class="text-[10px] text-arcade-cyan tracking-widest mt-2 uppercase font-bold text-center">
+    [ FRONTEND DEVELOPER ]
+  </div>
+</div>
+<!-- Clean Quote Intro Text without border/background, centered -->
+<div class="mt-3 p-2 text-[11px] font-silk leading-relaxed text-gray-300 text-center">
+<p class="leading-relaxed">
+    Создаю удобные и эстетичные интерфейсы, которыми действительно хочется пользоваться.
+  </p>
+</div>
+<!-- Section Navigation Menu Centered -->
+<nav class="mt-4 flex flex-col gap-2.5 text-center" data-purpose="arcade-sidebar-nav">
+<div class="text-[9px] text-arcade-yellow uppercase tracking-widest pb-1 border-b border-gray-800 text-center">
+    &gt; STAGE SELECTOR MENU:
+  </div>
+<!-- Nav Item 1: Start / Bio -->
+<a class="nav-tab nav-tab-active flex items-center justify-between px-3 py-2.5 bg-arcade-black border-2 border-arcade-border hover:border-arcade-yellow text-[10px] text-gray-200 transition-all group" href="#bio" id="nav-btn-bio">
+<span class="flex items-center gap-2">
+<span class="nav-arrow text-arcade-yellow blink-cursor font-bold">▶</span>
+<span class="">[ START PORTFOLIO ]</span>
+</span>
+<span class="text-[8px] text-arcade-yellow group-hover:translate-x-1 transition-transform">01</span>
+</a>
+<!-- Nav Item 2: Skills -->
+<a class="nav-tab flex items-center justify-between px-3 py-2.5 bg-arcade-black border-2 border-arcade-border hover:border-arcade-yellow text-[10px] text-gray-300 hover:text-white transition-all group" href="#skills" id="nav-btn-skills">
+<span class="flex items-center gap-2">
+<span class="nav-arrow text-transparent group-hover:text-arcade-yellow">▶</span>
+<span class="">[ POWER-UPS &amp; SKILLS ]</span>
+</span>
+<span class="text-[8px] text-gray-500 group-hover:text-arcade-yellow">02</span>
+</a>
+<!-- Nav Item 3: Stages -->
+<a class="nav-tab flex items-center justify-between px-3 py-2.5 bg-arcade-black border-2 border-arcade-border hover:border-arcade-yellow text-[10px] text-gray-300 hover:text-white transition-all group" href="#stages" id="nav-btn-stages">
+<span class="flex items-center gap-2">
+<span class="nav-arrow text-transparent group-hover:text-arcade-yellow">▶</span>
+<span class="">[ STAGES / PROJECTS ]</span>
+</span>
+<span class="text-[8px] text-gray-500 group-hover:text-arcade-yellow">03</span>
+</a>
+<!-- Nav Item 4: Contacts (added) -->
+<a class="nav-tab flex items-center justify-between px-3 py-2.5 bg-arcade-black border-2 border-arcade-border hover:border-arcade-yellow text-[10px] text-gray-300 hover:text-white transition-all group" href="#contact" id="nav-btn-contact">
+<span class="flex items-center gap-2">
+<span class="nav-arrow text-transparent group-hover:text-arcade-yellow">▶</span>
+<span class="">[ CONTACTS ]</span>
+</span>
+<span class="text-[8px] text-gray-500 group-hover:text-arcade-yellow">04</span>
+</a>
+</nav>
+<!-- Perspective 3D Wireframe Grid Floor Moved to Bottom of Sidebar Cabinet -->
+<div class="arcade-grid-perspective w-full mt-4 h-20 pointer-events-none rounded border border-arcade-border/50">
+<div class="arcade-grid-plane"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-arcade-panel via-transparent to-transparent"></div>
+</div></div>
+</aside>
+<!-- ======================================================== -->
+<!-- RIGHT COLUMN: MAIN SCROLLABLE CONTENT AREA             -->
+<!-- ======================================================== -->
+<main class="flex-1 w-full flex flex-col gap-8 min-w-0" data-purpose="desktop-right-content">
+<!-- ==================================================== -->
+<!-- SECTION 1: BIO / PLAYER DATA                         -->
+<!-- ==================================================== -->
+<section class="scroll-mt-20" data-purpose="about-me-section" id="bio">
+<!-- Section Header Banner -->
+<div class="flex items-center justify-between mb-3 pb-1 border-b-2 border-arcade-border">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 bg-arcade-red inline-block rotate-45"></span>
+<h2 class="text-xs text-arcade-yellow uppercase tracking-wider font-bold">
+<span class="player-label-dyn">PLAYER 1</span> : BIO_DATA.TXT
+            </h2>
+</div>
+<span class="text-[8px] text-arcade-green bg-arcade-green/10 border border-arcade-green/40 px-2 py-0.5 font-bold">READY TO PLAY</span>
+</div>
+<!-- Arcade Screen Frame Box -->
+<div class="pixel-box-gold bg-arcade-panel p-5 relative shadow-pixel-dark">
+<!-- CRT Corner Status Bar -->
+<div class="flex items-center justify-between pb-3 mb-4 border-b border-arcade-border text-[9px] text-gray-400">
+<span class="text-arcade-yellow">&gt; PROFILE: ANDREY LEBEDEV</span>
+<div class="flex gap-1.5 items-center">
+<span class="text-[9px] text-gray-400 mr-1">HP:</span>
+<span class="text-arcade-red">♥</span>
+<span class="text-arcade-red">♥</span>
+<span class="text-arcade-red">♥</span>
+</div>
+</div>
+<!-- 8-Bit Pixel Character Avatar & Speech Bubble -->
+<div class="flex flex-col sm:flex-row gap-4 items-start mb-4">
+<!-- Pixel Avatar -->
+<div class="w-16 h-16 bg-arcade-black border-2 border-arcade-cyan p-1 shrink-0 flex flex-col items-center justify-center relative shadow-pixel-cyan">
+<svg class="w-10 h-10 text-arcade-cyan" fill="currentColor" viewBox="0 0 24 24">
+<path d="M4 2h16v2H4V2zm2 4h12v2H6V6zm-2 4h16v8H4v-8zm4 2v4h2v-4H8zm6 0v4h2v-4h-2zm-8 8h12v2H6v-2z"></path>
+</svg>
+<span class="absolute -bottom-2 bg-arcade-red text-white text-[7px] px-1 font-bold">AL</span>
+</div>
+<!-- Speech Dialogue -->
+<div class="bg-arcade-black border-2 border-dashed border-gray-700 p-3 rounded-none text-[11px] font-silk leading-relaxed text-gray-200 flex-1">
+<div class="text-[8px] text-arcade-yellow font-bold mb-1">&gt; STATUS: JUNIOR+ / READY FOR QUEST</div>
+              Я начинающий фронтенд-разработчик, увлечённый созданием удобных и эстетических пользовательских интерфейсов.
+            </div>
+</div>
+<!-- Startup details and description -->
+<div class="text-[11px] font-silk text-gray-300 leading-relaxed space-y-3 bg-black/30 p-3.5 border border-arcade-border">
+<p class="">
+              Участвовал в двух стартапах: 
+              <span class="text-arcade-cyan font-bold underline">Re-Action</span> — сервис для автоматической рассылки резюме, 
+              <span class="text-arcade-yellow font-bold underline">Wellcards</span> — выпуск виртуальных карт. 
+            </p>
+<p class="">
+              Постоянно изучаю новые технологии и инструменты, стремлюсь развиваться и решать реальные задачи. Буду рад сотрудничеству в интересных и полезных проектах, где можно создавать качественный и значимый продукт.
+            </p>
+</div>
+<!-- Spec Matrix Badges -->
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 mt-4 pt-3 border-t border-arcade-border text-[8px]">
+<div class="bg-arcade-black p-2 border border-gray-800">
+<span class="text-gray-400 block mb-0.5">CLASS:</span>
+<span class="text-arcade-green font-bold">UI/UX CRAFTER</span>
+</div>
+<div class="bg-arcade-black p-2 border border-gray-800">
+<span class="text-gray-400 block mb-0.5">LOCATION:</span>
+<span class="text-arcade-yellow font-bold">REMOTE / RU</span>
+</div>
+<div class="bg-arcade-black p-2 border border-gray-800">
+<span class="text-gray-400 block mb-0.5">ALIGNMENT:</span>
+<span class="text-arcade-cyan font-bold">PIXEL CLEAN</span>
+</div>
+<div class="bg-arcade-black p-2 border border-gray-800">
+<span class="text-gray-400 block mb-0.5">EXP LEVEL:</span>
+<span class="text-arcade-red font-bold">STARTUP VET</span>
+</div>
+</div>
+</div>
+</section>
+<!-- ==================================================== -->
+<!-- SECTION 2: POWER-UPS & SKILLS (12 CARTRIDGES)       -->
+<!-- ==================================================== -->
+<section class="scroll-mt-20" data-purpose="skills-inventory-section" id="skills">
+<div class="flex items-center justify-between mb-3 pb-1 border-b-2 border-arcade-border">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 bg-arcade-yellow inline-block"></span>
+<h2 class="text-xs text-arcade-yellow uppercase tracking-wider font-bold">
+              POWER-UPS &amp; SKILLS
+            </h2>
+</div>
+<span class="text-[8px] text-arcade-yellow bg-arcade-yellow/10 border border-arcade-yellow/40 px-2 py-0.5 font-bold">12 / 12 SLOTS EQUIPPED</span>
+</div>
+<div class="pixel-box bg-arcade-panel p-5 relative shadow-pixel-dark">
+<div class="flex items-center justify-between pb-3 mb-4 border-b border-arcade-border text-[8px] text-gray-400">
+<span class="text-arcade-cyan">&gt; SELECT WEAPON / TECH INVENTORY</span>
+<span class="">SLOTS: 12 LOCKED &amp; LOADED</span>
+</div>
+<!-- 12 Skill Cartridges in 3-column / 4-column responsive grid -->
+<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
+<!-- Skill: HTML5 -->
+<div class="bg-arcade-black border-2 border-gray-800 p-2.5 flex flex-col justify-between hover:border-arcade-yellow transition group">
+<div class="flex items-center justify-between mb-2">
+<span class="text-[9px] text-arcade-red font-bold font-russo">01</span>
+<div class="w-6 h-6 bg-red-950/80 border border-arcade-red flex items-center justify-center text-arcade-red text-[8px]">5</div>
+</div>
+<div class="text-[10px] text-white font-bold group-hover:text-arcade-yellow">HTML5</div>
+<div class="text-[8px] font-silk text-gray-400 mt-0.5">Semantic &amp; A11y</div>
+</div>
+<!-- Skill: CSS3 -->
+<div class="bg-arcade-black border-2 border-gray-800 p-2.5 flex flex-col justify-between hover:border-arcade-yellow transition group">
+<div class="flex items-center justify-between mb-2">
+<span class="text-[9px] text-blue-400 font-bold font-russo">02</span>
+<div class="w-6 h-6 bg-blue-950/80 border border-blue-400 flex items-center justify-center text-blue-400 text-[8px]">#</div>
+</div>
+<div class="text-[10px] text-white font-bold group-hover:text-arcade-yellow">CSS3</div>
+<div class="text-[8px] font-silk text-gray-400 mt-0.5">Responsive / FX</div>
+</div>
+<!-- Skill: JavaScript -->
+<div class="bg-arcade-black border-2 border-gray-800 p-2.5 flex flex-col justify-between hover:border-arcade-yellow transition group">
+<div class="flex items-center justify-between mb-2">
+<span class="text-[9px] text-arcade-yellow font-bold font-russo">03</span>
+<div class="w-6 h-6 bg-amber-950/80 border border-arcade-yellow flex items-center justify-center text-arcade-yellow text-[8px]">JS</div>
+</div>
+<div class="text-[10px] text-white font-bold group-hover:text-arcade-yellow">JavaScript</div>
+<div class="text-[8px] font-silk text-gray-400 mt-0.5">ES6+ / Async</div>
+</div>
+<!-- Skill: TypeScript -->
+<div class="bg-arcade-black border-2 border-gray-800 p-2.5 flex flex-col justify-between hover:border-arcade-yellow transition group">
+<div class="flex items-center justify-between mb-2">
+<span class="text-[9px] text-arcade-cyan font-bold font-russo">04</span>
+<div class="w-6 h-6 bg-sky-950/80 border border-arcade-cyan flex items-center justify-center text-arcade-cyan text-[8px]">TS</div>
+</div>
+<div class="text-[10px] text-white font-bold group-hover:text-arcade-yellow">TypeScript</div>
+<div class="text-[8px] font-silk text-gray-400 mt-0.5">Strong Typing</div>
+</div>
+<!-- Skill: React -->
+<div class="bg-arcade-black border-2 border-gray-800 p-2.5 flex flex-col justify-between hover:border-arcade-yellow transition group">
+<div class="flex items-center justify-between mb-2">
+<span class="text-[9px] text-cyan-400 font-bold font-russo">05</span>
+<div class="w-6 h-6 bg-cyan-950/80 border border-cyan-400 flex items-center justify-center text-cyan-400 text-[8px]">⚛</div>
+</div>
+<div class="text-[10px] text-white font-bold group-hover:text-arcade-yellow">React</div>
+<div class="text-[8px] font-silk text-gray-400 mt-0.5">Hooks / State</div>
+</div>
+<!-- Skill: Redux -->
+<div class="bg-arcade-black border-2 border-gray-800 p-2.5 flex flex-col justify-between hover:border-arcade-yellow transition group">
+<div class="flex items-center justify-between mb-2">
+<span class="text-[9px] text-purple-400 font-bold font-russo">06</span>
+<div class="w-6 h-6 bg-purple-950/80 border border-purple-400 flex items-center justify-center text-purple-400 text-[8px]">◈</div>
+</div>
+<div class="text-[10px] text-white font-bold group-hover:text-arcade-yellow">Redux</div>
+<div class="text-[8px] font-silk text-gray-400 mt-0.5">Toolkit &amp; Query</div>
+</div>
+<!-- Skill: Next.js -->
+<div class="bg-arcade-black border-2 border-gray-800 p-2.5 flex flex-col justify-between hover:border-arcade-yellow transition group">
+<div class="flex items-center justify-between mb-2">
+<span class="text-[9px] text-gray-300 font-bold font-russo">07</span>
+<div class="w-6 h-6 bg-neutral-900 border border-white flex items-center justify-center text-white text-[8px]">N</div>
+</div>
+<div class="text-[10px] text-white font-bold group-hover:text-arcade-yellow">Next.js</div>
+<div class="text-[8px] font-silk text-gray-400 mt-0.5">App Router 14+</div>
+</div>
+<!-- Skill: SCSS -->
+<div class="bg-arcade-black border-2 border-gray-800 p-2.5 flex flex-col justify-between hover:border-arcade-yellow transition group">
+<div class="flex items-center justify-between mb-2">
+<span class="text-[9px] text-pink-400 font-bold font-russo">08</span>
+<div class="w-6 h-6 bg-pink-950/80 border border-pink-400 flex items-center justify-center text-pink-400 text-[8px]">§</div>
+</div>
+<div class="text-[10px] text-white font-bold group-hover:text-arcade-yellow">SCSS</div>
+<div class="text-[8px] font-silk text-gray-400 mt-0.5">Modules &amp; BEM</div>
+</div>
+<!-- Skill: Vite -->
+<div class="bg-arcade-black border-2 border-gray-800 p-2.5 flex flex-col justify-between hover:border-arcade-yellow transition group">
+<div class="flex items-center justify-between mb-2">
+<span class="text-[9px] text-indigo-400 font-bold font-russo">09</span>
+<div class="w-6 h-6 bg-indigo-950/80 border border-indigo-400 flex items-center justify-center text-indigo-400 text-[8px]">⚡</div>
+</div>
+<div class="text-[10px] text-white font-bold group-hover:text-arcade-yellow">Vite</div>
+<div class="text-[8px] font-silk text-gray-400 mt-0.5">Fast Bundling</div>
+</div>
+<!-- Skill: Node.js -->
+<div class="bg-arcade-black border-2 border-gray-800 p-2.5 flex flex-col justify-between hover:border-arcade-yellow transition group">
+<div class="flex items-center justify-between mb-2">
+<span class="text-[9px] text-emerald-400 font-bold font-russo">10</span>
+<div class="w-6 h-6 bg-emerald-950/80 border border-emerald-400 flex items-center justify-center text-emerald-400 text-[8px]">N</div>
+</div>
+<div class="text-[10px] text-white font-bold group-hover:text-arcade-yellow">Node.js</div>
+<div class="text-[8px] font-silk text-gray-400 mt-0.5">Backend Runtime</div>
+</div>
+<!-- Skill: Webpack -->
+<div class="bg-arcade-black border-2 border-gray-800 p-2.5 flex flex-col justify-between hover:border-arcade-yellow transition group">
+<div class="flex items-center justify-between mb-2">
+<span class="text-[9px] text-sky-400 font-bold font-russo">11</span>
+<div class="w-6 h-6 bg-blue-950/80 border border-blue-500 flex items-center justify-center text-blue-300 text-[8px]">📦</div>
+</div>
+<div class="text-[10px] text-white font-bold group-hover:text-arcade-yellow">Webpack</div>
+<div class="text-[8px] font-silk text-gray-400 mt-0.5">Custom Configs</div>
+</div>
+<!-- Skill: Git -->
+<div class="bg-arcade-black border-2 border-gray-800 p-2.5 flex flex-col justify-between hover:border-arcade-yellow transition group">
+<div class="flex items-center justify-between mb-2">
+<span class="text-[9px] text-orange-400 font-bold font-russo">12</span>
+<div class="w-6 h-6 bg-orange-950/80 border border-orange-500 flex items-center justify-center text-orange-400 text-[8px]">ᚷ</div>
+</div>
+<div class="text-[10px] text-white font-bold group-hover:text-arcade-yellow">Git / GH</div>
+<div class="text-[8px] font-silk text-gray-400 mt-0.5">Branching &amp; CI</div>
+</div>
+</div>
+<!-- Main Interactive Arcade Controller Box -->
+<div class="mt-5 pt-4 border-t-2 border-arcade-border flex flex-col sm:flex-row items-center justify-between gap-4 px-3 bg-black/40 p-3">
+<!-- D-Pad Graphic -->
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 relative bg-zinc-900 border-2 border-gray-700 rounded-none flex items-center justify-center">
+<div class="w-10 h-3 bg-zinc-700 absolute"></div>
+<div class="w-3 h-10 bg-zinc-700 absolute"></div>
+<div class="w-3 h-3 bg-zinc-800 z-10"></div>
+</div>
+<div>
+<span class="text-[8px] text-gray-400 block font-bold">D-PAD CONTROLLER</span>
+<span class="text-[9px] text-arcade-cyan font-silk">STATUS: CONNECTED (PORT 1)</span>
+</div>
+</div>
+<!-- A / B Arcade Buttons -->
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-2">
+<button class="w-8 h-8 bg-arcade-red border-2 border-white/80 shadow-pixel-red flex items-center justify-center text-[10px] text-white font-bold active:translate-y-0.5 transition" onclick="pulseFeedback(this)">A</button>
+<span class="text-[8px] text-gray-400">EXEC</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="w-8 h-8 bg-arcade-yellow border-2 border-white/80 shadow-pixel-yellow flex items-center justify-center text-[10px] text-black font-bold active:translate-y-0.5 transition" onclick="pulseFeedback(this)">B</button>
+<span class="text-[8px] text-gray-400">INFO</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ==================================================== -->
+<!-- SECTION 3: PROJECTS / ALL 8 STAGES                  -->
+<!-- ==================================================== -->
+<section class="scroll-mt-20" data-purpose="projects-cartridge-section" id="stages">
+<div class="flex items-center justify-between mb-3 pb-1 border-b-2 border-arcade-border">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 bg-arcade-cyan inline-block rotate-45"></span>
+<h2 class="text-xs text-arcade-yellow uppercase tracking-wider font-bold">
+              СПИСОК ИГР / STAGES
+            </h2>
+</div>
+<span class="text-[8px] text-arcade-cyan bg-arcade-cyan/10 border border-arcade-cyan/40 px-2 py-0.5 font-bold">8 STAGES AVAILABLE</span>
+</div>
+<div class="space-y-6">
+<!-- STAGE 01: Умный тренажер изучения языка -->
+<article class="pixel-box bg-arcade-panel p-5 relative hover:border-arcade-cyan transition-all shadow-pixel-dark" id="stage-1"><div class="flex items-center justify-between text-[8px] pb-2 mb-3 border-b border-arcade-border">
+<span class="text-arcade-yellow font-bold">STAGE 01 / 08</span>
+<span class="text-arcade-red font-bold animate-pulse">● AI BOSS LEVEL</span>
+</div>
+<div class="flex flex-col md:flex-row gap-5 items-center md:items-start">
+<!-- LEFT COLUMN: Retro Yellow Pixel PC Monitor Mockup -->
+<div class="w-full md:w-[250px] shrink-0 flex flex-col items-center justify-center"><div class="relative w-[230px] sm:w-[240px] aspect-square flex items-center justify-center p-1 bg-arcade-black/60 border border-arcade-border shadow-pixel-dark"><img alt="Arcade Retro Computer" class="w-full h-full object-contain select-none pointer-events-none block" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEAfPgjPAX1s_uOggXLYMS22mpqc_YHT3v5pMC1kIqX1iiNofTtR8y0ysM0er8pjJlibnuaC0IY7xPgqY32Nu5GBAePz96qW_fOD-1fC7-bSzKl8v5ZM_LvqOpEfwAC97drQA3-d7rhJUDNTQoFDki20m6EesfXewI5VqUKoZzOTqz1730aQVxszI5RduurMWD1F1k297Zy-MJ76_NGC-fcAwTYnVZahOeyOZ4ExeLUVuMZUCfT6cuXQf4ATEZQz894mA" style="image-rendering: pixelated; object-fit: contain; max-width: 100%; height: auto; display: block; margin: 0 auto;"><div class="absolute overflow-hidden" style="top: 7%; left: 17%; width: 66%; height: 42%; border: 2px solid #00ff66; box-shadow: 0 0 10px rgba(0,255,102,0.6); border-radius: 2px;"><img alt="Пиксельный бугорок" class="w-full h-full object-cover block select-none pointer-events-none" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHT0J8Y5Te7OhJAdPsKK9zZhgx5HEfCIQGYQsy6wEVjaId0zdn189OXls3xAyqS4z1rPpvOe6v-VWFiwmHNEVZVk50Lr9ipDSdABuZfIWiptB3aIwJj34ebFU7mZ23o2ZldqBDfnMelOHdFr6N0sdtUeucrvpTIZQyxD7RCBunfqQkG9RCeNfn7zcmO2zEN5pLLrrP2B734HapTf03IKcLzn7rbT7LQYTraNppaZxaMGdU6Oks8Knr9-7lTcg-9Sh3oYo" style="image-rendering: pixelated; object-fit: cover;"><div class="absolute inset-0 pointer-events-none" style="background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%); background-size: 100% 3px;"></div></div></div><div class="mt-1.5 text-[8px] text-gray-500 font-pixel">&gt; HARDWARE: RETRO_TERMINAL_01</div></div>
+<!-- RIGHT COLUMN: Project Info, Badges, and Controller -->
+<div class="flex-1 w-full min-w-0 flex flex-col justify-between h-full"><div class="mb-auto">
+<h3 class="font-russo text-lg text-white tracking-wide flex items-center justify-between">
+<span class="">Умный тренажер изучения языка</span>
+<span class="text-arcade-cyan text-xs">↗</span>
+</h3>
+<p class="text-[11px] font-silk text-gray-300 mt-2.5 leading-relaxed">
+        Интерактивное веб-приложение для изучения английских слов с полной ИИ-интеграцией. Реализована автоматическая генерация контекстных примеров и британской озвучки (Gemini API), создание визуальных ассоциаций (FLUX.1-schnell), отслеживание прогресса и адаптивный PWA-интерфейс.
+      </p>
+</div>
+<div class="mt-4">
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2 py-1 bg-arcade-black border border-arcade-cyan text-arcade-cyan text-[8px]">React</span>
+<span class="px-2 py-1 bg-arcade-black border border-gray-700 text-gray-300 text-[8px]">Redux-toolkit</span>
+<span class="px-2 py-1 bg-arcade-black border border-gray-700 text-gray-300 text-[8px]">Next.js</span>
+<span class="px-2 py-1 bg-arcade-black border border-gray-700 text-gray-300 text-[8px]">TypeScript</span>
+<span class="px-2 py-1 bg-arcade-black border border-arcade-yellow text-arcade-yellow text-[8px]">Gemini API</span>
+<span class="px-2 py-1 bg-arcade-black border border-arcade-red text-arcade-red text-[8px]">FLUX.1</span>
+</div>
+</div></div>
+</div><div class="mt-4 pt-3 border-t border-arcade-border/40 flex flex-wrap items-center justify-between gap-3 w-full bg-black/30 p-2.5"><div class="flex items-center gap-2"><a class="px-2 py-1 bg-zinc-800 hover:bg-zinc-700 border border-gray-600 text-gray-500 cursor-not-allowed text-[8px]">▲ PREV</a><a class="px-2 py-1 bg-zinc-800 hover:bg-zinc-700 border border-gray-500 text-arcade-cyan text-[8px]" href="#stage-2">▼ NEXT</a><div class="w-6 h-6 bg-zinc-900 border border-gray-700 flex items-center justify-center text-[7px] text-gray-400">PAD</div></div><div class="flex items-center gap-2"><a class="flex items-center gap-1.5 px-3 py-1 bg-arcade-red text-white text-[8px] font-bold border border-white/60 shadow-pixel-red active:translate-y-0.5 transition" href="#" target="_blank"><span class="">A</span><span class="">PLAY MISSION</span></a><a class="flex items-center gap-1.5 px-3 py-1 bg-arcade-yellow text-black text-[8px] font-bold border border-white/60 shadow-pixel-yellow active:translate-y-0.5 transition" href="#" target="_blank"><span class="">B</span><span class="">CODE ↗</span></a></div></div></article>
+<!-- STAGE 02: Бронирование отелей -->
+<article class="pixel-box bg-arcade-panel p-5 relative hover:border-arcade-yellow transition-all shadow-pixel-dark" id="stage-2"><div class="flex items-center justify-between text-[8px] pb-2 mb-3 border-b border-arcade-border">
+<span class="text-arcade-yellow font-bold">STAGE 02 / 08</span>
+<span class="text-arcade-green font-bold">● FULLSTACK ZONE</span>
+</div>
+<div class="flex flex-col md:flex-row gap-5 items-center md:items-start">
+<div class="w-full md:w-[250px] shrink-0 flex flex-col items-center justify-center">
+<div class="relative w-[230px] sm:w-[240px] aspect-square flex items-center justify-center p-1 bg-arcade-black/60 border border-arcade-border shadow-pixel-dark">
+<img alt="Arcade Retro Computer" class="w-full h-full object-contain select-none pointer-events-none block" src="https://lh3.googleusercontent.com/aida/AEtjO1XyX0Yyblh6FyeWPXEB3oSarLBhgNjNgdfciyzG7ZQozHtDf7Xn_bWp2wqwiIPZHxdvALm959Kwr6CrYOvLglMWM0BeU-9DnY2eaXpcpSV5n8oEqVICKMW2DMw0RWW8AZiitOpNFVvhaYiCFlryV3wfc-jxbdXZXAY-TuMs4HndeEEeocXgDD3DrA_JadZhHLpD-19E6iIsyJXz1aNo69DAw3mOHPpwOQS2Ti1SZQFnniBZ-OEcE1ZryME3" style="image-rendering: pixelated; object-fit: contain; max-width: 100%; height: auto; display: block; margin: 0 auto;">
+<div class="absolute overflow-hidden flex flex-col justify-between p-2 bg-[#0c1015]" style="top: 7%; left: 17%; width: 66%; height: 42%; border: 2px solid #00f0ff; box-shadow: 0 0 10px rgba(0,240,255,0.5); border-radius: 2px;">
+<div class="text-[7px] text-arcade-cyan font-pixel leading-tight">&gt; HOTEL_SYS.EXE<br><span class="text-arcade-yellow">PRISMA: OK</span></div>
+<div class="text-[6px] text-gray-400 font-silk leading-none border-t border-gray-800 pt-1">ROOMS: 128 / BOOKED: 42</div>
+<div class="absolute inset-0 pointer-events-none" style="background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%); background-size: 100% 3px;"></div>
+</div>
+</div>
+<div class="mt-1.5 text-[8px] text-gray-500 font-pixel">&gt; HARDWARE: RETRO_TERMINAL_02</div>
+</div>
+<div class="flex-1 w-full min-w-0 flex flex-col justify-between h-full">
+<div class="mb-auto">
+<h3 class="font-russo text-lg text-white tracking-wide flex items-center justify-between">
+<span class="">Бронирование отелей</span>
+<span class="text-arcade-yellow text-xs">↗</span>
+</h3>
+<p class="text-[11px] font-silk text-gray-300 mt-2.5 leading-relaxed">
+Макет веб-приложение для поиска и бронирования отелей. Разработано на Next.js 14+ (App Router) с серверной авторизацией, управлением темой, адаптивным интерфейсом и подключением к PostgreSQL (Neon.tech) через Prisma ORM.
+</p>
+</div>
+<div class="mt-4">
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2 py-1 bg-arcade-black border border-arcade-yellow text-arcade-yellow text-[8px]">Next.js 14</span>
+<span class="px-2 py-1 bg-arcade-black border border-gray-700 text-gray-300 text-[8px]">Prisma ORM</span>
+<span class="px-2 py-1 bg-arcade-black border border-gray-700 text-gray-300 text-[8px]">PostgreSQL</span>
+<span class="px-2 py-1 bg-arcade-black border border-arcade-cyan text-arcade-cyan text-[8px]">JWT</span>
+<span class="px-2 py-1 bg-arcade-black border border-gray-700 text-gray-300 text-[8px]">RTK Query</span>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-4 pt-3 border-t border-arcade-border/40 flex flex-wrap items-center justify-between gap-3 w-full bg-black/30 p-2.5">
+<div class="flex items-center gap-2">
+<a class="px-2 py-1 bg-zinc-800 hover:bg-zinc-700 border border-gray-500 text-arcade-cyan text-[8px]" href="#stage-1">▲ PREV</a>
+<a class="px-2 py-1 bg-zinc-800 hover:bg-zinc-700 border border-gray-500 text-arcade-cyan text-[8px]" href="#stage-3">▼ NEXT</a>
+<div class="w-6 h-6 bg-zinc-900 border border-gray-700 flex items-center justify-center text-[7px] text-gray-400">PAD</div>
+</div>
+<div class="flex items-center gap-2">
+<a class="flex items-center gap-1.5 px-3 py-1 bg-arcade-red text-white text-[8px] font-bold border border-white/60 shadow-pixel-red active:translate-y-0.5 transition" href="#" target="_blank"><span class="">A</span><span class="">RUN DEMO</span></a>
+<a class="flex items-center gap-1.5 px-3 py-1 bg-arcade-yellow text-black text-[8px] font-bold border border-white/60 shadow-pixel-yellow active:translate-y-0.5 transition" href="#" target="_blank"><span class="">B</span><span class="">CODE ↗</span></a>
+</div>
+</div></article>
+<!-- STAGE 03: Календарь игр -->
+<article class="pixel-box bg-arcade-panel p-5 relative hover:border-arcade-green transition-all shadow-pixel-dark" id="stage-3"><div class="flex items-center justify-between text-[8px] pb-2 mb-3 border-b border-arcade-border">
+<span class="text-arcade-yellow font-bold">STAGE 03 / 08</span>
+<span class="text-arcade-yellow font-bold">● DND ARCADE</span>
+</div>
+<div class="flex flex-col md:flex-row gap-5 items-center md:items-start">
+<div class="w-full md:w-[250px] shrink-0 flex flex-col items-center justify-center">
+<div class="relative w-[230px] sm:w-[240px] aspect-square flex items-center justify-center p-1 bg-arcade-black/60 border border-arcade-border shadow-pixel-dark">
+<img alt="Arcade Retro Computer" class="w-full h-full object-contain select-none pointer-events-none block" src="https://lh3.googleusercontent.com/aida/AEtjO1XyX0Yyblh6FyeWPXEB3oSarLBhgNjNgdfciyzG7ZQozHtDf7Xn_bWp2wqwiIPZHxdvALm959Kwr6CrYOvLglMWM0BeU-9DnY2eaXpcpSV5n8oEqVICKMW2DMw0RWW8AZiitOpNFVvhaYiCFlryV3wfc-jxbdXZXAY-TuMs4HndeEEeocXgDD3DrA_JadZhHLpD-19E6iIsyJXz1aNo69DAw3mOHPpwOQS2Ti1SZQFnniBZ-OEcE1ZryME3" style="image-rendering: pixelated; object-fit: contain; max-width: 100%; height: auto; display: block; margin: 0 auto;">
+<div class="absolute overflow-hidden flex flex-col justify-between p-2 bg-[#0d140e]" style="top: 7%; left: 17%; width: 66%; height: 42%; border: 2px solid #25e076; box-shadow: 0 0 10px rgba(37,224,118,0.5); border-radius: 2px;">
+<div class="text-[7px] text-arcade-green font-pixel leading-tight">&gt; CALENDAR_DND.SH<br><span class="text-white">FIREBASE: SYNC</span></div>
+<div class="text-[6px] text-gray-400 font-silk leading-none border-t border-gray-800 pt-1">TASKS: 16 | CARDS: DRAGGABLE</div>
+<div class="absolute inset-0 pointer-events-none" style="background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%); background-size: 100% 3px;"></div>
+</div>
+</div>
+<div class="mt-1.5 text-[8px] text-gray-500 font-pixel">&gt; HARDWARE: RETRO_TERMINAL_03</div>
+</div>
+<div class="flex-1 w-full min-w-0 flex flex-col justify-between h-full">
+<div class="mb-auto">
+<h3 class="font-russo text-lg text-white tracking-wide flex items-center justify-between">
+<span class="">Календарь игр</span>
+<span class="text-arcade-green text-xs">↗</span>
+</h3>
+<p class="text-[11px] font-silk text-gray-300 mt-2.5 leading-relaxed">
+Интерактивное веб-приложение для расписания игр в формате календаря. Поддерживает drag &amp; drop, добавление задач, загрузку изображений, просмотр и удаление задач, а также синхронизацию с Firebase.
+</p>
+</div>
+<div class="mt-4">
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2 py-1 bg-arcade-black border border-arcade-green text-arcade-green text-[8px]">React</span>
+<span class="px-2 py-1 bg-arcade-black border border-gray-700 text-gray-300 text-[8px]">Drag &amp; Drop</span>
+<span class="px-2 py-1 bg-arcade-black border border-arcade-yellow text-arcade-yellow text-[8px]">Firebase</span>
+<span class="px-2 py-1 bg-arcade-black border border-gray-700 text-gray-300 text-[8px]">Cloudinary</span>
+<span class="px-2 py-1 bg-arcade-black border border-gray-700 text-gray-300 text-[8px]">Vite</span>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-4 pt-3 border-t border-arcade-border/40 flex flex-wrap items-center justify-between gap-3 w-full bg-black/30 p-2.5">
+<div class="flex items-center gap-2">
+<a class="px-2 py-1 bg-zinc-800 hover:bg-zinc-700 border border-gray-500 text-arcade-cyan text-[8px]" href="#stage-2">▲ PREV</a>
+<a class="px-2 py-1 bg-zinc-800 hover:bg-zinc-700 border border-gray-500 text-arcade-cyan text-[8px]" href="#stage-4">▼ NEXT</a>
+<div class="w-6 h-6 bg-zinc-900 border border-gray-700 flex items-center justify-center text-[7px] text-gray-400">PAD</div>
+</div>
+<div class="flex items-center gap-2">
+<a class="flex items-center gap-1.5 px-3 py-1 bg-arcade-red text-white text-[8px] font-bold border border-white/60 shadow-pixel-red active:translate-y-0.5 transition" href="#" target="_blank"><span class="">A</span><span class="">MATCH DEMO</span></a>
+<a class="flex items-center gap-1.5 px-3 py-1 bg-arcade-yellow text-black text-[8px] font-bold border border-white/60 shadow-pixel-yellow active:translate-y-0.5 transition" href="#" target="_blank"><span class="">B</span><span class="">CODE ↗</span></a>
+</div>
+</div></article>
+<!-- STAGE 04: Планировщик задач -->
+<article class="pixel-box bg-arcade-panel p-5 relative hover:border-arcade-red transition-all shadow-pixel-dark" id="stage-4"><div class="flex items-center justify-between text-[8px] pb-2 mb-3 border-b border-arcade-border">
+<span class="text-arcade-yellow font-bold">STAGE 04 / 08</span>
+<span class="text-arcade-red font-bold">● KANBAN QUEST</span>
+</div>
+<div class="flex flex-col md:flex-row gap-5 items-center md:items-start">
+<div class="w-full md:w-[250px] shrink-0 flex flex-col items-center justify-center">
+<div class="relative w-[230px] sm:w-[240px] aspect-square flex items-center justify-center p-1 bg-arcade-black/60 border border-arcade-border shadow-pixel-dark">
+<img alt="Arcade Retro Computer" class="w-full h-full object-contain select-none pointer-events-none block" src="https://lh3.googleusercontent.com/aida/AEtjO1XyX0Yyblh6FyeWPXEB3oSarLBhgNjNgdfciyzG7ZQozHtDf7Xn_bWp2wqwiIPZHxdvALm959Kwr6CrYOvLglMWM0BeU-9DnY2eaXpcpSV5n8oEqVICKMW2DMw0RWW8AZiitOpNFVvhaYiCFlryV3wfc-jxbdXZXAY-TuMs4HndeEEeocXgDD3DrA_JadZhHLpD-19E6iIsyJXz1aNo69DAw3mOHPpwOQS2Ti1SZQFnniBZ-OEcE1ZryME3" style="image-rendering: pixelated; object-fit: contain; max-width: 100%; height: auto; display: block; margin: 0 auto;">
+<div class="absolute overflow-hidden flex flex-col justify-between p-2 bg-[#180a0d]" style="top: 7%; left: 17%; width: 66%; height: 42%; border: 2px solid #ff3344; box-shadow: 0 0 10px rgba(255,51,68,0.5); border-radius: 2px;">
+<div class="text-[7px] text-arcade-red font-pixel leading-tight">&gt; KANBAN_BOARD.DAT<br><span class="text-arcade-yellow">TODO / PROGRESS / DONE</span></div>
+<div class="text-[6px] text-gray-400 font-silk leading-none border-t border-gray-800 pt-1">AUTH: OK | DND: ACTIVE</div>
+<div class="absolute inset-0 pointer-events-none" style="background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%); background-size: 100% 3px;"></div>
+</div>
+</div>
+<div class="mt-1.5 text-[8px] text-gray-500 font-pixel">&gt; HARDWARE: RETRO_TERMINAL_04</div>
+</div>
+<div class="flex-1 w-full min-w-0 flex flex-col justify-between h-full">
+<div class="mb-auto">
+<h3 class="font-russo text-lg text-white tracking-wide flex items-center justify-between">
+<span class="">Планировщик задач</span>
+<span class="text-arcade-red text-xs">↗</span>
+</h3>
+<p class="text-[11px] font-silk text-gray-300 mt-2.5 leading-relaxed">
+Веб-приложение для управления задачами между колонками (To Do, In Progress, Done). Перетаскивание карточек, фильтрация, аутентификация пользователей.
+</p>
+</div>
+<div class="mt-4">
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2 py-1 bg-arcade-black border border-arcade-red text-arcade-red text-[8px]">React</span>
+<span class="px-2 py-1 bg-arcade-black border border-gray-700 text-gray-300 text-[8px]">Redux-toolkit</span>
+<span class="px-2 py-1 bg-arcade-black border border-gray-700 text-gray-300 text-[8px]">DnD</span>
+<span class="px-2 py-1 bg-arcade-black border border-arcade-yellow text-arcade-yellow text-[8px]">Firebase-auth</span>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-4 pt-3 border-t border-arcade-border/40 flex flex-wrap items-center justify-between gap-3 w-full bg-black/30 p-2.5">
+<div class="flex items-center gap-2">
+<a class="px-2 py-1 bg-zinc-800 hover:bg-zinc-700 border border-gray-500 text-arcade-cyan text-[8px]" href="#stage-3">▲ PREV</a>
+<a class="px-2 py-1 bg-zinc-800 hover:bg-zinc-700 border border-gray-500 text-arcade-cyan text-[8px]" href="#stage-5">▼ NEXT</a>
+<div class="w-6 h-6 bg-zinc-900 border border-gray-700 flex items-center justify-center text-[7px] text-gray-400">PAD</div>
+</div>
+<div class="flex items-center gap-2">
+<a class="flex items-center gap-1.5 px-3 py-1 bg-arcade-red text-white text-[8px] font-bold border border-white/60 shadow-pixel-red active:translate-y-0.5 transition" href="#" target="_blank"><span class="">A</span><span class="">OPEN BOARD</span></a>
+<a class="flex items-center gap-1.5 px-3 py-1 bg-arcade-yellow text-black text-[8px] font-bold border border-white/60 shadow-pixel-yellow active:translate-y-0.5 transition" href="#" target="_blank"><span class="">B</span><span class="">CODE ↗</span></a>
+</div>
+</div></article>
+<!-- STAGE 05: Виртуальное пианино -->
+<article class="pixel-box bg-arcade-panel p-5 relative hover:border-purple-400 transition-all shadow-pixel-dark" id="stage-5"><div class="flex items-center justify-between text-[8px] pb-2 mb-3 border-b border-arcade-border">
+<span class="text-arcade-yellow font-bold">STAGE 05 / 08</span>
+<span class="text-purple-400 font-bold">● SOUND SYNTH</span>
+</div>
+<div class="flex flex-col md:flex-row gap-5 items-center md:items-start">
+<div class="w-full md:w-[250px] shrink-0 flex flex-col items-center justify-center">
+<div class="relative w-[230px] sm:w-[240px] aspect-square flex items-center justify-center p-1 bg-arcade-black/60 border border-arcade-border shadow-pixel-dark">
+<img alt="Arcade Retro Computer" class="w-full h-full object-contain select-none pointer-events-none block" src="https://lh3.googleusercontent.com/aida/AEtjO1XyX0Yyblh6FyeWPXEB3oSarLBhgNjNgdfciyzG7ZQozHtDf7Xn_bWp2wqwiIPZHxdvALm959Kwr6CrYOvLglMWM0BeU-9DnY2eaXpcpSV5n8oEqVICKMW2DMw0RWW8AZiitOpNFVvhaYiCFlryV3wfc-jxbdXZXAY-TuMs4HndeEEeocXgDD3DrA_JadZhHLpD-19E6iIsyJXz1aNo69DAw3mOHPpwOQS2Ti1SZQFnniBZ-OEcE1ZryME3" style="image-rendering: pixelated; object-fit: contain; max-width: 100%; height: auto; display: block; margin: 0 auto;">
+<div class="absolute overflow-hidden flex flex-col justify-between p-2 bg-[#120919]" style="top: 7%; left: 17%; width: 66%; height: 42%; border: 2px solid #c084fc; box-shadow: 0 0 10px rgba(192,132,252,0.5); border-radius: 2px;">
+<div class="text-[7px] text-purple-400 font-pixel leading-tight">&gt; TONE_SYNTH.WAV<br><span class="text-arcade-cyan">3 OCTAVES ONLINE</span></div>
+<div class="text-[6px] text-gray-400 font-silk leading-none border-t border-gray-800 pt-1">KEYS: C3-B5 | RAF: 60 FPS</div>
+<div class="absolute inset-0 pointer-events-none" style="background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%); background-size: 100% 3px;"></div>
+</div>
+</div>
+<div class="mt-1.5 text-[8px] text-gray-500 font-pixel">&gt; HARDWARE: RETRO_TERMINAL_05</div>
+</div>
+<div class="flex-1 w-full min-w-0 flex flex-col justify-between h-full">
+<div class="mb-auto">
+<h3 class="font-russo text-lg text-white tracking-wide flex items-center justify-between">
+<span class="">Виртуальное пианино</span>
+<span class="text-purple-400 text-xs">↗</span>
+</h3>
+<p class="text-[11px] font-silk text-gray-300 mt-2.5 leading-relaxed">
+Виртуальное пианино с тремя октавами, интерактивной визуализацией нот и поддержкой управления с клавиатуры в реальном времени.
+</p>
+</div>
+<div class="mt-4">
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2 py-1 bg-arcade-black border border-purple-400 text-purple-400 text-[8px]">Tone.js</span>
+<span class="px-2 py-1 bg-arcade-black border border-gray-700 text-gray-300 text-[8px]">requestAnimationFrame</span>
+<span class="px-2 py-1 bg-arcade-black border border-gray-700 text-gray-300 text-[8px]">FSD</span>
+<span class="px-2 py-1 bg-arcade-black border border-arcade-cyan text-arcade-cyan text-[8px]">React</span>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-4 pt-3 border-t border-arcade-border/40 flex flex-wrap items-center justify-between gap-3 w-full bg-black/30 p-2.5">
+<div class="flex items-center gap-2">
+<a class="px-2 py-1 bg-zinc-800 hover:bg-zinc-700 border border-gray-500 text-arcade-cyan text-[8px]" href="#stage-4">▲ PREV</a>
+<a class="px-2 py-1 bg-zinc-800 hover:bg-zinc-700 border border-gray-500 text-arcade-cyan text-[8px]" href="#stage-6">▼ NEXT</a>
+<div class="w-6 h-6 bg-zinc-900 border border-gray-700 flex items-center justify-center text-[7px] text-gray-400">PAD</div>
+</div>
+<div class="flex items-center gap-2">
+<a class="flex items-center gap-1.5 px-3 py-1 bg-arcade-red text-white text-[8px] font-bold border border-white/60 shadow-pixel-red active:translate-y-0.5 transition" href="#" target="_blank"><span class="">A</span><span class="">PLAY SYNTH</span></a>
+<a class="flex items-center gap-1.5 px-3 py-1 bg-arcade-yellow text-black text-[8px] font-bold border border-white/60 shadow-pixel-yellow active:translate-y-0.5 transition" href="#" target="_blank"><span class="">B</span><span class="">CODE ↗</span></a>
+</div>
+</div></article>
+<!-- STAGE 06: Клуб четырёх коней -->
+<article class="pixel-box bg-arcade-panel p-5 relative hover:border-arcade-yellow transition-all shadow-pixel-dark" id="stage-6"><div class="flex items-center justify-between text-[8px] pb-2 mb-3 border-b border-arcade-border">
+<span class="text-arcade-yellow font-bold">STAGE 06 / 08</span>
+<span class="text-arcade-gold font-bold">● VANILLA OOP</span>
+</div>
+<div class="flex flex-col md:flex-row gap-5 items-center md:items-start">
+<div class="w-full md:w-[250px] shrink-0 flex flex-col items-center justify-center">
+<div class="relative w-[230px] sm:w-[240px] aspect-square flex items-center justify-center p-1 bg-arcade-black/60 border border-arcade-border shadow-pixel-dark">
+<img alt="Arcade Retro Computer" class="w-full h-full object-contain select-none pointer-events-none block" src="https://lh3.googleusercontent.com/aida/AEtjO1XyX0Yyblh6FyeWPXEB3oSarLBhgNjNgdfciyzG7ZQozHtDf7Xn_bWp2wqwiIPZHxdvALm959Kwr6CrYOvLglMWM0BeU-9DnY2eaXpcpSV5n8oEqVICKMW2DMw0RWW8AZiitOpNFVvhaYiCFlryV3wfc-jxbdXZXAY-TuMs4HndeEEeocXgDD3DrA_JadZhHLpD-19E6iIsyJXz1aNo69DAw3mOHPpwOQS2Ti1SZQFnniBZ-OEcE1ZryME3" style="image-rendering: pixelated; object-fit: contain; max-width: 100%; height: auto; display: block; margin: 0 auto;">
+<div class="absolute overflow-hidden flex flex-col justify-between p-2 bg-[#141208]" style="top: 7%; left: 17%; width: 66%; height: 42%; border: 2px solid #ffd13b; box-shadow: 0 0 10px rgba(255,209,59,0.5); border-radius: 2px;">
+<div class="text-[7px] text-arcade-yellow font-pixel leading-tight">&gt; CHESS_CLUB.JS<br><span class="text-white">PURE OOP PATTERNS</span></div>
+<div class="text-[6px] text-gray-400 font-silk leading-none border-t border-gray-800 pt-1">NO LIBS | WEBPACK BUNDLE</div>
+<div class="absolute inset-0 pointer-events-none" style="background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%); background-size: 100% 3px;"></div>
+</div>
+</div>
+<div class="mt-1.5 text-[8px] text-gray-500 font-pixel">&gt; HARDWARE: RETRO_TERMINAL_06</div>
+</div>
+<div class="flex-1 w-full min-w-0 flex flex-col justify-between h-full">
+<div class="mb-auto">
+<h3 class="font-russo text-lg text-white tracking-wide flex items-center justify-between">
+<span class="">Клуб четырёх коней</span>
+<span class="text-arcade-yellow text-xs">↗</span>
+</h3>
+<p class="text-[11px] font-silk text-gray-300 mt-2.5 leading-relaxed">
+Адаптивный сайт на чистом JavaScript по макету из Figma, написан со строгим применением ООП без использования внешних фреймворков.
+</p>
+</div>
+<div class="mt-4">
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2 py-1 bg-arcade-black border border-arcade-yellow text-arcade-yellow text-[8px]">Vanilla JS</span>
+<span class="px-2 py-1 bg-arcade-black border border-gray-700 text-gray-300 text-[8px]">HTML5</span>
+<span class="px-2 py-1 bg-arcade-black border border-gray-700 text-gray-300 text-[8px]">CSS3</span>
+<span class="px-2 py-1 bg-arcade-black border border-gray-700 text-gray-300 text-[8px]">Webpack</span>
+<span class="px-2 py-1 bg-arcade-black border border-arcade-green text-arcade-green text-[8px]">ООП</span>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-4 pt-3 border-t border-arcade-border/40 flex flex-wrap items-center justify-between gap-3 w-full bg-black/30 p-2.5">
+<div class="flex items-center gap-2">
+<a class="px-2 py-1 bg-zinc-800 hover:bg-zinc-700 border border-gray-500 text-arcade-cyan text-[8px]" href="#stage-5">▲ PREV</a>
+<a class="px-2 py-1 bg-zinc-800 hover:bg-zinc-700 border border-gray-500 text-arcade-cyan text-[8px]" href="#stage-7">▼ NEXT</a>
+<div class="w-6 h-6 bg-zinc-900 border border-gray-700 flex items-center justify-center text-[7px] text-gray-400">PAD</div>
+</div>
+<div class="flex items-center gap-2">
+<a class="flex items-center gap-1.5 px-3 py-1 bg-arcade-red text-white text-[8px] font-bold border border-white/60 shadow-pixel-red active:translate-y-0.5 transition" href="#" target="_blank"><span class="">A</span><span class="">VIEW DEMO</span></a>
+<a class="flex items-center gap-1.5 px-3 py-1 bg-arcade-yellow text-black text-[8px] font-bold border border-white/60 shadow-pixel-yellow active:translate-y-0.5 transition" href="#" target="_blank"><span class="">B</span><span class="">CODE ↗</span></a>
+</div>
+</div></article>
+<!-- STAGE 07: GitHub-поиск -->
+<article class="pixel-box bg-arcade-panel p-5 relative hover:border-arcade-cyan transition-all shadow-pixel-dark" id="stage-7"><div class="flex items-center justify-between text-[8px] pb-2 mb-3 border-b border-arcade-border">
+<span class="text-arcade-yellow font-bold">STAGE 07 / 08</span>
+<span class="text-arcade-cyan font-bold">● REST API HUNT</span>
+</div>
+<div class="flex flex-col md:flex-row gap-5 items-center md:items-start">
+<div class="w-full md:w-[250px] shrink-0 flex flex-col items-center justify-center">
+<div class="relative w-[230px] sm:w-[240px] aspect-square flex items-center justify-center p-1 bg-arcade-black/60 border border-arcade-border shadow-pixel-dark">
+<img alt="Arcade Retro Computer" class="w-full h-full object-contain select-none pointer-events-none block" src="https://lh3.googleusercontent.com/aida/AEtjO1XyX0Yyblh6FyeWPXEB3oSarLBhgNjNgdfciyzG7ZQozHtDf7Xn_bWp2wqwiIPZHxdvALm959Kwr6CrYOvLglMWM0BeU-9DnY2eaXpcpSV5n8oEqVICKMW2DMw0RWW8AZiitOpNFVvhaYiCFlryV3wfc-jxbdXZXAY-TuMs4HndeEEeocXgDD3DrA_JadZhHLpD-19E6iIsyJXz1aNo69DAw3mOHPpwOQS2Ti1SZQFnniBZ-OEcE1ZryME3" style="image-rendering: pixelated; object-fit: contain; max-width: 100%; height: auto; display: block; margin: 0 auto;">
+<div class="absolute overflow-hidden flex flex-col justify-between p-2 bg-[#081215]" style="top: 7%; left: 17%; width: 66%; height: 42%; border: 2px solid #00f0ff; box-shadow: 0 0 10px rgba(0,240,255,0.5); border-radius: 2px;">
+<div class="text-[7px] text-arcade-cyan font-pixel leading-tight">&gt; GITHUB_SEARCH.API<br><span class="text-white">USERS &amp; REPOS</span></div>
+<div class="text-[6px] text-gray-400 font-silk leading-none border-t border-gray-800 pt-1">STATUS: 200 OK | RATE LIMIT: SAFE</div>
+<div class="absolute inset-0 pointer-events-none" style="background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%); background-size: 100% 3px;"></div>
+</div>
+</div>
+<div class="mt-1.5 text-[8px] text-gray-500 font-pixel">&gt; HARDWARE: RETRO_TERMINAL_07</div>
+</div>
+<div class="flex-1 w-full min-w-0 flex flex-col justify-between h-full">
+<div class="mb-auto">
+<h3 class="font-russo text-lg text-white tracking-wide flex items-center justify-between">
+<span class="">GitHub-поиск</span>
+<span class="text-arcade-cyan text-xs">↗</span>
+</h3>
+<p class="text-[11px] font-silk text-gray-300 mt-2.5 leading-relaxed">
+Приложение для поиска пользователей GitHub и их репозиториев с детальной статистикой с использованием их REST API.
+</p>
+</div>
+<div class="mt-4">
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2 py-1 bg-arcade-black border border-arcade-cyan text-arcade-cyan text-[8px]">React</span>
+<span class="px-2 py-1 bg-arcade-black border border-gray-700 text-gray-300 text-[8px]">TypeScript</span>
+<span class="px-2 py-1 bg-arcade-black border border-arcade-yellow text-arcade-yellow text-[8px]">GitHub API</span>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-4 pt-3 border-t border-arcade-border/40 flex flex-wrap items-center justify-between gap-3 w-full bg-black/30 p-2.5">
+<div class="flex items-center gap-2">
+<a class="px-2 py-1 bg-zinc-800 hover:bg-zinc-700 border border-gray-500 text-arcade-cyan text-[8px]" href="#stage-6">▲ PREV</a>
+<a class="px-2 py-1 bg-zinc-800 hover:bg-zinc-700 border border-gray-500 text-arcade-cyan text-[8px]" href="#stage-8">▼ NEXT</a>
+<div class="w-6 h-6 bg-zinc-900 border border-gray-700 flex items-center justify-center text-[7px] text-gray-400">PAD</div>
+</div>
+<div class="flex items-center gap-2">
+<a class="flex items-center gap-1.5 px-3 py-1 bg-arcade-red text-white text-[8px] font-bold border border-white/60 shadow-pixel-red active:translate-y-0.5 transition" href="#" target="_blank"><span class="">A</span><span class="">FIND USERS</span></a>
+<a class="flex items-center gap-1.5 px-3 py-1 bg-arcade-yellow text-black text-[8px] font-bold border border-white/60 shadow-pixel-yellow active:translate-y-0.5 transition" href="#" target="_blank"><span class="">B</span><span class="">CODE ↗</span></a>
+</div>
+</div></article>
+<!-- STAGE 08: Каталог стран -->
+<article class="pixel-box bg-arcade-panel p-5 relative hover:border-arcade-yellow transition-all shadow-pixel-dark" id="stage-8"><div class="flex items-center justify-between text-[8px] pb-2 mb-3 border-b border-arcade-border">
+<span class="text-arcade-yellow font-bold">STAGE 08 / 08</span>
+<span class="text-arcade-green font-bold">● WORLD DATA</span>
+</div>
+<div class="flex flex-col md:flex-row gap-5 items-center md:items-start">
+<div class="w-full md:w-[250px] shrink-0 flex flex-col items-center justify-center">
+<div class="relative w-[230px] sm:w-[240px] aspect-square flex items-center justify-center p-1 bg-arcade-black/60 border border-arcade-border shadow-pixel-dark">
+<img alt="Arcade Retro Computer" class="w-full h-full object-contain select-none pointer-events-none block" src="https://lh3.googleusercontent.com/aida/AEtjO1XyX0Yyblh6FyeWPXEB3oSarLBhgNjNgdfciyzG7ZQozHtDf7Xn_bWp2wqwiIPZHxdvALm959Kwr6CrYOvLglMWM0BeU-9DnY2eaXpcpSV5n8oEqVICKMW2DMw0RWW8AZiitOpNFVvhaYiCFlryV3wfc-jxbdXZXAY-TuMs4HndeEEeocXgDD3DrA_JadZhHLpD-19E6iIsyJXz1aNo69DAw3mOHPpwOQS2Ti1SZQFnniBZ-OEcE1ZryME3" style="image-rendering: pixelated; object-fit: contain; max-width: 100%; height: auto; display: block; margin: 0 auto;">
+<div class="absolute overflow-hidden flex flex-col justify-between p-2 bg-[#091510]" style="top: 7%; left: 17%; width: 66%; height: 42%; border: 2px solid #25e076; box-shadow: 0 0 10px rgba(37,224,118,0.5); border-radius: 2px;">
+<div class="text-[7px] text-arcade-green font-pixel leading-tight">&gt; ATLAS_GLOBAL.MAP<br><span class="text-white">REGIONS &amp; FLAGS</span></div>
+<div class="text-[6px] text-gray-400 font-silk leading-none border-t border-gray-800 pt-1">COUNTRIES: 250 | SEARCH: LIVE</div>
+<div class="absolute inset-0 pointer-events-none" style="background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%); background-size: 100% 3px;"></div>
+</div>
+</div>
+<div class="mt-1.5 text-[8px] text-gray-500 font-pixel">&gt; HARDWARE: RETRO_TERMINAL_08</div>
+</div>
+<div class="flex-1 w-full min-w-0 flex flex-col justify-between h-full">
+<div class="mb-auto">
+<h3 class="font-russo text-lg text-white tracking-wide flex items-center justify-between">
+<span class="">Каталог стран</span>
+<span class="text-arcade-yellow text-xs">↗</span>
+</h3>
+<p class="text-[11px] font-silk text-gray-300 mt-2.5 leading-relaxed">
+Приложение с подробной информацией о странах мира, фильтрацией по регионам и динамическим поиском по названию.
+</p>
+</div>
+<div class="mt-4">
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2 py-1 bg-arcade-black border border-arcade-yellow text-arcade-yellow text-[8px]">React</span>
+<span class="px-2 py-1 bg-arcade-black border border-gray-700 text-gray-300 text-[8px]">Redux-toolkit</span>
+<span class="px-2 py-1 bg-arcade-black border border-arcade-cyan text-arcade-cyan text-[8px]">TypeScript</span>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-4 pt-3 border-t border-arcade-border/40 flex flex-wrap items-center justify-between gap-3 w-full bg-black/30 p-2.5">
+<div class="flex items-center gap-2">
+<a class="px-2 py-1 bg-zinc-800 hover:bg-zinc-700 border border-gray-500 text-arcade-cyan text-[8px]" href="#stage-7">▲ PREV</a>
+<a class="px-2 py-1 bg-zinc-800 hover:bg-zinc-700 border border-gray-600 text-gray-500 cursor-not-allowed text-[8px]">▼ END</a>
+<div class="w-6 h-6 bg-zinc-900 border border-gray-700 flex items-center justify-center text-[7px] text-gray-400">PAD</div>
+</div>
+<div class="flex items-center gap-2">
+<a class="flex items-center gap-1.5 px-3 py-1 bg-arcade-red text-white text-[8px] font-bold border border-white/60 shadow-pixel-red active:translate-y-0.5 transition" href="#" target="_blank"><span class="">A</span><span class="">EXPLORE WORLD</span></a>
+<a class="flex items-center gap-1.5 px-3 py-1 bg-arcade-yellow text-black text-[8px] font-bold border border-white/60 shadow-pixel-yellow active:translate-y-0.5 transition" href="#" target="_blank"><span class="">B</span><span class="">CODE ↗</span></a>
+</div>
+</div></article>
+</div>
+</section>
+<!-- ==================================================== -->
+<!-- SECTION 4: GAME OVER / CONTINUE (9 SEC) + CREDITS   -->
+<!-- ==================================================== -->
+<section class="scroll-mt-20" data-purpose="contact-and-socials" id="contact">
+<div class="pixel-box-gold bg-arcade-panel p-6 text-center shadow-pixel-dark">
+<h2 class="font-russo text-3xl uppercase text-arcade-yellow arcade-heading-orange tracking-widest">
+            GAME OVER?
+          </h2>
+<div class="text-[12px] text-white mt-1.5">
+            &gt; CONTINUE: <span class="text-arcade-red font-bold blink-cursor text-base">9</span> SEC
+          </div>
+<p class="text-[11px] font-silk text-gray-300 max-w-md mx-auto mt-3 leading-relaxed">
+            Готовы начать совместный проект или обсудить позицию в команде? Нажмите кнопку подключения:
+          </p>
+<!-- Social Action Retro Buttons -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-md mx-auto mt-5">
+<!-- Telegram Action -->
+<a class="flex items-center justify-center gap-2 py-3 px-4 bg-arcade-cyan text-arcade-black text-[10px] font-bold border-2 border-white shadow-pixel-dark active:translate-y-1 transition hover:brightness-110" href="https://t.me/" rel="noopener noreferrer" target="_blank">
+<svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+<path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.52 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"></path>
+</svg>
+<span class="">TELEGRAM CONNECT</span>
+</a>
+<!-- GitHub Action -->
+<a class="flex items-center justify-center gap-2 py-3 px-4 bg-arcade-yellow text-arcade-black text-[10px] font-bold border-2 border-white shadow-pixel-dark active:translate-y-1 transition hover:brightness-110" href="https://github.com/" rel="noopener noreferrer" target="_blank">
+<svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+<path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"></path>
+</svg>
+<span class="">GITHUB PROFILE</span>
+</a>
+</div>
+</div>
+<!-- Tech Specifications & Colophon from Andrei's site -->
+<div class="mt-5 text-[10px] font-silk text-gray-400 bg-arcade-black border-2 border-gray-800 p-4 leading-relaxed" data-purpose="tech-credits">
+<div class="text-[8px] text-arcade-cyan mb-2 font-pixel">&gt; SYSTEM SPECS &amp; CREDITS:</div>
+          Дизайн прототипирован в Figma и реализован вручную в Visual Studio Code. Сайт построен на React с использованием Redux Toolkit для управления состоянием, написан на TypeScript и стилизован с помощью SCSS-модулей. Сборка осуществляется через Vite. Проект развёрнут на Vercel. Исходный код доступен в репозитории на GitHub. Основной шрифт — Inter / Pixel Fonts.
+        </div>
+<!-- Arcade Bottom Finish Sign -->
+<div class="mt-6 border-t-2 border-arcade-border pt-5 pb-2 text-center">
+<div class="font-russo text-2xl text-arcade-yellow arcade-heading-orange tracking-wider">
+            再見游戏时代
+          </div>
+<div class="text-[10px] text-arcade-red tracking-widest mt-1 font-bold">
+            THANK YOU FOR PLAYING!
+          </div>
+<div class="mt-2 text-[8px] text-gray-400 font-silk">
+            © 2026 Андрей Лебедев. Все права защищены · Adapted for Desktop Web
+          </div>
+</div>
+</section>
+</main>
+</div>
+</div>
+<!-- ==================================================== -->
+<!-- INTERACTION SCRIPT: THEMES (1UP / 2UP) & HI-SCORE   -->
+<!-- ==================================================== -->
+<script data-purpose="retro-interactive-effects">
+  let currentTheme = 'dark';
+
+  // Function to switch between 1UP (Dark Arcade) and 2UP (Soft Lavender Light Theme)
+  function setArcadeTheme(theme) {
+    currentTheme = theme;
+    const htmlEl = document.documentElement;
+    const dot1up = document.getElementById('dot-1up');
+    const dot2up = document.getElementById('dot-2up');
+    const playerLabels = document.querySelectorAll('.player-label-dyn');
+
+    if (theme === 'light') {
+      htmlEl.classList.add('theme-light');
+      // 1UP square disabled
+      dot1up.classList.add('hidden');
+      dot1up.classList.remove('blink-cursor');
+      // 2UP square active & blinking
+      dot2up.classList.remove('hidden');
+      dot2up.classList.add('blink-cursor');
+      // Update all PLAYER 1 -> PLAYER 2
+      playerLabels.forEach(el => {
+        el.textContent = 'PLAYER 2';
+      });
+    } else {
+      htmlEl.classList.remove('theme-light');
+      // 2UP square disabled
+      dot2up.classList.add('hidden');
+      dot2up.classList.remove('blink-cursor');
+      // 1UP square active & blinking
+      dot1up.classList.remove('hidden');
+      dot1up.classList.add('blink-cursor');
+      // Update all PLAYER 2 -> PLAYER 1
+      playerLabels.forEach(el => {
+        el.textContent = 'PLAYER 1';
+      });
+    }
+  }
+
+  // Dynamic HI-SCORE counter synced to scroll progress: 000000 to 999999
+  function updateHiScoreOnScroll() {
+    const hiScore = document.getElementById('hi-score-val');
+    if (!hiScore) return;
+
+    const scrollTop = window.scrollY || document.documentElement.scrollTop;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    
+    let progress = 0;
+    if (docHeight > 0) {
+      progress = Math.min(Math.max(scrollTop / docHeight, 0), 1);
+    }
+    
+    const scoreNumber = Math.floor(progress * 999999);
+    hiScore.textContent = String(scoreNumber).padStart(6, '0');
+  }
+
+  // Active Navigation Tab Highlight on Scroll
+  document.addEventListener('DOMContentLoaded', () => {
+    updateHiScoreOnScroll();
+
+    const sections = [
+      { id: 'bio', btn: document.getElementById('nav-btn-bio') },
+      { id: 'skills', btn: document.getElementById('nav-btn-skills') },
+      { id: 'stages', btn: document.getElementById('nav-btn-stages') }
+    ];
+
+    window.addEventListener('scroll', () => {
+      updateHiScoreOnScroll();
+
+      let scrollPos = window.scrollY + 180;
+      let currentSection = sections[0];
+
+      sections.forEach(s => {
+        const el = document.getElementById(s.id);
+        if (el && el.offsetTop <= scrollPos) {
+          currentSection = s;
+        }
+      });
+
+      sections.forEach(s => {
+        if (!s.btn) return;
+        const arrow = s.btn.querySelector('.nav-arrow');
+        if (s.id === currentSection.id) {
+          s.btn.classList.add('nav-tab-active');
+          if (arrow) {
+            arrow.classList.remove('text-transparent');
+            arrow.classList.add('text-arcade-yellow', 'blink-cursor');
+          }
+        } else {
+          s.btn.classList.remove('nav-tab-active');
+          if (arrow) {
+            arrow.classList.remove('text-arcade-yellow', 'blink-cursor');
+            arrow.classList.add('text-transparent');
+          }
+        }
+      });
+    });
+  });
+
+  // Language switcher toggle
+  function toggleLang(lang) {
+    const ruBtn = document.getElementById('lang-ru');
+    const enBtn = document.getElementById('lang-en');
+    if (lang === 'RU') {
+      ruBtn.classList.add('text-arcade-yellow', 'font-bold', 'underline');
+      enBtn.classList.remove('text-arcade-yellow', 'font-bold', 'underline');
+    } else {
+      enBtn.classList.add('text-arcade-yellow', 'font-bold', 'underline');
+      ruBtn.classList.remove('text-arcade-yellow', 'font-bold', 'underline');
+    }
+  }
+
+  // Feedback on controller button press
+  function pulseFeedback(btn) {
+    btn.style.transform = 'translateY(2px) scale(0.95)';
+    setTimeout(() => {
+      btn.style.transform = 'none';
+    }, 120);
+  }
+</script>
+<div class="fixed -bottom-2 right-4 z-50 p-2.5 bg-arcade-panel border-2 border-arcade-yellow text-arcade-yellow font-pixel text-[9px] shadow-pixel-dark flex items-center gap-3 select-none" id="floating-edit-hud"><span class="w-2.5 h-2.5 bg-arcade-yellow inline-block blink-cursor"></span><span class="">[ ✎ РЕЖИМ РЕДАКТИРОВАНИЯ: ON ] Кликните любой текст для правки</span><button class="text-arcade-red hover:text-white px-1 font-bold" onclick="document.getElementById('floating-edit-hud').remove();">✕</button></div>
+
+
+
+
+
+</body></html>
