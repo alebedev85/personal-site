@@ -1,0 +1,175 @@
+.skillGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.skillCard {
+  display: flex;
+  min-height: 108px;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px;
+  border: 2px solid var(--arcade-border);
+  background: var(--arcade-black);
+  transition:
+    border-color 150ms ease,
+    transform 150ms ease;
+
+  &:hover,
+  &:focus-visible {
+    transform: translate(-2px, -2px);
+    border-color: var(--arcade-yellow);
+  }
+
+  strong {
+    color: #fff;
+    font-size: 9px;
+  }
+}
+
+.skillTopline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--arcade-yellow);
+  font-family: var(--font-russo);
+  font-size: 10px;
+}
+
+.skillIcon {
+  display: flex;
+  width: 27px;
+  height: 27px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--arcade-cyan);
+  color: var(--arcade-cyan);
+  font-size: 15px;
+
+  svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+.skillDescription {
+  color: var(--arcade-muted);
+  font-family: var(--font-silk);
+  font-size: 9px;
+}
+
+.controller {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 20px;
+  padding: 14px;
+  border-top: 2px solid var(--arcade-border);
+  background: rgb(0 0 0 / 40%);
+}
+
+.controllerInfo,
+.controllerActions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.controllerInfo > div:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.controllerInfo strong,
+.controllerActions > span {
+  color: var(--arcade-muted);
+  font-size: 8px;
+}
+
+.controllerInfo > div > span {
+  color: var(--arcade-cyan);
+  font-family: var(--font-silk);
+  font-size: 10px;
+}
+
+.dpad {
+  position: relative;
+  width: 45px;
+  height: 45px;
+  flex: 0 0 45px;
+  border: 2px solid #555866;
+  background: #15161b;
+
+  &::before,
+  &::after,
+  span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #444650;
+    content: "";
+  }
+
+  &::before {
+    width: 32px;
+    height: 10px;
+  }
+
+  &::after {
+    width: 10px;
+    height: 32px;
+  }
+
+  span {
+    z-index: 1;
+    width: 10px;
+    height: 10px;
+    background: #282a32;
+  }
+}
+
+.controllerActions {
+  gap: 8px;
+}
+
+.controlButton {
+  display: flex;
+  width: 34px;
+  height: 34px;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #fff;
+  font-size: 10px;
+  font-weight: 700;
+  transition: transform 100ms ease;
+
+  &:active {
+    transform: translateY(2px);
+  }
+}
+
+.buttonRed {
+  background: var(--arcade-red);
+  box-shadow: 3px 3px 0 #8b0000;
+  color: #fff;
+}
+
+.buttonYellow {
+  background: var(--arcade-yellow);
+  box-shadow: 3px 3px 0 #b87a00;
+  color: #000;
+}
+
+.visuallyHidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  clip-path: inset(50%);
+}

@@ -1,0 +1,36 @@
+@use "./_breakpoints.scss" as *;
+
+.page {
+  h1,
+  h2,
+  h3,
+  p {
+    margin: 0;
+    padding: 0;
+  }
+
+  h1,
+  h3 {
+    font-family: var(--font-russo);
+  }
+
+  h1 {
+    line-height: 1.12;
+  }
+
+  h2 {
+    font-family: var(--font-pixel);
+    line-height: 1.7;
+  }
+
+  p {
+    font-family: var(--font-silk);
+    line-height: 1.65;
+  }
+}
+
+@media (max-width: $bp-mobile) {
+  .page h1 {
+    font-size: 2rem;
+  }
+}

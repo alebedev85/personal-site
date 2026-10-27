@@ -1,0 +1,192 @@
+.sidebar {
+  position: sticky;
+  z-index: 10;
+  top: 76px;
+  flex: 0 0 410px;
+  width: 410px;
+}
+
+.cabinet {
+  position: relative;
+  overflow: hidden;
+  padding: 20px;
+  border: 3px solid var(--arcade-yellow);
+  background: var(--arcade-panel);
+  box-shadow:
+    inset 2px 2px 0 rgb(255 255 255 / 12%),
+    inset -2px -2px 0 rgb(0 0 0 / 70%),
+    4px 4px 0 #000;
+  transition:
+    background-color 180ms ease,
+    border-color 180ms ease;
+}
+
+.cabinetMeta {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid rgb(255 209 59 / 40%);
+  color: var(--arcade-yellow);
+  font-size: 9px;
+}
+
+.credits {
+  color: var(--arcade-green);
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0 8px;
+  text-align: center;
+}
+
+.engineBadge {
+  margin-bottom: 14px;
+  padding: 2px 8px;
+  border: 1px solid rgb(255 209 59 / 50%);
+  background: var(--arcade-black);
+  color: var(--arcade-yellow);
+  font-size: 8px;
+}
+
+.arcadeTitle {
+  margin: 0;
+  color: var(--arcade-yellow);
+  font-family: var(--font-russo);
+  font-size: clamp(32px, 3vw, 42px);
+  letter-spacing: 0.06em;
+  line-height: 1.12;
+  text-shadow:
+    3px 3px 0 var(--arcade-red),
+    6px 6px 0 #9b111c,
+    8px 8px 0 #000;
+
+  span {
+    display: block;
+    color: #fff;
+    font-size: 0.78em;
+  }
+}
+
+.lightTheme .arcadeTitle span {
+  color: #161b26;
+}
+
+.role {
+  margin-top: 14px;
+  color: var(--arcade-cyan);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.tagline {
+  padding: 8px;
+  color: var(--arcade-text);
+  font-family: var(--font-silk);
+  font-size: 12px;
+  line-height: 1.6;
+  text-align: center;
+
+  p {
+    margin: 0;
+    color: inherit;
+    font: inherit;
+  }
+}
+
+.arcadeNav {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.navHeading {
+  padding-bottom: 5px;
+  border-bottom: 1px solid var(--arcade-border);
+  color: var(--arcade-yellow);
+  font-size: 9px;
+  text-align: center;
+}
+
+.navTab {
+  display: flex;
+  min-height: 42px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 8px 10px;
+  border: 2px solid var(--arcade-border);
+  background: var(--arcade-black);
+  color: var(--arcade-text);
+  font-size: 9px;
+  transition:
+    border-color 150ms ease,
+    color 150ms ease,
+    background-color 150ms ease;
+
+  &:hover,
+  &:focus-visible {
+    border-color: var(--arcade-yellow);
+  }
+}
+
+.navTabActive {
+  border-color: var(--arcade-yellow);
+  background: rgb(255 209 59 / 15%);
+  color: var(--arcade-yellow);
+  box-shadow:
+    0 0 10px rgb(255 209 59 / 30%),
+    inset 1px 1px 0 #fff;
+}
+
+.navLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.navArrow {
+  color: transparent;
+}
+
+.navTabActive .navArrow {
+  color: var(--arcade-yellow);
+}
+
+.navNumber {
+  color: var(--arcade-muted);
+  font-size: 8px;
+}
+
+.gridHorizon {
+  position: relative;
+  height: 78px;
+  overflow: hidden;
+  margin-top: 18px;
+  border: 1px solid rgb(42 43 56 / 65%);
+  perspective: 320px;
+}
+
+.gridPlane {
+  width: 200%;
+  height: 200px;
+  margin-left: -50%;
+  transform: rotateX(68deg);
+  transform-origin: top center;
+  background-image:
+    linear-gradient(to right, rgb(0 240 255 / 28%) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(255 209 59 / 25%) 1px, transparent 1px);
+  background-size: 24px 24px;
+  mask-image: linear-gradient(#000 15%, transparent 95%);
+}
+
+.gridFade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, var(--arcade-panel), transparent 80%);
+}

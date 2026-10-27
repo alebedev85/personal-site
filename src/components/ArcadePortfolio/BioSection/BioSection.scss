@@ -1,0 +1,142 @@
+.specGreen {
+  color: var(--arcade-green);
+}
+
+.specYellow {
+  color: var(--arcade-yellow);
+}
+
+.specCyan {
+  color: var(--arcade-cyan);
+}
+
+.specRed {
+  color: var(--arcade-red);
+}
+
+.health {
+  color: var(--arcade-muted);
+  white-space: nowrap;
+
+  span {
+    color: var(--arcade-red);
+  }
+}
+
+.bioIntro {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.avatar {
+  position: relative;
+  display: flex;
+  width: 64px;
+  height: 64px;
+  flex: 0 0 64px;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--arcade-cyan);
+  background: var(--arcade-black);
+  color: var(--arcade-cyan);
+  box-shadow: 4px 4px 0 #007788;
+
+  svg {
+    width: 40px;
+    height: 40px;
+  }
+
+  span {
+    position: absolute;
+    right: -6px;
+    bottom: -7px;
+    padding: 0 4px;
+    background: var(--arcade-red);
+    color: #fff;
+    font-size: 8px;
+    font-weight: 700;
+  }
+}
+
+.dialogue {
+  flex: 1;
+  padding: 12px;
+  border: 2px dashed #555866;
+  background: var(--arcade-black);
+  color: var(--arcade-text);
+  font-family: var(--font-silk);
+  font-size: 12px;
+  line-height: 1.65;
+
+  strong {
+    display: block;
+    margin-bottom: 4px;
+    color: var(--arcade-yellow);
+    font-family: var(--font-pixel);
+    font-size: 8px;
+  }
+
+  p {
+    margin: 0;
+    color: inherit;
+    font: inherit;
+  }
+}
+
+.bioCopy {
+  padding: 14px;
+  border: 1px solid var(--arcade-border);
+  background: rgb(0 0 0 / 30%);
+  color: #d0d1d8;
+  font-family: var(--font-silk);
+  font-size: 12px;
+  line-height: 1.75;
+
+  p {
+    margin: 0;
+    color: inherit;
+    font: inherit;
+  }
+
+  a {
+    color: var(--arcade-cyan);
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+
+    &:nth-of-type(2) {
+      color: var(--arcade-yellow);
+    }
+  }
+}
+
+.specGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid var(--arcade-border);
+}
+
+.spec {
+  display: flex;
+  min-height: 54px;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+  padding: 8px;
+  border: 1px solid var(--arcade-border);
+  background: var(--arcade-black);
+  font-size: 8px;
+
+  > span {
+    color: var(--arcade-muted);
+  }
+
+  strong {
+    font-size: 8px;
+  }
+}

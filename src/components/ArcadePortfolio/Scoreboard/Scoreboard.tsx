@@ -3,10 +3,10 @@
 import { useTranslation } from "react-i18next";
 import Link from "next/link";
 import { useDispatch, useSelector } from "react-redux";
-import type { RootState } from "../../store";
-import { toggleLanguage, toggleTheme } from "../../store/slices/togglesSlice";
-import type { LanguageType, ThemeType } from "../../types";
-import styles from "./ArcadePortfolio.module.scss";
+import type { RootState } from "../../../store";
+import { toggleLanguage, toggleTheme } from "../../../store/slices/togglesSlice";
+import type { LanguageType, ThemeType } from "../../../types";
+import "./Scoreboard.scss";
 
 type ScoreboardProps = {
   score: string;
@@ -32,44 +32,44 @@ const Scoreboard = ({ score }: ScoreboardProps) => {
   };
 
   return (
-    <header className={styles.scoreboard}>
-      <div className={styles.scoreboardInner}>
-        <div className={styles.scoreboardTop}>
+    <header className={"scoreboard"}>
+      <div className={"scoreboardInner"}>
+        <div className={"scoreboardTop"}>
           <button
-            className={`${styles.playerButton} ${
-              theme === "dark" ? styles.playerButtonActive : ""
+            className={`${"playerButton"} ${
+              theme === "dark" ? "playerButtonActive" : ""
             }`}
             type="button"
             onClick={() => changeTheme("dark")}
             aria-pressed={theme === "dark"}
           >
             <span>1UP</span>
-            <span className={styles.redDot} />
+            <span className={"redDot"} />
           </button>
-          <Link className={styles.highScoreLabel} href="/">
+          <Link className={"highScoreLabel"} href="/">
             HI-SCORE
           </Link>
           <button
-            className={`${styles.playerButton} ${
-              theme === "light" ? styles.playerButtonActive : ""
+            className={`${"playerButton"} ${
+              theme === "light" ? "playerButtonActive" : ""
             }`}
             type="button"
             onClick={() => changeTheme("light")}
             aria-pressed={theme === "light"}
           >
-            <span className={styles.cyanDot} />
+            <span className={"cyanDot"} />
             <span>2UP</span>
           </button>
         </div>
-        <div className={styles.scoreboardBottom}>
-          <span className={styles.scoreLabel}>002026</span>
-          <span className={styles.scoreValue} aria-label={`High score ${score}`}>
+        <div className={"scoreboardBottom"}>
+          <span className={"scoreLabel"}>002026</span>
+          <span className={"scoreValue"} aria-label={`High score ${score}`}>
             {score}
           </span>
-          <div className={styles.languageSwitch} aria-label="Language">
+          <div className={"languageSwitch"} aria-label="Language">
             <button
               type="button"
-              className={language === "ru" ? styles.languageActive : ""}
+              className={language === "ru" ? "languageActive" : ""}
               onClick={() => changeLanguage("ru")}
               aria-pressed={language === "ru"}
             >
@@ -78,7 +78,7 @@ const Scoreboard = ({ score }: ScoreboardProps) => {
             <span>/</span>
             <button
               type="button"
-              className={language === "en" ? styles.languageActive : ""}
+              className={language === "en" ? "languageActive" : ""}
               onClick={() => changeLanguage("en")}
               aria-pressed={language === "en"}
             >

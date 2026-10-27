@@ -1,8 +1,8 @@
 "use client";
 
 import { useTranslation } from "react-i18next";
-import { contacts } from "../../data/contacts";
-import styles from "./ArcadePortfolio.module.scss";
+import { contacts } from "../../../data/contacts";
+import "./ContactSection.scss";
 
 const ContactSection = () => {
   const { t } = useTranslation();
@@ -11,23 +11,23 @@ const ContactSection = () => {
   const email = contacts.find(({ label }) => label === "GMail");
 
   return (
-    <section className={styles.section} id="contact">
-      <div className={`${styles.panel} ${styles.panelGold} ${styles.contactPanel}`}>
+    <section className={"section"} id="contact">
+      <div className={`${"panel"} ${"panelGold"} ${"contactPanel"}`}>
         <h2>GAME OVER?</h2>
-        <div className={styles.continueText}>
-          &gt; CONTINUE: <span className={styles.blink}>9</span> SEC
+        <div className={"continueText"}>
+          &gt; CONTINUE: <span className={"blink"}>9</span> SEC
         </div>
-        <p className={styles.contactIntro}>
+        <p className={"contactIntro"}>
           Готовы начать совместный проект или обсудить позицию в команде?
           Нажмите кнопку подключения:
         </p>
-        <div className={styles.contactActions}>
+        <div className={"contactActions"}>
           {[telegram, github, email].map(
             (contact, index) =>
               contact && (
                 <a
-                  className={`${styles.contactButton} ${
-                    index === 0 ? styles.contactCyan : styles.contactYellow
+                  className={`${"contactButton"} ${
+                    index === 0 ? "contactCyan" : "contactYellow"
                   }`}
                   href={contact.href}
                   key={contact.label}
@@ -38,7 +38,7 @@ const ContactSection = () => {
                       : "noreferrer noopener"
                   }
                 >
-                  <span className={styles.contactIcon}>{contact.icon}</span>
+                  <span className={"contactIcon"}>{contact.icon}</span>
                   {contact.label === "Telegram"
                     ? "TELEGRAM CONNECT"
                     : contact.label === "GitHub"
@@ -49,14 +49,14 @@ const ContactSection = () => {
           )}
         </div>
 
-        <div className={styles.systemCredits}>
+        <div className={"systemCredits"}>
           <strong>&gt; SYSTEM SPECS &amp; CREDITS:</strong>
           <p>
             {t("footer.description")} GitHub. {t("footer.font")} / Pixel Fonts.
           </p>
         </div>
 
-        <div className={styles.endCredits}>
+        <div className={"endCredits"}>
           <strong>再見游戏时代</strong>
           <span>THANK YOU FOR PLAYING!</span>
           <small>

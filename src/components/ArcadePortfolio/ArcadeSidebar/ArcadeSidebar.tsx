@@ -2,8 +2,8 @@
 
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
-import type { RootState } from "../../store";
-import styles from "./ArcadePortfolio.module.scss";
+import type { RootState } from "../../../store";
+import "./ArcadeSidebar.scss";
 
 type ArcadeSidebarProps = {
   activeSection: string;
@@ -23,57 +23,57 @@ const ArcadeSidebar = ({ activeSection }: ArcadeSidebarProps) => {
   const [firstName, ...lastName] = t("hero.name").split(" ");
 
   return (
-    <aside className={styles.sidebar}>
-      <div className={styles.cabinet}>
-        <div className={styles.cabinetMeta}>
+    <aside className={"sidebar"}>
+      <div className={"cabinet"}>
+        <div className={"cabinetMeta"}>
           <span>★ PLAYER {playerNumber} CABINET ★</span>
-          <span className={styles.credits}>CREDITS: 09</span>
+          <span className={"credits"}>CREDITS: 09</span>
         </div>
 
-        <div className={styles.logo}>
-          <span className={styles.engineBadge}>NEWBEEREN ENGINE V2.0</span>
-          <h1 className={styles.arcadeTitle}>
+        <div className={"logo"}>
+          <span className={"engineBadge"}>NEWBEEREN ENGINE V2.0</span>
+          <h1 className={"arcadeTitle"}>
             {firstName}
             <span>{lastName.join(" ")}</span>
           </h1>
-          <span className={styles.role}>[ FRONTEND DEVELOPER ]</span>
+          <span className={"role"}>[ FRONTEND DEVELOPER ]</span>
         </div>
 
-        <div className={styles.tagline}>
+        <div className={"tagline"}>
           <p>{t("hero.description")}</p>
         </div>
 
-        <nav className={styles.arcadeNav} aria-label={t("nav.ariaLabel")}>
-          <div className={styles.navHeading}>&gt; STAGE SELECTOR MENU:</div>
+        <nav className={"arcadeNav"} aria-label={t("nav.ariaLabel")}>
+          <div className={"navHeading"}>&gt; STAGE SELECTOR MENU:</div>
           {navigation.map(({ href, id, label }, index) => (
             <a
               key={id}
               href={href}
-              className={`${styles.navTab} ${
-                activeSection === id ? styles.navTabActive : ""
+              className={`${"navTab"} ${
+                activeSection === id ? "navTabActive" : ""
               }`}
               aria-current={activeSection === id ? "location" : undefined}
             >
-              <span className={styles.navLabel}>
+              <span className={"navLabel"}>
                 <span
-                  className={`${styles.navArrow} ${
-                    activeSection === id ? styles.blink : ""
+                  className={`${"navArrow"} ${
+                    activeSection === id ? "blink" : ""
                   }`}
                 >
                   ▶
                 </span>
                 {label}
               </span>
-              <span className={styles.navNumber}>
+              <span className={"navNumber"}>
                 {String(index + 1).padStart(2, "0")}
               </span>
             </a>
           ))}
         </nav>
 
-        <div className={styles.gridHorizon} aria-hidden="true">
-          <div className={styles.gridPlane} />
-          <div className={styles.gridFade} />
+        <div className={"gridHorizon"} aria-hidden="true">
+          <div className={"gridPlane"} />
+          <div className={"gridFade"} />
         </div>
       </div>
     </aside>

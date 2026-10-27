@@ -1,0 +1,150 @@
+.contactPanel {
+  padding: 24px;
+  text-align: center;
+
+  > h2 {
+    margin: 0;
+    color: var(--arcade-yellow);
+    font-family: var(--font-russo);
+    font-size: clamp(24px, 4vw, 34px);
+    letter-spacing: 0.08em;
+    text-shadow:
+      2px 2px 0 var(--arcade-orange),
+      4px 4px 0 #d43b00,
+      6px 6px 0 #000;
+  }
+}
+
+.continueText {
+  margin-top: 8px;
+  color: var(--arcade-text);
+  font-size: 12px;
+
+  span {
+    color: var(--arcade-red);
+    font-size: 18px;
+  }
+}
+
+.blink {
+  animation: arcadeBlink 750ms steps(1) infinite;
+}
+
+.contactIntro {
+  max-width: 460px;
+  margin: 14px auto 0;
+  color: var(--arcade-muted);
+  font-family: var(--font-silk);
+  font-size: 12px;
+  line-height: 1.65;
+}
+
+.contactActions {
+  display: grid;
+  max-width: 520px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin: 20px auto 0;
+}
+
+.contactButton {
+  display: flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 10px;
+  border: 2px solid #fff;
+  color: #0a0a0c;
+  font-size: 8px;
+  transition:
+    filter 150ms ease,
+    transform 100ms ease;
+
+  &:hover,
+  &:focus-visible {
+    filter: brightness(1.12);
+  }
+
+  &:active {
+    transform: translateY(2px);
+  }
+}
+
+.contactCyan {
+  background: var(--arcade-cyan);
+  box-shadow: 4px 4px 0 #007788;
+}
+
+.contactYellow {
+  background: var(--arcade-yellow);
+  box-shadow: 4px 4px 0 #b87a00;
+}
+
+.contactIcon {
+  display: inline-flex;
+  font-size: 16px;
+
+  svg {
+    width: 17px;
+    height: 17px;
+  }
+}
+
+.systemCredits {
+  margin-top: 22px;
+  padding: 14px;
+  border: 2px solid var(--arcade-border);
+  background: var(--arcade-black);
+  color: var(--arcade-muted);
+  font-family: var(--font-silk);
+  font-size: 11px;
+  line-height: 1.7;
+  text-align: left;
+
+  strong {
+    display: block;
+    margin-bottom: 6px;
+    color: var(--arcade-cyan);
+    font-family: var(--font-pixel);
+    font-size: 8px;
+  }
+
+  p {
+    margin: 0;
+    color: inherit;
+    font: inherit;
+  }
+}
+
+.endCredits {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 22px;
+  padding-top: 16px;
+  border-top: 2px solid var(--arcade-border);
+
+  strong {
+    color: var(--arcade-yellow);
+    font-family: var(--font-russo);
+    font-size: 23px;
+    text-shadow:
+      2px 2px 0 var(--arcade-orange),
+      4px 4px 0 #d43b00;
+  }
+
+  > span {
+    color: var(--arcade-red);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+  }
+
+  small {
+    margin-top: 4px;
+    color: var(--arcade-muted);
+    font-family: var(--font-silk);
+    font-size: 9px;
+  }
+}

@@ -1,0 +1,25 @@
+.page {
+  --arcade-black: #0a0a0c;
+  --arcade-panel: #13141c;
+  --arcade-border: #2a2b38;
+  --arcade-yellow: #ffd13b;
+  --arcade-red: #ff3344;
+  --arcade-cyan: #00f0ff;
+  --arcade-green: #25e076;
+  --arcade-orange: #ff6b35;
+  --arcade-text: #e1e3e9;
+  --arcade-muted: #9295a3;
+
+  --font-pixel: "Press Start 2P", "Courier New", monospace;
+  --font-silk: "Silkscreen", "Courier New", monospace;
+  --font-russo: "Russo One", "Arial Black", sans-serif;
+  --font-vt: "VT323", "Courier New", monospace;
+}
+
+.page.lightTheme {
+  --arcade-black: #e8eaf6;
+  --arcade-panel: #f3f4fa;
+  --arcade-border: #bfc6d8;
+  --arcade-text: #161b26;
+  --arcade-muted: #50596e;
+}

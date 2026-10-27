@@ -2,8 +2,8 @@
 
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
-import type { RootState } from "../../store";
-import styles from "./ArcadePortfolio.module.scss";
+import type { RootState } from "../../../store";
+import "./BioSection.scss";
 
 const BioSection = () => {
   const { t } = useTranslation();
@@ -11,39 +11,39 @@ const BioSection = () => {
   const playerNumber = theme === "dark" ? "1" : "2";
 
   return (
-    <section className={styles.section} id="bio">
-      <div className={styles.sectionHeader}>
-        <div className={styles.sectionHeading}>
-          <span className={`${styles.sectionMarker} ${styles.markerRed}`} />
+    <section className={"section"} id="bio">
+      <div className={"sectionHeader"}>
+        <div className={"sectionHeading"}>
+          <span className={`${"sectionMarker"} ${"markerRed"}`} />
           <h2>PLAYER {playerNumber} : BIO_DATA.TXT</h2>
         </div>
-        <span className={`${styles.statusBadge} ${styles.statusGreen}`}>
+        <span className={`${"statusBadge"} ${"statusGreen"}`}>
           READY TO PLAY
         </span>
       </div>
 
-      <div className={`${styles.panel} ${styles.panelGold}`}>
-        <div className={styles.panelStatus}>
+      <div className={`${"panel"} ${"panelGold"}`}>
+        <div className={"panelStatus"}>
           <span>&gt; PROFILE: ANDREY LEBEDEV</span>
-          <span className={styles.health}>
+          <span className={"health"}>
             HP: <span>♥ ♥ ♥</span>
           </span>
         </div>
 
-        <div className={styles.bioIntro}>
-          <div className={styles.avatar} aria-hidden="true">
+        <div className={"bioIntro"}>
+          <div className={"avatar"} aria-hidden="true">
             <span>AL</span>
             <svg viewBox="0 0 24 24" fill="currentColor">
               <path d="M4 2h16v2H4V2zm2 4h12v2H6V6zm-2 4h16v8H4v-8zm4 2v4h2v-4H8zm6 0v4h2v-4h-2zm-8 8h12v2H6v-2z" />
             </svg>
           </div>
-          <div className={styles.dialogue}>
+          <div className={"dialogue"}>
             <strong>&gt; STATUS: JUNIOR+ / READY FOR QUEST</strong>
             <p>{t("hero.description")}</p>
           </div>
         </div>
 
-        <div className={styles.bioCopy}>
+        <div className={"bioCopy"}>
           <p>
             {t("about.description.part1")}{" "}
             <a
@@ -65,22 +65,22 @@ const BioSection = () => {
           </p>
         </div>
 
-        <div className={styles.specGrid}>
-          <div className={styles.spec}>
+        <div className={"specGrid"}>
+          <div className={"spec"}>
             <span>CLASS:</span>
-            <strong className={styles.specGreen}>UI/UX CRAFTER</strong>
+            <strong className={"specGreen"}>UI/UX CRAFTER</strong>
           </div>
-          <div className={styles.spec}>
+          <div className={"spec"}>
             <span>LOCATION:</span>
-            <strong className={styles.specYellow}>REMOTE / RU</strong>
+            <strong className={"specYellow"}>REMOTE / RU</strong>
           </div>
-          <div className={styles.spec}>
+          <div className={"spec"}>
             <span>ALIGNMENT:</span>
-            <strong className={styles.specCyan}>PIXEL CLEAN</strong>
+            <strong className={"specCyan"}>PIXEL CLEAN</strong>
           </div>
-          <div className={styles.spec}>
+          <div className={"spec"}>
             <span>EXP LEVEL:</span>
-            <strong className={styles.specRed}>STARTUP VET</strong>
+            <strong className={"specRed"}>STARTUP VET</strong>
           </div>
         </div>
       </div>

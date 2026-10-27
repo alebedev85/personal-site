@@ -3,13 +3,13 @@
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import type { RootState } from "../../store";
-import styles from "./ArcadePortfolio.module.scss";
-import BioSection from "./BioSection";
-import ContactSection from "./ContactSection";
-import Scoreboard from "./Scoreboard";
-import SkillInventory from "./SkillInventory";
-import StageList from "./StageList";
-import ArcadeSidebar from "./ArcadeSidebar";
+import "./ArcadePortfolio.scss";
+import BioSection from "./BioSection/BioSection";
+import ContactSection from "./ContactSection/ContactSection";
+import Scoreboard from "./Scoreboard/Scoreboard";
+import SkillInventory from "./SkillInventory/SkillInventory";
+import StageList from "./StageList/StageList";
+import ArcadeSidebar from "./ArcadeSidebar/ArcadeSidebar";
 
 const sectionIds = ["bio", "skills", "stages", "contact"];
 
@@ -53,15 +53,15 @@ const ArcadePortfolio = () => {
 
   return (
     <div
-      className={`${styles.page} ${
-        theme === "light" ? styles.lightTheme : ""
+      className={`${"page"} ${
+        theme === "light" ? "lightTheme" : ""
       }`}
     >
       <Scoreboard score={score} />
-      <div className={styles.shell}>
-        <div className={styles.columns}>
+      <div className={"shell"}>
+        <div className={"columns"}>
           <ArcadeSidebar activeSection={activeSection} />
-          <main className={styles.mainContent}>
+          <main className={"mainContent"}>
             <BioSection />
             <SkillInventory />
             <StageList />

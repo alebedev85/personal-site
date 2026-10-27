@@ -1,0 +1,447 @@
+@use "./styles/_breakpoints.scss" as *;
+@use "./styles/global.scss";
+@use "./styles/typography.scss";
+
+.lightTheme {
+  .scoreboard {
+    background: rgb(232 234 246 / 96%);
+  }
+
+  .cabinet,
+  .panel,
+  .stageCard {
+    background-color: var(--arcade-panel);
+  }
+
+  .panelStatus,
+  .stageMeta,
+  .stageFooter {
+    border-color: var(--arcade-border);
+  }
+
+  .bioCopy,
+  .skillCard,
+  .navTab,
+  .systemCredits,
+  .monitor {
+    background-color: #dedee9;
+  }
+
+  .skillCard strong,
+  .stageInfo h3 a,
+  .bioCopy,
+  .dialogue,
+  .spec,
+  .tagline {
+    color: #161b26;
+  }
+
+  .navTab {
+    color: #3e475e;
+  }
+
+  .navTabActive {
+    background-color: #ded9fc;
+    color: #161b26;
+    box-shadow: 3px 3px 0 #161b26;
+  }
+
+  .dialogue,
+  .bioCopy,
+  .spec,
+  .skillCard,
+  .monitor,
+  .systemCredits {
+    border-color: #abb3c7;
+  }
+
+  .skillDescription,
+  .panelStatus,
+  .hardwareLabel,
+  .scoreLabel,
+  .health,
+  .spec > span,
+  .controllerInfo strong,
+  .controllerActions > span,
+  .systemCredits p,
+  .endCredits small {
+    color: #50596e;
+  }
+
+  .stageFooter,
+  .controller {
+    background-color: rgb(210 214 230 / 55%);
+  }
+}
+
+.shell {
+  width: min(100%, 1280px);
+  margin: 0 auto;
+}
+
+.shell {
+  padding: 24px 16px 40px;
+}
+
+.columns {
+  display: flex;
+  align-items: flex-start;
+  gap: 32px;
+}
+
+.mainContent {
+  display: flex;
+  min-width: 0;
+  flex: 1;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.section {
+  scroll-margin-top: 90px;
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+  padding-bottom: 5px;
+  border-bottom: 2px solid var(--arcade-border);
+}
+
+.sectionHeading {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 10px;
+
+  h2 {
+    margin: 0;
+    color: var(--arcade-yellow);
+    font-size: clamp(9px, 1.1vw, 12px);
+    line-height: 1.7;
+    text-transform: uppercase;
+  }
+}
+
+.sectionMarker {
+  width: 11px;
+  height: 11px;
+  flex: 0 0 11px;
+  transform: rotate(45deg);
+}
+
+.markerRed {
+  background: var(--arcade-red);
+}
+
+.markerYellow {
+  background: var(--arcade-yellow);
+}
+
+.markerCyan {
+  background: var(--arcade-cyan);
+}
+
+.statusBadge {
+  flex: 0 0 auto;
+  padding: 2px 6px;
+  border: 1px solid currentcolor;
+  font-size: 8px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.statusGreen {
+  color: var(--arcade-green);
+}
+
+.statusYellow {
+  color: var(--arcade-yellow);
+}
+
+.statusCyan {
+  color: var(--arcade-cyan);
+}
+
+.panel {
+  position: relative;
+  padding: 20px;
+  border: 3px solid var(--arcade-border);
+  background: var(--arcade-panel);
+  box-shadow:
+    inset 2px 2px 0 rgb(255 255 255 / 8%),
+    inset -2px -2px 0 rgb(0 0 0 / 60%),
+    4px 4px 0 #000;
+  transition:
+    border-color 180ms ease,
+    background-color 180ms ease;
+}
+
+.panelGold {
+  border-color: var(--arcade-yellow);
+}
+
+.panelStatus {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--arcade-border);
+  color: var(--arcade-muted);
+  font-size: 8px;
+
+  > span:first-child {
+    color: var(--arcade-yellow);
+  }
+}
+
+@keyframes arcadeBlink {
+  0%,
+  49% {
+    opacity: 1;
+  }
+
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@media (max-width: $bp-tablet) {
+  .columns {
+    gap: 24px;
+  }
+
+  .sidebar {
+    flex-basis: 340px;
+    width: 340px;
+  }
+
+  .cabinet {
+    padding: 16px;
+  }
+
+  .stageMain {
+    gap: 14px;
+  }
+
+  .monitorColumn {
+    width: 190px;
+    flex-basis: 190px;
+  }
+
+  .monitor {
+    padding: 11px;
+  }
+
+  .skillGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: $bp-mobile) {
+  .columns {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    position: static;
+    width: 100%;
+    flex-basis: auto;
+  }
+
+  .cabinet {
+    padding: 18px;
+  }
+
+  .arcadeTitle {
+    font-size: 40px;
+  }
+
+  .arcadeNav {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .navHeading {
+    grid-column: 1 / -1;
+  }
+
+  .gridHorizon {
+    height: 58px;
+  }
+
+  .mainContent {
+    width: 100%;
+  }
+
+  .monitorColumn {
+    width: 210px;
+    flex-basis: 210px;
+  }
+}
+
+@media (max-width: $bp-mobile-small) {
+  .scoreboard {
+    padding: 7px 10px;
+  }
+
+  .scoreboardInner {
+    font-size: 8px;
+  }
+
+  .playerButton,
+  .languageSwitch button {
+    font-size: 8px;
+  }
+
+  .shell {
+    padding: 16px 12px 28px;
+  }
+
+  .columns,
+  .mainContent {
+    gap: 24px;
+  }
+
+  .cabinet,
+  .panel,
+  .stageCard {
+    padding: 14px;
+  }
+
+  .arcadeTitle {
+    font-size: 34px;
+  }
+
+  .arcadeNav {
+    grid-template-columns: 1fr;
+  }
+
+  .navHeading {
+    grid-column: auto;
+  }
+
+  .sectionHeader {
+    align-items: flex-start;
+  }
+
+  .statusBadge {
+    font-size: 7px;
+    white-space: normal;
+    text-align: center;
+  }
+
+  .sectionHeading h2 {
+    font-size: 9px;
+  }
+
+  .panelStatus {
+    font-size: 7px;
+  }
+
+  .bioIntro {
+    gap: 12px;
+  }
+
+  .avatar {
+    width: 52px;
+    height: 52px;
+    flex-basis: 52px;
+
+    svg {
+      width: 32px;
+      height: 32px;
+    }
+  }
+
+  .dialogue,
+  .bioCopy,
+  .stageInfo p {
+    font-size: 11px;
+  }
+
+  .specGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .skillGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .skillCard {
+    min-height: 100px;
+    padding: 8px;
+  }
+
+  .skillDescription {
+    font-size: 8px;
+  }
+
+  .controller {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .controllerActions {
+    align-self: flex-end;
+  }
+
+  .stageMain {
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .monitorColumn {
+    width: min(100%, 260px);
+    flex-basis: auto;
+  }
+
+  .stageInfo {
+    width: 100%;
+    gap: 14px;
+  }
+
+  .stageInfo h3 {
+    font-size: 17px;
+  }
+
+  .stageFooter {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .stageActions {
+    align-self: flex-end;
+  }
+
+  .contactPanel {
+    padding: 18px 14px;
+  }
+
+  .contactActions {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .endCredits small {
+    line-height: 1.6;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page *,
+  .page *::before,
+  .page *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}

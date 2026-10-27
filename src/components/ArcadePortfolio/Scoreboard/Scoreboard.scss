@@ -1,0 +1,116 @@
+.scoreboard {
+  position: sticky;
+  z-index: 50;
+  top: 0;
+  padding: 8px 16px;
+  border-bottom: 2px solid var(--arcade-yellow);
+  background: rgb(10 10 12 / 96%);
+  backdrop-filter: blur(10px);
+  transition: background-color 180ms ease;
+}
+
+.scoreboardInner {
+  width: min(100%, 1280px);
+  margin: 0 auto;
+}
+
+.scoreboardInner {
+  font-size: 10px;
+  letter-spacing: 0.08em;
+}
+
+.scoreboardTop,
+.scoreboardBottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.scoreboardTop {
+  min-height: 25px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid rgb(42 43 56 / 75%);
+}
+
+.scoreboardBottom {
+  min-height: 23px;
+  padding-top: 3px;
+}
+
+.playerButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--arcade-muted);
+  cursor: pointer;
+  font-size: 10px;
+  letter-spacing: inherit;
+  transition: filter 150ms ease;
+
+  &:hover,
+  &:focus-visible {
+    filter: brightness(1.35);
+  }
+}
+
+.playerButtonActive {
+  color: var(--arcade-red);
+}
+
+.redDot,
+.cyanDot {
+  width: 9px;
+  height: 9px;
+  background: var(--arcade-red);
+  box-shadow: 0 0 8px var(--arcade-red);
+}
+
+.cyanDot {
+  background: var(--arcade-cyan);
+  box-shadow: 0 0 8px var(--arcade-cyan);
+}
+
+.playerButton:not(.playerButtonActive) .redDot,
+.playerButton:not(.playerButtonActive) .cyanDot {
+  visibility: hidden;
+}
+
+.highScoreLabel,
+.scoreValue {
+  color: var(--arcade-yellow);
+  font-weight: 700;
+}
+
+.scoreLabel {
+  color: var(--arcade-muted);
+}
+
+.languageSwitch {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--arcade-muted);
+
+  button {
+    padding: 2px 0;
+    border: 0;
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
+    font-size: 10px;
+
+    &:hover,
+    &:focus-visible {
+      color: var(--arcade-yellow);
+    }
+  }
+
+  .languageActive {
+    color: var(--arcade-yellow);
+    font-weight: 700;
+    text-decoration: underline;
+  }
+}

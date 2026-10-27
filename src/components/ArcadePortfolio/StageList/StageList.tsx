@@ -2,8 +2,8 @@
 
 import Image from "next/image";
 import { useTranslation } from "react-i18next";
-import { projects } from "../../data/projects";
-import styles from "./ArcadePortfolio.module.scss";
+import { projects } from "../../../data/projects";
+import "./StageList.scss";
 
 const statusLabels = [
   "AI BOSS LEVEL",
@@ -17,32 +17,32 @@ const statusLabels = [
 ];
 
 const screenColors = [
-  styles.screenGreen,
-  styles.screenCyan,
-  styles.screenYellow,
-  styles.screenRed,
-  styles.screenPurple,
-  styles.screenYellow,
-  styles.screenCyan,
-  styles.screenGreen,
+  "screenGreen",
+  "screenCyan",
+  "screenYellow",
+  "screenRed",
+  "screenPurple",
+  "screenYellow",
+  "screenCyan",
+  "screenGreen",
 ];
 
 const StageList = () => {
   const { t } = useTranslation();
 
   return (
-    <section className={styles.section} id="stages">
-      <div className={styles.sectionHeader}>
-        <div className={styles.sectionHeading}>
-          <span className={`${styles.sectionMarker} ${styles.markerCyan}`} />
+    <section className={"section"} id="stages">
+      <div className={"sectionHeader"}>
+        <div className={"sectionHeading"}>
+          <span className={`${"sectionMarker"} ${"markerCyan"}`} />
           <h2>СПИСОК ИГР / STAGES</h2>
         </div>
-        <span className={`${styles.statusBadge} ${styles.statusCyan}`}>
+        <span className={`${"statusBadge"} ${"statusCyan"}`}>
           {projects.length} STAGES AVAILABLE
         </span>
       </div>
 
-      <div className={styles.stageList}>
+      <div className={"stageList"}>
         {projects.map((project, index) => {
           const stageNumber = index + 1;
           const previousStage = stageNumber - 1;
@@ -51,44 +51,44 @@ const StageList = () => {
 
           return (
             <article
-              className={styles.stageCard}
+              className={"stageCard"}
               id={`stage-${stageNumber}`}
               key={project.id}
             >
-              <div className={styles.stageMeta}>
+              <div className={"stageMeta"}>
                 <span>STAGE {String(stageNumber).padStart(2, "0")} / 08</span>
-                <span className={styles.stageStatus}>
+                <span className={"stageStatus"}>
                   ● {statusLabels[index]}
                 </span>
               </div>
 
-              <div className={styles.stageMain}>
-                <div className={styles.monitorColumn}>
-                  <div className={styles.monitor}>
+              <div className={"stageMain"}>
+                <div className={"monitorColumn"}>
+                  <div className={"monitor"}>
                     <div
-                      className={`${styles.monitorScreen} ${screenColors[index]}`}
+                      className={`${"monitorScreen"} ${screenColors[index]}`}
                     >
                       <Image
                         src={project.imgSrc}
                         alt={project.imgAlt}
                         fill
                         sizes="(max-width: 768px) 80vw, 240px"
-                        className={styles.projectImage}
+                        className={"projectImage"}
                       />
-                      <span className={styles.scanlines} aria-hidden="true" />
+                      <span className={"scanlines"} aria-hidden="true" />
                     </div>
-                    <div className={styles.monitorControls} aria-hidden="true">
+                    <div className={"monitorControls"} aria-hidden="true">
                       <span />
                       <span />
                       <span />
                     </div>
                   </div>
-                  <span className={styles.hardwareLabel}>
+                  <span className={"hardwareLabel"}>
                     &gt; HARDWARE: RETRO_TERMINAL_{String(stageNumber).padStart(2, "0")}
                   </span>
                 </div>
 
-                <div className={styles.stageInfo}>
+                <div className={"stageInfo"}>
                   <div>
                     <h3>
                       <a
@@ -102,7 +102,7 @@ const StageList = () => {
                     </h3>
                     <p>{t(`projects.${project.id}.description`)}</p>
                   </div>
-                  <ul className={styles.technologyList} aria-label="Technologies">
+                  <ul className={"technologyList"} aria-label="Technologies">
                     {project.technologies.map((technology) => (
                       <li key={technology}>{technology}</li>
                     ))}
@@ -110,22 +110,22 @@ const StageList = () => {
                 </div>
               </div>
 
-              <div className={styles.stageFooter}>
-                <div className={styles.stageNavigation}>
+              <div className={"stageFooter"}>
+                <div className={"stageNavigation"}>
                   {previousStage > 0 ? (
                     <a href={`#stage-${previousStage}`}>▲ PREV</a>
                   ) : (
-                    <span className={styles.disabledControl}>▲ PREV</span>
+                    <span className={"disabledControl"}>▲ PREV</span>
                   )}
                   {nextStage <= projects.length ? (
                     <a href={`#stage-${nextStage}`}>▼ NEXT</a>
                   ) : (
-                    <span className={styles.disabledControl}>▼ END</span>
+                    <span className={"disabledControl"}>▼ END</span>
                   )}
                 </div>
-                <div className={styles.stageActions}>
+                <div className={"stageActions"}>
                   <a
-                    className={`${styles.actionButton} ${styles.missionButton}`}
+                    className={`${"actionButton"} ${"missionButton"}`}
                     href={project.projectLink}
                     target="_blank"
                     rel="noreferrer noopener"
@@ -133,7 +133,7 @@ const StageList = () => {
                     <span>A</span> PLAY MISSION
                   </a>
                   <a
-                    className={`${styles.actionButton} ${styles.codeButton}`}
+                    className={`${"actionButton"} ${"codeButton"}`}
                     href={project.gitHubLink}
                     target="_blank"
                     rel="noreferrer noopener"
