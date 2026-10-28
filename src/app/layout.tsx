@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
-import "../styles/global.scss";
-import "../styles/typography.scss";
+import "../features/ClassicPortfolio/styles/global.scss";
+import "../features/ClassicPortfolio/styles/typography.scss";
 
 export const metadata: Metadata = {
   title: "Андрей Лебедев",

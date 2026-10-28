@@ -1,5 +1,5 @@
+import ArcadePortfolio from "../../features/ArcadePortfolio/ArcadePortfolio";
 import Providers from "../providers";
-import ArcadePortfolio from "../../components/ArcadePortfolio/ArcadePortfolio";
 
 export const metadata = {
   title: "Андрей Лебедев | 8-BIT RETRO ARCADE PORTFOLIO",
