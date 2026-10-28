@@ -1,3 +1,5 @@
+@use "../styles/_breakpoints.scss" as *;
+
 .skillGrid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -172,4 +174,54 @@
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   clip-path: inset(50%);
+}
+
+[data-theme="light"] .skillCard,
+[data-theme="light"] .controller {
+  background-color: #dedee9;
+}
+
+[data-theme="light"] .skillCard {
+  border-color: #abb3c7;
+}
+
+[data-theme="light"] .skillCard strong {
+  color: #161b26;
+}
+
+[data-theme="light"] .skillDescription,
+[data-theme="light"] .controllerInfo strong,
+[data-theme="light"] .controllerActions > span {
+  color: #50596e;
+}
+
+@media (max-width: $bp-tablet) {
+  .skillGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: $bp-mobile-small) {
+  .skillGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .skillCard {
+    min-height: 100px;
+    padding: 8px;
+  }
+
+  .skillDescription {
+    font-size: 8px;
+  }
+
+  .controller {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .controllerActions {
+    align-self: flex-end;
+  }
 }

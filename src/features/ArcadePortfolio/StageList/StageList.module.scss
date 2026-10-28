@@ -1,3 +1,5 @@
+@use "../styles/_breakpoints.scss" as *;
+
 .stageList {
   display: flex;
   flex-direction: column;
@@ -304,4 +306,90 @@
   background: var(--arcade-yellow);
   box-shadow: 3px 3px 0 #b87a00;
   color: #111;
+}
+
+[data-theme="light"] .stageInfo h3 {
+  color: #161b26;
+}
+
+[data-theme="light"] .stageInfo h3 a {
+  color: #161b26;
+}
+
+[data-theme="light"] .stageInfo p {
+  color: #50596e;
+}
+
+[data-theme="light"] .monitor {
+  border-color: #abb3c7;
+  background-color: #dedee9;
+}
+
+[data-theme="light"] .stageFooter {
+  border-color: var(--arcade-border);
+  background-color: rgb(210 214 230 / 55%);
+}
+
+[data-theme="light"] .hardwareLabel {
+  color: #50596e;
+}
+
+@media (max-width: $bp-tablet) {
+  .stageMain {
+    gap: 14px;
+  }
+
+  .monitorColumn {
+    width: 190px;
+    flex-basis: 190px;
+  }
+
+  .monitor {
+    padding: 11px;
+  }
+}
+
+@media (max-width: $bp-mobile) {
+  .monitorColumn {
+    width: 210px;
+    flex-basis: 210px;
+  }
+}
+
+@media (max-width: $bp-mobile-small) {
+  .stageCard {
+    padding: 14px;
+  }
+
+  .stageInfo p {
+    font-size: 11px;
+  }
+
+  .stageMain {
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .monitorColumn {
+    width: min(100%, 260px);
+    flex-basis: auto;
+  }
+
+  .stageInfo {
+    width: 100%;
+    gap: 14px;
+  }
+
+  .stageInfo h3 {
+    font-size: 17px;
+  }
+
+  .stageFooter {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .stageActions {
+    align-self: flex-end;
+  }
 }

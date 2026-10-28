@@ -2,7 +2,8 @@
 
 import { useTranslation } from "react-i18next";
 import { skills } from "../../../data/skills";
-import "./SkillInventory.scss";
+import common from "../ArcadePortfolio.module.scss";
+import styles from "./SkillInventory.module.scss";
 
 const descriptions: Record<string, string> = {
   HTML: "Semantic & A11y",
@@ -23,48 +24,48 @@ const SkillInventory = () => {
   const { t } = useTranslation();
 
   return (
-    <section className={"section"} id="skills">
-      <div className={"sectionHeader"}>
-        <div className={"sectionHeading"}>
-          <span className={`${"sectionMarker"} ${"markerYellow"}`} />
+    <section className={common.section} id="skills">
+      <div className={common.sectionHeader}>
+        <div className={common.sectionHeading}>
+          <span className={`${common.sectionMarker} ${common.markerYellow}`} />
           <h2>POWER-UPS &amp; SKILLS</h2>
         </div>
-        <span className={`${"statusBadge"} ${"statusYellow"}`}>
+        <span className={`${common.statusBadge} ${common.statusYellow}`}>
           12 / 12 SLOTS EQUIPPED
         </span>
       </div>
 
-      <div className={"panel"}>
-        <div className={"panelStatus"}>
+      <div className={common.panel}>
+        <div className={common.panelStatus}>
           <span>&gt; SELECT WEAPON / TECH INVENTORY</span>
           <span>SLOTS: 12 LOCKED &amp; LOADED</span>
         </div>
 
-        <div className={"skillGrid"}>
+        <div className={styles.skillGrid}>
           {skills.map(({ label, icon, link }, index) => (
             <a
-              className={"skillCard"}
+              className={styles.skillCard}
               href={link}
               target="_blank"
               rel="noreferrer noopener"
               key={label}
               aria-label={`${label} — ${descriptions[label]}`}
             >
-              <div className={"skillTopline"}>
+              <div className={styles.skillTopline}>
                 <span>{String(index + 1).padStart(2, "0")}</span>
-                <span className={"skillIcon"}>{icon}</span>
+                <span className={styles.skillIcon}>{icon}</span>
               </div>
               <strong>{label === "HTML" ? "HTML5" : label === "CSS" ? "CSS3" : label}</strong>
-              <span className={"skillDescription"}>
+              <span className={styles.skillDescription}>
                 {descriptions[label]}
               </span>
             </a>
           ))}
         </div>
 
-        <div className={"controller"}>
-          <div className={"controllerInfo"}>
-            <div className={"dpad"} aria-hidden="true">
+        <div className={styles.controller}>
+          <div className={styles.controllerInfo}>
+            <div className={styles.dpad} aria-hidden="true">
               <span />
             </div>
             <div>
@@ -72,19 +73,19 @@ const SkillInventory = () => {
               <span>STATUS: CONNECTED (PORT 1)</span>
             </div>
           </div>
-          <div className={"controllerActions"}>
-            <a href="#stages" className={`${"controlButton"} ${"buttonRed"}`}>
+          <div className={styles.controllerActions}>
+            <a href="#stages" className={`${styles.controlButton} ${styles.buttonRed}`}>
               A
             </a>
             <span>EXEC</span>
-            <a href="#bio" className={`${"controlButton"} ${"buttonYellow"}`}>
+            <a href="#bio" className={`${styles.controlButton} ${styles.buttonYellow}`}>
               B
             </a>
             <span>INFO</span>
           </div>
         </div>
       </div>
-      <span className={"visuallyHidden"}>{t("skills.title")}</span>
+      <span className={styles.visuallyHidden}>{t("skills.title")}</span>
     </section>
   );
 };

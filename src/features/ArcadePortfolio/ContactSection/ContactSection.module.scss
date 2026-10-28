@@ -1,3 +1,5 @@
+@use "../styles/_breakpoints.scss" as *;
+
 .contactPanel {
   padding: 24px;
   text-align: center;
@@ -146,5 +148,31 @@
     color: var(--arcade-muted);
     font-family: var(--font-silk);
     font-size: 9px;
+  }
+}
+
+[data-theme="light"] .systemCredits {
+  border-color: #abb3c7;
+  background-color: #dedee9;
+  color: #161b26;
+}
+
+[data-theme="light"] .systemCredits p,
+[data-theme="light"] .endCredits small {
+  color: #50596e;
+}
+
+@media (max-width: $bp-mobile-small) {
+  .contactPanel {
+    padding: 18px 14px;
+  }
+
+  .contactActions {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .endCredits small {
+    line-height: 1.6;
   }
 }

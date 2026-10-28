@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import type { RootState } from "../../../store";
 import { toggleLanguage, toggleTheme } from "../../../store/slices/togglesSlice";
 import type { LanguageType, ThemeType } from "../../../types";
-import "./Header.scss";
+import styles from "./Header.module.scss";
 
 type ScoreboardProps = {
   score: string;
@@ -32,44 +32,44 @@ const Header = ({ score }: ScoreboardProps) => {
   };
 
   return (
-    <header className={"scoreboard"}>
-      <div className={"scoreboardInner"}>
-        <div className={"scoreboardTop"}>
+    <header className={styles.scoreboard}>
+      <div className={styles.scoreboardInner}>
+        <div className={styles.scoreboardTop}>
           <button
-            className={`${"playerButton"} ${
-              theme === "dark" ? "playerButtonActive" : ""
+            className={`${styles.playerButton} ${
+              theme === "dark" ? styles.playerButtonActive : ""
             }`}
             type="button"
             onClick={() => changeTheme("dark")}
             aria-pressed={theme === "dark"}
           >
             <span>1UP</span>
-            <span className={"redDot"} />
+            <span className={styles.redDot} />
           </button>
-          <Link className={"highScoreLabel"} href="/">
+          <Link className={styles.highScoreLabel} href="/">
             HI-SCORE
           </Link>
           <button
-            className={`${"playerButton"} ${
-              theme === "light" ? "playerButtonActive" : ""
+            className={`${styles.playerButton} ${
+              theme === "light" ? styles.playerButtonActive : ""
             }`}
             type="button"
             onClick={() => changeTheme("light")}
             aria-pressed={theme === "light"}
           >
-            <span className={"cyanDot"} />
+            <span className={styles.cyanDot} />
             <span>2UP</span>
           </button>
         </div>
-        <div className={"scoreboardBottom"}>
-          <span className={"scoreLabel"}>002026</span>
-          <span className={"scoreValue"} aria-label={`High score ${score}`}>
+        <div className={styles.scoreboardBottom}>
+          <span className={styles.scoreLabel}>002026</span>
+          <span className={styles.scoreValue} aria-label={`High score ${score}`}>
             {score}
           </span>
-          <div className={"languageSwitch"} aria-label="Language">
+          <div className={styles.languageSwitch} aria-label="Language">
             <button
               type="button"
-              className={language === "ru" ? "languageActive" : ""}
+              className={language === "ru" ? styles.languageActive : ""}
               onClick={() => changeLanguage("ru")}
               aria-pressed={language === "ru"}
             >
@@ -78,7 +78,7 @@ const Header = ({ score }: ScoreboardProps) => {
             <span>/</span>
             <button
               type="button"
-              className={language === "en" ? "languageActive" : ""}
+              className={language === "en" ? styles.languageActive : ""}
               onClick={() => changeLanguage("en")}
               aria-pressed={language === "en"}
             >

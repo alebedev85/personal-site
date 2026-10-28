@@ -1,3 +1,5 @@
+@use "../styles/_breakpoints.scss" as *;
+
 .specGreen {
   color: var(--arcade-green);
 }
@@ -138,5 +140,51 @@
 
   strong {
     font-size: 8px;
+  }
+}
+
+[data-theme="light"] .dialogue,
+[data-theme="light"] .bioCopy,
+[data-theme="light"] .spec {
+  border-color: #abb3c7;
+}
+
+[data-theme="light"] .bioCopy {
+  background-color: #dedee9;
+  color: #161b26;
+}
+
+[data-theme="light"] .dialogue {
+  color: #161b26;
+}
+
+[data-theme="light"] .spec > span,
+[data-theme="light"] .health {
+  color: #50596e;
+}
+
+@media (max-width: $bp-mobile-small) {
+  .bioIntro {
+    gap: 12px;
+  }
+
+  .avatar {
+    width: 52px;
+    height: 52px;
+    flex-basis: 52px;
+
+    svg {
+      width: 32px;
+      height: 32px;
+    }
+  }
+
+  .dialogue,
+  .bioCopy {
+    font-size: 11px;
+  }
+
+  .specGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }

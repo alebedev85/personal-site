@@ -1,3 +1,5 @@
+@use "../styles/_breakpoints.scss" as *;
+
 .sidebar {
   position: sticky;
   z-index: 10;
@@ -71,7 +73,7 @@
   }
 }
 
-.lightTheme .arcadeTitle span {
+[data-theme="light"] .arcadeTitle span {
   color: #161b26;
 }
 
@@ -189,4 +191,73 @@
   position: absolute;
   inset: 0;
   background: linear-gradient(to top, var(--arcade-panel), transparent 80%);
+}
+
+[data-theme="light"] .navTab {
+  background-color: #dedee9;
+  color: #3e475e;
+}
+
+[data-theme="light"] .navTabActive {
+  background-color: #ded9fc;
+  color: #161b26;
+  box-shadow: 3px 3px 0 #161b26;
+}
+
+@media (max-width: $bp-tablet) {
+  .sidebar {
+    flex-basis: 340px;
+    width: 340px;
+  }
+
+  .cabinet {
+    padding: 16px;
+  }
+}
+
+@media (max-width: $bp-mobile) {
+  .sidebar {
+    position: static;
+    width: 100%;
+    flex-basis: auto;
+  }
+
+  .cabinet {
+    padding: 18px;
+  }
+
+  .arcadeTitle {
+    font-size: 40px;
+  }
+
+  .arcadeNav {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .navHeading {
+    grid-column: 1 / -1;
+  }
+
+  .gridHorizon {
+    height: 58px;
+  }
+}
+
+@media (max-width: $bp-mobile-small) {
+  .cabinet {
+    padding: 14px;
+  }
+
+  .arcadeTitle {
+    font-size: 34px;
+  }
+
+  .arcadeNav {
+    grid-template-columns: 1fr;
+  }
+
+  .navHeading {
+    grid-column: auto;
+  }
 }

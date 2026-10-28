@@ -1,0 +1,214 @@
+@use "./styles/_breakpoints.scss" as *;
+@use "./styles/global.scss";
+@use "./styles/typography.scss";
+
+.page {
+  min-height: 100vh;
+}
+
+.lightTheme {
+  --arcade-black: #e8eaf6;
+  --arcade-panel: #f3f4fa;
+  --arcade-border: #bfc6d8;
+  --arcade-text: #161b26;
+  --arcade-muted: #50596e;
+}
+
+.shell {
+  width: min(100%, 1280px);
+  margin: 0 auto;
+  padding: 24px 16px 40px;
+}
+
+.columns {
+  display: flex;
+  align-items: flex-start;
+  gap: 32px;
+}
+
+.mainContent {
+  display: flex;
+  min-width: 0;
+  flex: 1;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.section {
+  scroll-margin-top: 90px;
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+  padding-bottom: 5px;
+  border-bottom: 2px solid var(--arcade-border);
+}
+
+.sectionHeading {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 10px;
+
+  h2 {
+    margin: 0;
+    color: var(--arcade-yellow);
+    font-size: clamp(9px, 1.1vw, 12px);
+    line-height: 1.7;
+    text-transform: uppercase;
+  }
+}
+
+.sectionMarker {
+  width: 11px;
+  height: 11px;
+  flex: 0 0 11px;
+  transform: rotate(45deg);
+}
+
+.markerRed {
+  background: var(--arcade-red);
+}
+
+.markerYellow {
+  background: var(--arcade-yellow);
+}
+
+.markerCyan {
+  background: var(--arcade-cyan);
+}
+
+.statusBadge {
+  flex: 0 0 auto;
+  padding: 2px 6px;
+  border: 1px solid currentcolor;
+  font-size: 8px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.statusGreen {
+  color: var(--arcade-green);
+}
+
+.statusYellow {
+  color: var(--arcade-yellow);
+}
+
+.statusCyan {
+  color: var(--arcade-cyan);
+}
+
+.panel {
+  position: relative;
+  padding: 20px;
+  border: 3px solid var(--arcade-border);
+  background: var(--arcade-panel);
+  box-shadow:
+    inset 2px 2px 0 rgb(255 255 255 / 8%),
+    inset -2px -2px 0 rgb(0 0 0 / 60%),
+    4px 4px 0 #000;
+  transition:
+    border-color 180ms ease,
+    background-color 180ms ease;
+}
+
+.panelGold {
+  border-color: var(--arcade-yellow);
+}
+
+.panelStatus {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--arcade-border);
+  color: var(--arcade-muted);
+  font-size: 8px;
+
+  > span:first-child {
+    color: var(--arcade-yellow);
+  }
+}
+
+[data-theme="light"] .panelStatus {
+  border-color: var(--arcade-border);
+}
+
+.blink {
+  animation: arcadeBlink 750ms steps(1) infinite;
+}
+
+@keyframes arcadeBlink {
+  0%,
+  49% {
+    opacity: 1;
+  }
+
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@media (max-width: $bp-tablet) {
+  .columns {
+    gap: 24px;
+  }
+}
+
+@media (max-width: $bp-mobile) {
+  .columns {
+    flex-direction: column;
+  }
+
+  .mainContent {
+    width: 100%;
+  }
+}
+
+@media (max-width: $bp-mobile-small) {
+  .shell {
+    padding: 16px 12px 28px;
+  }
+
+  .panel {
+    padding: 14px;
+  }
+
+  .columns,
+  .mainContent {
+    gap: 24px;
+  }
+
+  .sectionHeader {
+    align-items: flex-start;
+  }
+
+  .statusBadge {
+    font-size: 7px;
+    white-space: normal;
+    text-align: center;
+  }
+
+  .sectionHeading h2 {
+    font-size: 9px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page *,
+  .page *::before,
+  .page *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}

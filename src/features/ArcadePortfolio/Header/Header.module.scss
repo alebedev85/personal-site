@@ -1,3 +1,5 @@
+@use "../styles/_breakpoints.scss" as *;
+
 .scoreboard {
   position: sticky;
   z-index: 50;
@@ -105,6 +107,25 @@
     &:hover,
     &:focus-visible {
       color: var(--arcade-yellow);
+    }
+  }
+
+  [data-theme="light"] .scoreboard {
+    background: rgb(232 234 246 / 96%);
+  }
+
+  @media (max-width: $bp-mobile-small) {
+    .scoreboard {
+      padding: 7px 10px;
+    }
+
+    .scoreboardInner {
+      font-size: 8px;
+    }
+
+    .playerButton,
+    .languageSwitch button {
+      font-size: 8px;
     }
   }
 

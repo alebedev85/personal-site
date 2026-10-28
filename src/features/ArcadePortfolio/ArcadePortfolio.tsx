@@ -3,10 +3,10 @@
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import type { RootState } from "../../store";
-import "./ArcadePortfolio.scss";
+import styles from "./ArcadePortfolio.module.scss";
 import BioSection from "./BioSection/BioSection";
 import ContactSection from "./ContactSection/ContactSection";
-import Scoreboard from "./Header/Header";
+import Header from "./Header/Header";
 import SkillInventory from "./SkillInventory/SkillInventory";
 import StageList from "./StageList/StageList";
 import ArcadeSidebar from "./ArcadeSidebar/ArcadeSidebar";
@@ -53,15 +53,16 @@ const ArcadePortfolio = () => {
 
   return (
     <div
-      className={`${"page"} ${
-        theme === "light" ? "lightTheme" : ""
+      className={`${styles.page} page ${
+        theme === "light" ? `${styles.lightTheme} lightTheme` : ""
       }`}
+      data-theme={theme}
     >
-      <Scoreboard score={score} />
-      <div className={"shell"}>
-        <div className={"columns"}>
+      <Header score={score} />
+      <div className={styles.shell}>
+        <div className={styles.columns}>
           <ArcadeSidebar activeSection={activeSection} />
-          <main className={"mainContent"}>
+          <main className={styles.mainContent}>
             <BioSection />
             <SkillInventory />
             <StageList />
