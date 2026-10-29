@@ -25,8 +25,8 @@
   }
 
   strong {
-    color: #fff;
-    font-size: 9px;
+    color: var(--arcade-white);
+    font-size: var(--font-size-sm);
   }
 }
 
@@ -36,7 +36,7 @@
   justify-content: space-between;
   color: var(--arcade-yellow);
   font-family: var(--font-russo);
-  font-size: 10px;
+  font-size: var(--font-size-md);
 }
 
 .skillIcon {
@@ -58,7 +58,7 @@
 .skillDescription {
   color: var(--arcade-muted);
   font-family: var(--font-silk);
-  font-size: 9px;
+  font-size: var(--font-size-sm);
 }
 
 .controller {
@@ -69,7 +69,7 @@
   margin-top: 20px;
   padding: 14px;
   border-top: 2px solid var(--arcade-border);
-  background: rgb(0 0 0 / 40%);
+  background: rgb(var(--arcade-black-rgb) / 40%);
 }
 
 .controllerInfo,
@@ -88,13 +88,13 @@
 .controllerInfo strong,
 .controllerActions > span {
   color: var(--arcade-muted);
-  font-size: 8px;
+  font-size: var(--font-size-xs);
 }
 
 .controllerInfo > div > span {
   color: var(--arcade-cyan);
   font-family: var(--font-silk);
-  font-size: 10px;
+  font-size: var(--font-size-md);
 }
 
 .dpad {
@@ -102,8 +102,8 @@
   width: 45px;
   height: 45px;
   flex: 0 0 45px;
-  border: 2px solid #555866;
-  background: #15161b;
+  border: 2px solid var(--arcade-detail);
+  background: var(--arcade-control);
 
   &::before,
   &::after,
@@ -112,7 +112,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: #444650;
+    background: var(--arcade-control-mid);
     content: "";
   }
 
@@ -130,7 +130,7 @@
     z-index: 1;
     width: 10px;
     height: 10px;
-    background: #282a32;
+    background: var(--arcade-control-dark);
   }
 }
 
@@ -144,7 +144,7 @@
   height: 34px;
   align-items: center;
   justify-content: center;
-  border: 2px solid #fff;
+  border: 2px solid var(--arcade-white);
   font-size: 10px;
   font-weight: 700;
   transition: transform 100ms ease;
@@ -156,14 +156,14 @@
 
 .buttonRed {
   background: var(--arcade-red);
-  box-shadow: 3px 3px 0 #8b0000;
-  color: #fff;
+  box-shadow: 3px 3px 0 var(--arcade-shadow-red);
+  color: var(--arcade-white);
 }
 
 .buttonYellow {
   background: var(--arcade-yellow);
-  box-shadow: 3px 3px 0 #b87a00;
-  color: #000;
+  box-shadow: 3px 3px 0 var(--arcade-shadow-yellow);
+  color: var(--arcade-shadow);
 }
 
 .visuallyHidden {
@@ -178,21 +178,21 @@
 
 [data-theme="light"] .skillCard,
 [data-theme="light"] .controller {
-  background-color: #dedee9;
+  background-color: var(--arcade-light-panel);
 }
 
 [data-theme="light"] .skillCard {
-  border-color: #abb3c7;
+  border-color: var(--arcade-light-border);
 }
 
 [data-theme="light"] .skillCard strong {
-  color: #161b26;
+  color: var(--arcade-light-text);
 }
 
 [data-theme="light"] .skillDescription,
 [data-theme="light"] .controllerInfo strong,
 [data-theme="light"] .controllerActions > span {
-  color: #50596e;
+  color: var(--arcade-light-muted);
 }
 
 @media (max-width: $bp-tablet) {
@@ -213,7 +213,7 @@
   }
 
   .skillDescription {
-    font-size: 8px;
+    font-size: var(--font-size-xs);
   }
 
   .controller {

@@ -2,24 +2,72 @@
   --arcade-black: #0a0a0c;
   --arcade-panel: #13141c;
   --arcade-border: #2a2b38;
+  --arcade-white: #fff;
+  --arcade-shadow: #000;
+  --arcade-ink-black: #0a0a0c;
   --arcade-yellow: #ffd13b;
   --arcade-red: #ff3344;
   --arcade-cyan: #00f0ff;
   --arcade-green: #25e076;
   --arcade-orange: #ff6b35;
+  --arcade-purple: #c084fc;
   --arcade-text: #e1e3e9;
   --arcade-muted: #9295a3;
+  --arcade-copy: #c4c6cf;
+  --arcade-bio-copy: #d0d1d8;
+  --arcade-light-text: #161b26;
+  --arcade-light-muted: #50596e;
+  --arcade-light-nav: #3e475e;
+  --arcade-light-border: #abb3c7;
+  --arcade-divider-muted: #4b5563;
+  --arcade-light-panel: #dedee9;
+  --arcade-light-active: #ded9fc;
+  --arcade-light-background-rgb: 232 234 246;
+  --arcade-light-text-rgb: 22 27 38;
+  --arcade-light-overlay-rgb: 210 214 230;
+  --arcade-dark-red: #9b111c;
+  --arcade-dark-orange: #d43b00;
+  --arcade-shadow-red: #8b0000;
+  --arcade-shadow-yellow: #b87a00;
+  --arcade-shadow-cyan: #007788;
+  --arcade-detail: #555866;
+  --arcade-detail-light: #737783;
+  --arcade-detail-muted: #777985;
+  --arcade-screen-frame: #0c0d12;
+  --arcade-screen: #071116;
+  --arcade-control: #15161b;
+  --arcade-control-dark: #282a32;
+  --arcade-control-mid: #444650;
+  --arcade-neutral: #202127;
+  --arcade-border-rgb: 42 43 56;
+  --arcade-black-rgb: 10 10 12;
+  --arcade-white-rgb: 255 255 255;
+  --arcade-yellow-rgb: 255 209 59;
+  --arcade-red-rgb: 255 51 68;
+  --arcade-cyan-rgb: 0 240 255;
+  --arcade-green-rgb: 37 224 118;
+  --arcade-purple-rgb: 192 132 252;
+
+  --font-size-tiny: 7px;
+  --font-size-xs: 8px;
+  --font-size-sm: 9px;
+  --font-size-md: 10px;
+  --font-size-nav: 11px;
+  --font-size-base: 12px;
+  --font-size-lg: 16px;
+  --font-size-title: 19px;
 
   --font-pixel: "Press Start 2P", "Courier New", monospace;
   --font-silk: "Silkscreen", "Courier New", monospace;
   --font-russo: "Russo One", "Arial Black", sans-serif;
   --font-vt: "VT323", "Courier New", monospace;
+  --font-mono: "Courier New", monospace;
 }
 
-.page.lightTheme {
+.page[data-theme="light"] {
   --arcade-black: #e8eaf6;
   --arcade-panel: #f3f4fa;
   --arcade-border: #bfc6d8;
-  --arcade-text: #161b26;
-  --arcade-muted: #50596e;
+  --arcade-text: var(--arcade-light-text);
+  --arcade-muted: var(--arcade-light-muted);
 }

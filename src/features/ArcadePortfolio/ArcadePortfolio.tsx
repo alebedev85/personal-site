@@ -52,12 +52,7 @@ const ArcadePortfolio = () => {
   }, []);
 
   return (
-    <div
-      className={`${styles.page} page ${
-        theme === "light" ? `${styles.lightTheme} lightTheme` : ""
-      }`}
-      data-theme={theme}
-    >
+    <div className={`${styles.page} page`} data-theme={theme}>
       <Header score={score} />
       <div className={styles.shell}>
         <div className={styles.columns}>

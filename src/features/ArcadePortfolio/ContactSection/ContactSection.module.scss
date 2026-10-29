@@ -12,15 +12,15 @@
     letter-spacing: 0.08em;
     text-shadow:
       2px 2px 0 var(--arcade-orange),
-      4px 4px 0 #d43b00,
-      6px 6px 0 #000;
+      4px 4px 0 var(--arcade-dark-orange),
+      6px 6px 0 var(--arcade-shadow);
   }
 }
 
 .continueText {
   margin-top: 8px;
   color: var(--arcade-text);
-  font-size: 12px;
+  font-size: var(--font-size-base);
 
   span {
     color: var(--arcade-red);
@@ -37,7 +37,7 @@
   margin: 14px auto 0;
   color: var(--arcade-muted);
   font-family: var(--font-silk);
-  font-size: 12px;
+  font-size: var(--font-size-base);
   line-height: 1.65;
 }
 
@@ -56,9 +56,9 @@
   justify-content: center;
   gap: 9px;
   padding: 10px;
-  border: 2px solid #fff;
-  color: #0a0a0c;
-  font-size: 8px;
+  border: 2px solid var(--arcade-white);
+  color: var(--arcade-ink-black);
+  font-size: var(--font-size-xs);
   transition:
     filter 150ms ease,
     transform 100ms ease;
@@ -75,17 +75,17 @@
 
 .contactCyan {
   background: var(--arcade-cyan);
-  box-shadow: 4px 4px 0 #007788;
+  box-shadow: 4px 4px 0 var(--arcade-shadow-cyan);
 }
 
 .contactYellow {
   background: var(--arcade-yellow);
-  box-shadow: 4px 4px 0 #b87a00;
+  box-shadow: 4px 4px 0 var(--arcade-shadow-yellow);
 }
 
 .contactIcon {
   display: inline-flex;
-  font-size: 16px;
+  font-size: var(--font-size-lg);
 
   svg {
     width: 17px;
@@ -100,7 +100,7 @@
   background: var(--arcade-black);
   color: var(--arcade-muted);
   font-family: var(--font-silk);
-  font-size: 11px;
+  font-size: var(--font-size-nav);
   line-height: 1.7;
   text-align: left;
 
@@ -109,7 +109,7 @@
     margin-bottom: 6px;
     color: var(--arcade-cyan);
     font-family: var(--font-pixel);
-    font-size: 8px;
+    font-size: var(--font-size-xs);
   }
 
   p {
@@ -133,12 +133,12 @@
     font-size: 23px;
     text-shadow:
       2px 2px 0 var(--arcade-orange),
-      4px 4px 0 #d43b00;
+      4px 4px 0 var(--arcade-dark-orange);
   }
 
   > span {
     color: var(--arcade-red);
-    font-size: 10px;
+    font-size: var(--font-size-md);
     font-weight: 700;
     letter-spacing: 0.12em;
   }
@@ -147,19 +147,19 @@
     margin-top: 4px;
     color: var(--arcade-muted);
     font-family: var(--font-silk);
-    font-size: 9px;
+    font-size: var(--font-size-sm);
   }
 }
 
 [data-theme="light"] .systemCredits {
-  border-color: #abb3c7;
-  background-color: #dedee9;
-  color: #161b26;
+  border-color: var(--arcade-light-border);
+  background-color: var(--arcade-light-panel);
+  color: var(--arcade-light-text);
 }
 
 [data-theme="light"] .systemCredits p,
 [data-theme="light"] .endCredits small {
-  color: #50596e;
+  color: var(--arcade-light-muted);
 }
 
 @media (max-width: $bp-mobile-small) {

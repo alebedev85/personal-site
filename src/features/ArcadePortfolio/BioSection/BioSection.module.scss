@@ -43,7 +43,7 @@
   border: 2px solid var(--arcade-cyan);
   background: var(--arcade-black);
   color: var(--arcade-cyan);
-  box-shadow: 4px 4px 0 #007788;
+  box-shadow: 4px 4px 0 var(--arcade-shadow-cyan);
 
   svg {
     width: 40px;
@@ -56,8 +56,8 @@
     bottom: -7px;
     padding: 0 4px;
     background: var(--arcade-red);
-    color: #fff;
-    font-size: 8px;
+    color: var(--arcade-white);
+    font-size: var(--font-size-xs);
     font-weight: 700;
   }
 }
@@ -65,11 +65,11 @@
 .dialogue {
   flex: 1;
   padding: 12px;
-  border: 2px dashed #555866;
+  border: 2px dashed var(--arcade-detail);
   background: var(--arcade-black);
   color: var(--arcade-text);
   font-family: var(--font-silk);
-  font-size: 12px;
+  font-size: var(--font-size-base);
   line-height: 1.65;
 
   strong {
@@ -77,7 +77,7 @@
     margin-bottom: 4px;
     color: var(--arcade-yellow);
     font-family: var(--font-pixel);
-    font-size: 8px;
+    font-size: var(--font-size-xs);
   }
 
   p {
@@ -90,10 +90,10 @@
 .bioCopy {
   padding: 14px;
   border: 1px solid var(--arcade-border);
-  background: rgb(0 0 0 / 30%);
-  color: #d0d1d8;
+  background: rgb(var(--arcade-black-rgb) / 30%);
+  color: var(--arcade-bio-copy);
   font-family: var(--font-silk);
-  font-size: 12px;
+  font-size: var(--font-size-base);
   line-height: 1.75;
 
   p {
@@ -132,35 +132,35 @@
   padding: 8px;
   border: 1px solid var(--arcade-border);
   background: var(--arcade-black);
-  font-size: 8px;
+  font-size: var(--font-size-xs);
 
   > span {
     color: var(--arcade-muted);
   }
 
   strong {
-    font-size: 8px;
+    font-size: var(--font-size-xs);
   }
 }
 
 [data-theme="light"] .dialogue,
 [data-theme="light"] .bioCopy,
 [data-theme="light"] .spec {
-  border-color: #abb3c7;
+  border-color: var(--arcade-light-border);
 }
 
 [data-theme="light"] .bioCopy {
-  background-color: #dedee9;
-  color: #161b26;
+  background-color: var(--arcade-light-panel);
+  color: var(--arcade-light-text);
 }
 
 [data-theme="light"] .dialogue {
-  color: #161b26;
+  color: var(--arcade-light-text);
 }
 
 [data-theme="light"] .spec > span,
 [data-theme="light"] .health {
-  color: #50596e;
+  color: var(--arcade-light-muted);
 }
 
 @media (max-width: $bp-mobile-small) {
@@ -181,7 +181,7 @@
 
   .dialogue,
   .bioCopy {
-    font-size: 11px;
+    font-size: var(--font-size-nav);
   }
 
   .specGrid {

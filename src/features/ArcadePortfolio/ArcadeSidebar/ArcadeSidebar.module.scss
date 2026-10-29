@@ -15,9 +15,9 @@
   border: 3px solid var(--arcade-yellow);
   background: var(--arcade-panel);
   box-shadow:
-    inset 2px 2px 0 rgb(255 255 255 / 12%),
-    inset -2px -2px 0 rgb(0 0 0 / 70%),
-    4px 4px 0 #000;
+    inset 2px 2px 0 rgb(var(--arcade-white-rgb) / 12%),
+    inset -2px -2px 0 rgb(var(--arcade-black-rgb) / 70%),
+    4px 4px 0 var(--arcade-shadow);
   transition:
     background-color 180ms ease,
     border-color 180ms ease;
@@ -28,9 +28,9 @@
   justify-content: space-between;
   gap: 8px;
   padding-bottom: 12px;
-  border-bottom: 2px solid rgb(255 209 59 / 40%);
+  border-bottom: 2px solid rgb(var(--arcade-yellow-rgb) / 40%);
   color: var(--arcade-yellow);
-  font-size: 9px;
+  font-size: var(--font-size-sm);
 }
 
 .credits {
@@ -48,10 +48,10 @@
 .engineBadge {
   margin-bottom: 14px;
   padding: 2px 8px;
-  border: 1px solid rgb(255 209 59 / 50%);
+  border: 1px solid rgb(var(--arcade-yellow-rgb) / 50%);
   background: var(--arcade-black);
   color: var(--arcade-yellow);
-  font-size: 8px;
+  font-size: var(--font-size-xs);
 }
 
 .arcadeTitle {
@@ -63,24 +63,24 @@
   line-height: 1.12;
   text-shadow:
     3px 3px 0 var(--arcade-red),
-    6px 6px 0 #9b111c,
-    8px 8px 0 #000;
+    6px 6px 0 var(--arcade-dark-red),
+    8px 8px 0 var(--arcade-shadow);
 
   span {
     display: block;
-    color: #fff;
+    color: var(--arcade-white);
     font-size: 0.78em;
   }
 }
 
 [data-theme="light"] .arcadeTitle span {
-  color: #161b26;
+  color: var(--arcade-light-text);
 }
 
 .role {
   margin-top: 14px;
   color: var(--arcade-cyan);
-  font-size: 10px;
+  font-size: var(--font-size-md);
   font-weight: 700;
   letter-spacing: 0.12em;
 }
@@ -89,7 +89,7 @@
   padding: 8px;
   color: var(--arcade-text);
   font-family: var(--font-silk);
-  font-size: 12px;
+  font-size: var(--font-size-base);
   line-height: 1.6;
   text-align: center;
 
@@ -111,7 +111,7 @@
   padding-bottom: 5px;
   border-bottom: 1px solid var(--arcade-border);
   color: var(--arcade-yellow);
-  font-size: 9px;
+  font-size: var(--font-size-sm);
   text-align: center;
 }
 
@@ -125,7 +125,7 @@
   border: 2px solid var(--arcade-border);
   background: var(--arcade-black);
   color: var(--arcade-text);
-  font-size: 9px;
+  font-size: var(--font-size-sm);
   transition:
     border-color 150ms ease,
     color 150ms ease,
@@ -139,11 +139,11 @@
 
 .navTabActive {
   border-color: var(--arcade-yellow);
-  background: rgb(255 209 59 / 15%);
+  background: rgb(var(--arcade-yellow-rgb) / 15%);
   color: var(--arcade-yellow);
   box-shadow:
-    0 0 10px rgb(255 209 59 / 30%),
-    inset 1px 1px 0 #fff;
+    0 0 10px rgb(var(--arcade-yellow-rgb) / 30%),
+    inset 1px 1px 0 var(--arcade-white);
 }
 
 .navLabel {
@@ -162,7 +162,7 @@
 
 .navNumber {
   color: var(--arcade-muted);
-  font-size: 8px;
+  font-size: var(--font-size-xs);
 }
 
 .gridHorizon {
@@ -170,7 +170,7 @@
   height: 78px;
   overflow: hidden;
   margin-top: 18px;
-  border: 1px solid rgb(42 43 56 / 65%);
+  border: 1px solid rgb(var(--arcade-border-rgb) / 65%);
   perspective: 320px;
 }
 
@@ -181,10 +181,10 @@
   transform: rotateX(68deg);
   transform-origin: top center;
   background-image:
-    linear-gradient(to right, rgb(0 240 255 / 28%) 1px, transparent 1px),
-    linear-gradient(to bottom, rgb(255 209 59 / 25%) 1px, transparent 1px);
+    linear-gradient(to right, rgb(var(--arcade-cyan-rgb) / 28%) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(var(--arcade-yellow-rgb) / 25%) 1px, transparent 1px);
   background-size: 24px 24px;
-  mask-image: linear-gradient(#000 15%, transparent 95%);
+  mask-image: linear-gradient(var(--arcade-shadow) 15%, transparent 95%);
 }
 
 .gridFade {
@@ -194,14 +194,14 @@
 }
 
 [data-theme="light"] .navTab {
-  background-color: #dedee9;
-  color: #3e475e;
+  background-color: var(--arcade-light-panel);
+  color: var(--arcade-light-nav);
 }
 
 [data-theme="light"] .navTabActive {
-  background-color: #ded9fc;
-  color: #161b26;
-  box-shadow: 3px 3px 0 #161b26;
+  background-color: var(--arcade-light-active);
+  color: var(--arcade-light-text);
+  box-shadow: 3px 3px 0 var(--arcade-light-text);
 }
 
 @media (max-width: $bp-tablet) {

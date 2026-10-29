@@ -6,14 +6,6 @@
   min-height: 100vh;
 }
 
-.lightTheme {
-  --arcade-black: #e8eaf6;
-  --arcade-panel: #f3f4fa;
-  --arcade-border: #bfc6d8;
-  --arcade-text: #161b26;
-  --arcade-muted: #50596e;
-}
-
 .shell {
   width: min(100%, 1280px);
   margin: 0 auto;
@@ -109,9 +101,9 @@
   border: 3px solid var(--arcade-border);
   background: var(--arcade-panel);
   box-shadow:
-    inset 2px 2px 0 rgb(255 255 255 / 8%),
-    inset -2px -2px 0 rgb(0 0 0 / 60%),
-    4px 4px 0 #000;
+    inset 2px 2px 0 rgb(var(--arcade-white-rgb) / 8%),
+    inset -2px -2px 0 rgb(var(--arcade-black-rgb) / 60%),
+    4px 4px 0 var(--arcade-shadow);
   transition:
     border-color 180ms ease,
     background-color 180ms ease;
@@ -130,7 +122,7 @@
   padding-bottom: 10px;
   border-bottom: 1px solid var(--arcade-border);
   color: var(--arcade-muted);
-  font-size: 8px;
+  font-size: var(--font-size-xs);
 
   > span:first-child {
     color: var(--arcade-yellow);
