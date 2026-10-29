@@ -34,42 +34,45 @@ const Header = ({ score }: ScoreboardProps) => {
   return (
     <header className={styles.scoreboard}>
       <div className={styles.scoreboardInner}>
-        <div className={styles.scoreboardTop}>
+        <div className={styles.playerGroup}>
           <button
-            className={`${styles.playerButton} ${
-              theme === "dark" ? styles.playerButtonActive : ""
-            }`}
+            className={`${styles.playerButton} ${styles.playerButtonDark}`}
             type="button"
             onClick={() => changeTheme("dark")}
             aria-pressed={theme === "dark"}
           >
-            <span>1UP</span>
-            <span className={styles.redDot} />
+            <span className={styles.playerText}>1UP</span>
+            <span className={styles.redDot} aria-hidden="true" />
           </button>
-          <Link className={styles.highScoreLabel} href="/">
+          <span className={styles.scoreLabel}>002026</span>
+        </div>
+        <Link
+          className={`${styles.playerGroup} ${styles.highScoreLink}`}
+          href="/"
+        >
+          <span className={`${styles.highScoreLabel} ${styles.playerText}`}>
             HI-SCORE
-          </Link>
+          </span>
+          <span className={styles.scoreValue} aria-label={`High score ${score}`}>
+            {score}
+          </span>
+        </Link>
+        <div className={`${styles.playerGroup} ${styles.playerGroupRight}`}>
           <button
-            className={`${styles.playerButton} ${
-              theme === "light" ? styles.playerButtonActive : ""
-            }`}
+            className={`${styles.playerButton} ${styles.playerButtonLight}`}
             type="button"
             onClick={() => changeTheme("light")}
             aria-pressed={theme === "light"}
           >
-            <span className={styles.cyanDot} />
-            <span>2UP</span>
+            <span className={styles.cyanDot} aria-hidden="true" />
+            <span className={styles.playerText}>2UP</span>
           </button>
-        </div>
-        <div className={styles.scoreboardBottom}>
-          <span className={styles.scoreLabel}>002026</span>
-          <span className={styles.scoreValue} aria-label={`High score ${score}`}>
-            {score}
-          </span>
           <div className={styles.languageSwitch} aria-label="Language">
             <button
               type="button"
-              className={language === "ru" ? styles.languageActive : ""}
+              className={`${styles.languageButton} ${
+                language === "ru" ? styles.languageActive : ""
+              }`}
               onClick={() => changeLanguage("ru")}
               aria-pressed={language === "ru"}
             >
@@ -78,7 +81,9 @@ const Header = ({ score }: ScoreboardProps) => {
             <span>/</span>
             <button
               type="button"
-              className={language === "en" ? styles.languageActive : ""}
+              className={`${styles.languageButton} ${
+                language === "en" ? styles.languageActive : ""
+              }`}
               onClick={() => changeLanguage("en")}
               aria-pressed={language === "en"}
             >

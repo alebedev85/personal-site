@@ -1,42 +1,38 @@
-@use "../styles/_breakpoints.scss" as *;
-
 .scoreboard {
   position: sticky;
   z-index: 50;
   top: 0;
-  padding: 8px 16px;
+
   border-bottom: 2px solid var(--arcade-yellow);
   background: rgb(10 10 12 / 96%);
   backdrop-filter: blur(10px);
   transition: background-color 180ms ease;
+
+  [data-theme="light"] & {
+    background: rgb(232 234 246 / 96%);
+  }
 }
 
 .scoreboardInner {
-  width: min(100%, 1280px);
-  margin: 0 auto;
-}
-
-.scoreboardInner {
-  font-size: 10px;
-  letter-spacing: 0.08em;
-}
-
-.scoreboardTop,
-.scoreboardBottom {
   display: flex;
+  width: min(100%, 1280px);
+  padding: 8px 16px;
   align-items: center;
   justify-content: space-between;
+  margin: 0 auto;
+  font-family: var(--font-pixel);
+  font-size: 11px;
+  letter-spacing: 0.05em;
 }
 
-.scoreboardTop {
-  min-height: 25px;
-  padding-bottom: 4px;
-  border-bottom: 1px solid rgb(42 43 56 / 75%);
+.playerGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 
-.scoreboardBottom {
-  min-height: 23px;
-  padding-top: 3px;
+.playerGroupRight {
+  align-items: flex-end;
 }
 
 .playerButton {
@@ -46,28 +42,43 @@
   padding: 0;
   border: 0;
   background: transparent;
-  color: var(--arcade-muted);
   cursor: pointer;
-  font-size: 10px;
-  letter-spacing: inherit;
-  transition: filter 150ms ease;
+  font-family: var(--font-pixel);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  transition: all 150ms ease;
 
   &:hover,
   &:focus-visible {
-    filter: brightness(1.35);
+    filter: brightness(1.25);
   }
 }
 
-.playerButtonActive {
+.playerButton.playerButtonDark {
   color: var(--arcade-red);
+}
+
+.playerButton.playerButtonLight {
+  color: var(--arcade-cyan);
+}
+
+.playerText {
+  padding-top: 4px;
 }
 
 .redDot,
 .cyanDot {
-  width: 9px;
-  height: 9px;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  flex: 0 0 10px;
   background: var(--arcade-red);
   box-shadow: 0 0 8px var(--arcade-red);
+}
+
+.redDot {
+  animation: markerBlink 750ms steps(1) infinite;
 }
 
 .cyanDot {
@@ -75,63 +86,90 @@
   box-shadow: 0 0 8px var(--arcade-cyan);
 }
 
-.playerButton:not(.playerButtonActive) .redDot,
-.playerButton:not(.playerButtonActive) .cyanDot {
+.playerButton[aria-pressed="false"] .redDot,
+.playerButton[aria-pressed="false"] .cyanDot {
   visibility: hidden;
 }
 
-.highScoreLabel,
-.scoreValue {
+.highScoreLink {
+  align-items: center;
+  color: #fff;
+  text-decoration: none;
+  font-family: var(--font-pixel);
+  font-size: 11px;
+
+  &:hover,
+  &:focus-visible {
+    filter: brightness(1.15);
+  }
+}
+
+.highScoreLabel {
   color: var(--arcade-yellow);
   font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.scoreValue {
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  transition: color 150ms ease;
 }
 
 .scoreLabel {
   color: var(--arcade-muted);
+  font-family: var(--font-pixel);
+  font-size: 11px;
+  letter-spacing: 0.1em;
 }
 
 .languageSwitch {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 4px;
   color: var(--arcade-muted);
+  font-family: var(--font-pixel);
+  font-size: 11px;
+  line-height: 1;
 
-  button {
-    padding: 2px 0;
+  .languageButton {
+    padding: 0;
     border: 0;
     background: transparent;
     color: inherit;
     cursor: pointer;
-    font-size: 10px;
+    font-family: var(--font-pixel);
+    font-size: 11px;
+    line-height: inherit;
+    transition: color 150ms ease;
 
     &:hover,
     &:focus-visible {
       color: var(--arcade-yellow);
     }
   }
+}
 
-  [data-theme="light"] .scoreboard {
-    background: rgb(232 234 246 / 96%);
+.languageSwitch > span {
+  color: #4b5563;
+}
+
+.languageSwitch .languageActive {
+  color: var(--arcade-yellow);
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+@keyframes markerBlink {
+  0%,
+  49% {
+    opacity: 1;
   }
 
-  @media (max-width: $bp-mobile-small) {
-    .scoreboard {
-      padding: 7px 10px;
-    }
-
-    .scoreboardInner {
-      font-size: 8px;
-    }
-
-    .playerButton,
-    .languageSwitch button {
-      font-size: 8px;
-    }
-  }
-
-  .languageActive {
-    color: var(--arcade-yellow);
-    font-weight: 700;
-    text-decoration: underline;
+  50%,
+  100% {
+    opacity: 0;
   }
 }
