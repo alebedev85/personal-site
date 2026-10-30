@@ -4,12 +4,11 @@
   top: 0;
 
   border-bottom: 2px solid var(--arcade-yellow);
-  background: rgb(var(--arcade-black-rgb) / 96%);
-  backdrop-filter: blur(10px);
+  background: var(--arcade-black);
   transition: background-color 180ms ease;
 
   [data-theme="light"] & {
-    background: rgb(var(--arcade-light-background-rgb) / 96%);
+    background: var(--arcade-black);
   }
 }
 

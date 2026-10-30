@@ -8,6 +8,7 @@ import BioSection from "./BioSection/BioSection";
 import ContactSection from "./ContactSection/ContactSection";
 import Header from "./Header/Header";
 import SkillInventory from "./SkillInventory/SkillInventory";
+import Starfield from "./Starfield";
 import StageList from "./StageList/StageList";
 import ArcadeSidebar from "./ArcadeSidebar/ArcadeSidebar";
 
@@ -53,6 +54,7 @@ const ArcadePortfolio = () => {
 
   return (
     <div className={`${styles.page} arcadePage`} data-theme={theme}>
+      <Starfield />
       <Header score={score} />
       <div className={styles.shell}>
         <div className={styles.columns}>

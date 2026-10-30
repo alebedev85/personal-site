@@ -139,7 +139,7 @@
 
 .navTabActive {
   border-color: var(--arcade-yellow);
-  background: rgb(var(--arcade-yellow-rgb) / 15%);
+  background: var(--arcade-panel);
   color: var(--arcade-yellow);
   box-shadow:
     0 0 10px rgb(var(--arcade-yellow-rgb) / 30%),

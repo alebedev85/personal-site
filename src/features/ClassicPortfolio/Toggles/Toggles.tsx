@@ -11,7 +11,7 @@ type TogglesProps = {
 const Toggles = ({ className }: TogglesProps) => {
   return (
     <div className={clsx(styles.header, className)}>
-      <Link className={styles.newVersionLink} href="/8bit">
+      <Link className={styles.newVersionLink} href="/">
         Go to New
       </Link>
       <div className={styles.toggles}>

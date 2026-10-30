@@ -239,7 +239,7 @@
   margin-top: 16px;
   padding: 10px;
   border-top: 1px solid var(--arcade-border);
-  background: rgb(var(--arcade-black-rgb) / 30%);
+  background: var(--arcade-black);
 }
 
 .stageNavigation,
@@ -327,7 +327,7 @@
 
 [data-theme="light"] .stageFooter {
   border-color: var(--arcade-border);
-  background-color: rgb(var(--arcade-light-overlay-rgb) / 55%);
+  background-color: var(--arcade-light-panel);
 }
 
 [data-theme="light"] .hardwareLabel {

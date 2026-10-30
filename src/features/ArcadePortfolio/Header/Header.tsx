@@ -48,7 +48,7 @@ const Header = ({ score }: ScoreboardProps) => {
         </div>
         <Link
           className={`${styles.playerGroup} ${styles.highScoreLink}`}
-          href="/"
+          href="/old"
         >
           <span className={`${styles.highScoreLabel} ${styles.playerText}`}>
             HI-SCORE
