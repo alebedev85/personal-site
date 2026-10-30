@@ -3,7 +3,6 @@
 import Image from "next/image";
 import { useTranslation } from "react-i18next";
 import { projects } from "../../../data/projects";
-import common from "../ArcadePortfolio.module.scss";
 import styles from "./StageList.module.scss";
 
 const statusLabels = [
@@ -32,13 +31,13 @@ const StageList = () => {
   const { t } = useTranslation();
 
   return (
-    <section className={common.section} id="stages">
-      <div className={common.sectionHeader}>
-        <div className={common.sectionHeading}>
-          <span className={`${common.sectionMarker} ${common.markerCyan}`} />
+    <section className="arcadeSection" id="stages">
+      <div className="arcadeSectionHeader">
+        <div className="arcadeSectionHeading">
+          <span className="arcadeSectionMarker arcadeMarkerCyan" />
           <h2>СПИСОК ИГР / STAGES</h2>
         </div>
-        <span className={`${common.statusBadge} ${common.statusCyan}`}>
+        <span className="arcadeStatusBadge arcadeStatusCyan">
           {projects.length} STAGES AVAILABLE
         </span>
       </div>

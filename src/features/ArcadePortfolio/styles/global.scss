@@ -1,12 +1,14 @@
 @use "./_fonts.scss";
 @use "./_variables.scss";
 
-.page,
-.page * {
+@use "./_breakpoints.scss" as *;
+
+.arcadePage,
+.arcadePage * {
   box-sizing: border-box;
 }
 
-.page {
+.arcadePage {
   min-height: 100vh;
   background: var(--arcade-black);
   color: var(--arcade-text);
@@ -45,14 +47,157 @@
   ul {
     list-style: none;
   }
+
+  &[data-theme="light"]::before {
+    background: linear-gradient(
+      to bottom,
+      transparent 50%,
+      rgb(var(--arcade-light-text-rgb) / 8%) 50%
+    );
+    background-size: 100% 4px;
+    opacity: 0.45;
+  }
 }
 
-.page[data-theme="light"]::before {
-  background: linear-gradient(
-    to bottom,
-    transparent 50%,
-    rgb(var(--arcade-light-text-rgb) / 8%) 50%
-  );
-  background-size: 100% 4px;
-  opacity: 0.45;
+.arcadePage .arcadeSection {
+  scroll-margin-top: 90px;
+}
+
+.arcadePage .arcadeSectionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+  padding-bottom: 5px;
+  border-bottom: 2px solid var(--arcade-border);
+}
+
+.arcadePage .arcadeSectionHeading {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 10px;
+
+  h2 {
+    margin: 0;
+    color: var(--arcade-yellow);
+    font-size: clamp(9px, 1.1vw, 12px);
+    line-height: 1.7;
+    text-transform: uppercase;
+  }
+}
+
+.arcadePage .arcadeSectionMarker {
+  width: 11px;
+  height: 11px;
+  flex: 0 0 11px;
+  transform: rotate(45deg);
+}
+
+.arcadePage .arcadeMarkerRed {
+  background: var(--arcade-red);
+}
+
+.arcadePage .arcadeMarkerYellow {
+  background: var(--arcade-yellow);
+}
+
+.arcadePage .arcadeMarkerCyan {
+  background: var(--arcade-cyan);
+}
+
+.arcadePage .arcadeStatusBadge {
+  flex: 0 0 auto;
+  padding: 2px 6px;
+  border: 1px solid currentcolor;
+  font-size: 8px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.arcadePage .arcadeStatusGreen {
+  color: var(--arcade-green);
+}
+
+.arcadePage .arcadeStatusYellow {
+  color: var(--arcade-yellow);
+}
+
+.arcadePage .arcadeStatusCyan {
+  color: var(--arcade-cyan);
+}
+
+.arcadePage .arcadePanel {
+  position: relative;
+  padding: 20px;
+  border: 3px solid var(--arcade-border);
+  background: var(--arcade-panel);
+  box-shadow:
+    inset 2px 2px 0 rgb(var(--arcade-white-rgb) / 8%),
+    inset -2px -2px 0 rgb(var(--arcade-black-rgb) / 60%),
+    4px 4px 0 var(--arcade-shadow);
+  transition:
+    border-color 180ms ease,
+    background-color 180ms ease;
+}
+
+.arcadePage .arcadePanelGold {
+  border-color: var(--arcade-yellow);
+}
+
+.arcadePage .arcadePanelStatus {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--arcade-border);
+  color: var(--arcade-muted);
+  font-size: var(--font-size-xs);
+
+  > span:first-child {
+    color: var(--arcade-yellow);
+  }
+}
+
+.arcadePage[data-theme="light"] .arcadePanelStatus {
+  border-color: var(--arcade-border);
+}
+
+.arcadePage .arcadeBlink {
+  animation: arcadeBlink 750ms steps(1) infinite;
+}
+
+@keyframes arcadeBlink {
+  0%,
+  49% {
+    opacity: 1;
+  }
+
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@media (max-width: $bp-mobile-small) {
+  .arcadePage .arcadePanel {
+    padding: 14px;
+  }
+
+  .arcadePage .arcadeSectionHeader {
+    align-items: flex-start;
+  }
+
+  .arcadePage .arcadeStatusBadge {
+    font-size: 7px;
+    white-space: normal;
+    text-align: center;
+  }
+
+  .arcadePage .arcadeSectionHeading h2 {
+    font-size: 9px;
+  }
 }

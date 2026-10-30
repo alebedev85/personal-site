@@ -2,7 +2,6 @@
 
 import { useTranslation } from "react-i18next";
 import { contacts } from "../../../data/contacts";
-import common from "../ArcadePortfolio.module.scss";
 import styles from "./ContactSection.module.scss";
 
 const ContactSection = () => {
@@ -12,11 +11,11 @@ const ContactSection = () => {
   const email = contacts.find(({ label }) => label === "GMail");
 
   return (
-    <section className={common.section} id="contact">
-      <div className={`${common.panel} ${common.panelGold} ${styles.contactPanel}`}>
+    <section className="arcadeSection" id="contact">
+      <div className={`arcadePanel arcadePanelGold ${styles.contactPanel}`}>
         <h2>GAME OVER?</h2>
         <div className={styles.continueText}>
-          &gt; CONTINUE: <span className={common.blink}>9</span> SEC
+          &gt; CONTINUE: <span className="arcadeBlink">9</span> SEC
         </div>
         <p className={styles.contactIntro}>
           Готовы начать совместный проект или обсудить позицию в команде?

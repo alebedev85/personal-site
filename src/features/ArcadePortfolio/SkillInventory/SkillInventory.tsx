@@ -2,7 +2,6 @@
 
 import { useTranslation } from "react-i18next";
 import { skills } from "../../../data/skills";
-import common from "../ArcadePortfolio.module.scss";
 import styles from "./SkillInventory.module.scss";
 
 const descriptions: Record<string, string> = {
@@ -24,19 +23,19 @@ const SkillInventory = () => {
   const { t } = useTranslation();
 
   return (
-    <section className={common.section} id="skills">
-      <div className={common.sectionHeader}>
-        <div className={common.sectionHeading}>
-          <span className={`${common.sectionMarker} ${common.markerYellow}`} />
+    <section className="arcadeSection" id="skills">
+      <div className="arcadeSectionHeader">
+        <div className="arcadeSectionHeading">
+          <span className="arcadeSectionMarker arcadeMarkerYellow" />
           <h2>POWER-UPS &amp; SKILLS</h2>
         </div>
-        <span className={`${common.statusBadge} ${common.statusYellow}`}>
+        <span className="arcadeStatusBadge arcadeStatusYellow">
           12 / 12 SLOTS EQUIPPED
         </span>
       </div>
 
-      <div className={common.panel}>
-        <div className={common.panelStatus}>
+      <div className="arcadePanel">
+        <div className="arcadePanelStatus">
           <span>&gt; SELECT WEAPON / TECH INVENTORY</span>
           <span>SLOTS: 12 LOCKED &amp; LOADED</span>
         </div>

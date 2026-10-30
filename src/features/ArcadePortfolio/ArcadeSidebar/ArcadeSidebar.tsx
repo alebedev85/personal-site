@@ -3,7 +3,6 @@
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 import type { RootState } from "../../../store";
-import common from "../ArcadePortfolio.module.scss";
 import styles from "./ArcadeSidebar.module.scss";
 
 type ArcadeSidebarProps = {
@@ -58,7 +57,7 @@ const ArcadeSidebar = ({ activeSection }: ArcadeSidebarProps) => {
               <span className={styles.navLabel}>
                 <span
                   className={`${styles.navArrow} ${
-                    activeSection === id ? common.blink : ""
+                    activeSection === id ? "arcadeBlink" : ""
                   }`}
                 >
                   ▶

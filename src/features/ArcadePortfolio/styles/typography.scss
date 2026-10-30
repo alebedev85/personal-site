@@ -1,6 +1,6 @@
 @use "./_breakpoints.scss" as *;
 
-.page {
+.arcadePage {
   h1,
   h2,
   h3,
@@ -30,7 +30,7 @@
 }
 
 @media (max-width: $bp-mobile) {
-  .page h1 {
+  .arcadePage h1 {
     font-size: 2rem;
   }
 }

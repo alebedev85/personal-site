@@ -3,7 +3,6 @@
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 import type { RootState } from "../../../store";
-import common from "../ArcadePortfolio.module.scss";
 import styles from "./BioSection.module.scss";
 
 const BioSection = () => {
@@ -12,19 +11,19 @@ const BioSection = () => {
   const playerNumber = theme === "dark" ? "1" : "2";
 
   return (
-    <section className={common.section} id="bio">
-      <div className={common.sectionHeader}>
-        <div className={common.sectionHeading}>
-          <span className={`${common.sectionMarker} ${common.markerRed}`} />
+    <section className="arcadeSection" id="bio">
+      <div className="arcadeSectionHeader">
+        <div className="arcadeSectionHeading">
+          <span className="arcadeSectionMarker arcadeMarkerRed" />
           <h2>PLAYER {playerNumber} : BIO_DATA.TXT</h2>
         </div>
-        <span className={`${common.statusBadge} ${common.statusGreen}`}>
+        <span className="arcadeStatusBadge arcadeStatusGreen">
           READY TO PLAY
         </span>
       </div>
 
-      <div className={`${common.panel} ${common.panelGold}`}>
-        <div className={common.panelStatus}>
+      <div className="arcadePanel arcadePanelGold">
+        <div className="arcadePanelStatus">
           <span>&gt; PROFILE: ANDREY LEBEDEV</span>
           <span className={styles.health}>
             HP: <span>♥ ♥ ♥</span>
