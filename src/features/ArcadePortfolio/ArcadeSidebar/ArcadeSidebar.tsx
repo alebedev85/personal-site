@@ -3,6 +3,8 @@
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 import type { RootState } from "../../../store";
+import { FaPlay } from "react-icons/fa";
+import { FaStar } from "react-icons/fa"
 import styles from "./ArcadeSidebar.module.scss";
 
 type ArcadeSidebarProps = {
@@ -26,7 +28,7 @@ const ArcadeSidebar = ({ activeSection }: ArcadeSidebarProps) => {
     <aside className={styles.sidebar}>
       <div className={styles.cabinet}>
         <div className={styles.cabinetMeta}>
-          <span>★ PLAYER {playerNumber} CABINET ★</span>
+          <span><FaStar /> PLAYER {playerNumber} CABINET <FaStar /></span>
           <span className={styles.credits}>CREDITS: 09</span>
         </div>
 
@@ -60,7 +62,7 @@ const ArcadeSidebar = ({ activeSection }: ArcadeSidebarProps) => {
                     activeSection === id ? "arcadeBlink" : ""
                   }`}
                 >
-                  ▶
+                  <FaPlay />
                 </span>
                 {label}
               </span>
