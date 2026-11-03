@@ -1,10 +1,10 @@
 @use "../styles/_breakpoints.scss" as *;
 
 .sidebar {
-  position: sticky;
+  position: fixed;
   z-index: 10;
-  top: 76px;
-  flex: 0 0 410px;
+  top: 86px;
+  left: max(calc((100vw - 1280px) / 2 + 16px), 16px);
   width: 410px;
 }
 
@@ -21,6 +21,7 @@
   transition:
     background-color 180ms ease,
     border-color 180ms ease;
+  
 }
 
 .cabinetMeta {
@@ -41,13 +42,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px 0 8px;
+  padding: 20px 0 18px;
   text-align: center;
 }
 
 .engineBadge {
-  margin-bottom: 14px;
-  padding: 2px 8px;
+  margin-bottom: 6px;
+  padding: 3px 8px 2px;
   border: 1px solid rgb(var(--arcade-yellow-rgb) / 50%);
   background: var(--arcade-black);
   color: var(--arcade-yellow);
@@ -58,7 +59,8 @@
   margin: 0;
   color: var(--arcade-yellow);
   font-family: var(--font-russo);
-  font-size: clamp(32px, 3vw, 42px);
+  font-size: clamp(32px, 3vw, 2.25rem);
+  text-transform: uppercase;
   letter-spacing: 0.06em;
   line-height: 1.12;
   text-shadow:
@@ -78,20 +80,22 @@
 }
 
 .role {
-  margin-top: 14px;
+  margin-top: 10px;
   color: var(--arcade-cyan);
   font-size: var(--font-size-md);
   font-weight: 700;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.1em;
 }
 
 .tagline {
   padding: 8px;
   color: var(--arcade-text);
   font-family: var(--font-silk);
-  font-size: var(--font-size-base);
-  line-height: 1.6;
+  font-size: var(--font-size-lg);
+  line-height: 1.2;
   text-align: center;
+  max-width: 300px;
+  margin: 0 auto;
 
   p {
     margin: 0;
@@ -104,7 +108,7 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
-  margin-top: 16px;
+  margin-top: 12px;
 }
 
 .navHeading {
@@ -112,7 +116,9 @@
   border-bottom: 1px solid var(--arcade-border);
   color: var(--arcade-yellow);
   font-size: var(--font-size-sm);
+  letter-spacing: 0.1em;
   text-align: center;
+  text-transform: uppercase;
 }
 
 .navTab {
@@ -206,7 +212,6 @@
 
 @media (max-width: $bp-tablet) {
   .sidebar {
-    flex-basis: 340px;
     width: 340px;
   }
 
@@ -218,8 +223,8 @@
 @media (max-width: $bp-mobile) {
   .sidebar {
     position: static;
+    left: auto;
     width: 100%;
-    flex-basis: auto;
   }
 
   .cabinet {

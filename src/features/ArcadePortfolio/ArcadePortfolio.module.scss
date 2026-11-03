@@ -27,6 +27,7 @@
   display: flex;
   align-items: flex-start;
   gap: 32px;
+  padding-left: 442px;
 }
 
 .mainContent {
@@ -40,12 +41,14 @@
 @media (max-width: $bp-tablet) {
   .columns {
     gap: 24px;
+    padding-left: 364px;
   }
 }
 
 @media (max-width: $bp-mobile) {
   .columns {
     flex-direction: column;
+    padding-left: 0;
   }
 
   .mainContent {
