@@ -1,19 +1,7 @@
 @use "../styles/_breakpoints.scss" as *;
 
-.specGreen {
-  color: var(--arcade-green);
-}
-
-.specYellow {
+.specValue {
   color: var(--arcade-yellow);
-}
-
-.specCyan {
-  color: var(--arcade-cyan);
-}
-
-.specRed {
-  color: var(--arcade-red);
 }
 
 .health {
@@ -91,7 +79,7 @@
   padding: 14px;
   border: 1px solid var(--arcade-border);
   background: var(--arcade-black);
-  color: var(--arcade-bio-copy);
+  color: var(--arcade-text);
   font-family: var(--font-silk);
   font-size: var(--font-size-base);
   line-height: 1.75;
@@ -141,26 +129,6 @@
   strong {
     font-size: var(--font-size-xs);
   }
-}
-
-[data-theme="light"] .dialogue,
-[data-theme="light"] .bioCopy,
-[data-theme="light"] .spec {
-  border-color: var(--arcade-light-border);
-}
-
-[data-theme="light"] .bioCopy {
-  background-color: var(--arcade-light-panel);
-  color: var(--arcade-light-text);
-}
-
-[data-theme="light"] .dialogue {
-  color: var(--arcade-light-text);
-}
-
-[data-theme="light"] .spec > span,
-[data-theme="light"] .health {
-  color: var(--arcade-light-muted);
 }
 
 @media (max-width: $bp-mobile-small) {

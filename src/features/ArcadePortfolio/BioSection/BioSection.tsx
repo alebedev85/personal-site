@@ -3,6 +3,7 @@
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 import type { RootState } from "../../../store";
+import { FaHeart } from "react-icons/fa"
 import styles from "./BioSection.module.scss";
 
 const BioSection = () => {
@@ -26,7 +27,7 @@ const BioSection = () => {
         <div className="arcadePanelStatus">
           <span>&gt; PROFILE: ANDREY LEBEDEV</span>
           <span className={styles.health}>
-            HP: <span>♥ ♥ ♥</span>
+            HP: <span><FaHeart/> <FaHeart/> <FaHeart/></span>
           </span>
         </div>
 
@@ -68,19 +69,19 @@ const BioSection = () => {
         <div className={styles.specGrid}>
           <div className={styles.spec}>
             <span>CLASS:</span>
-            <strong className={styles.specGreen}>UI/UX CRAFTER</strong>
+            <strong className={styles.specValue}>UI/UX CRAFTER</strong>
           </div>
           <div className={styles.spec}>
             <span>LOCATION:</span>
-            <strong className={styles.specYellow}>REMOTE / RU</strong>
+            <strong className={styles.specValue}>REMOTE / RU</strong>
           </div>
           <div className={styles.spec}>
             <span>ALIGNMENT:</span>
-            <strong className={styles.specCyan}>PIXEL CLEAN</strong>
+            <strong className={styles.specValue}>PIXEL CLEAN</strong>
           </div>
           <div className={styles.spec}>
             <span>EXP LEVEL:</span>
-            <strong className={styles.specRed}>STARTUP VET</strong>
+            <strong className={styles.specValue}>STARTUP VET</strong>
           </div>
         </div>
       </div>
