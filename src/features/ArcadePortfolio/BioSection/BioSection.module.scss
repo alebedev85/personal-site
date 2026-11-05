@@ -1,7 +1,19 @@
 @use "../styles/_breakpoints.scss" as *;
 
-.specValue {
+.spec:nth-child(1) .specValue {
+  color: var(--arcade-green);
+}
+
+.spec:nth-child(2) .specValue {
   color: var(--arcade-yellow);
+}
+
+.spec:nth-child(3) .specValue {
+  color: var(--arcade-cyan);
+}
+
+.spec:nth-child(4) .specValue {
+  color: var(--arcade-red);
 }
 
 .health {
@@ -23,9 +35,9 @@
 .avatar {
   position: relative;
   display: flex;
-  width: 64px;
-  height: 64px;
-  flex: 0 0 64px;
+  width: 80px;
+  height: 80px;
+  flex: 0 0 80px;
   align-items: center;
   justify-content: center;
   border: 2px solid var(--arcade-cyan);
@@ -33,16 +45,17 @@
   color: var(--arcade-cyan);
   box-shadow: 4px 4px 0 var(--arcade-shadow-cyan);
 
-  svg {
-    width: 40px;
-    height: 40px;
+  .avatarImage {
+    object-fit: cover;
   }
 
   span {
     position: absolute;
-    right: -6px;
+    left: 50%;
     bottom: -7px;
+    z-index: 1;
     padding: 0 4px;
+    transform: translateX(-50%);
     background: var(--arcade-red);
     color: var(--arcade-white);
     font-size: var(--font-size-xs);
@@ -57,15 +70,15 @@
   background: var(--arcade-black);
   color: var(--arcade-text);
   font-family: var(--font-silk);
-  font-size: var(--font-size-base);
-  line-height: 1.65;
+  font-size: var(--font-size-lg);
+  line-height: 1.2;
 
   strong {
     display: block;
     margin-bottom: 4px;
     color: var(--arcade-yellow);
     font-family: var(--font-pixel);
-    font-size: var(--font-size-xs);
+    font-size: var(--font-size-sm);
   }
 
   p {
@@ -81,8 +94,8 @@
   background: var(--arcade-black);
   color: var(--arcade-text);
   font-family: var(--font-silk);
-  font-size: var(--font-size-base);
-  line-height: 1.75;
+  font-size: var(--font-size-lg);
+  line-height: 1.2;
 
   p {
     margin: 0;
@@ -120,14 +133,14 @@
   padding: 8px;
   border: 1px solid var(--arcade-border);
   background: var(--arcade-black);
-  font-size: var(--font-size-xs);
+  font-size: var(--font-size-md);
 
   > span {
     color: var(--arcade-muted);
   }
 
   strong {
-    font-size: var(--font-size-xs);
+    // font-size: var(--font-size-xs);
   }
 }
 
@@ -141,10 +154,6 @@
     height: 52px;
     flex-basis: 52px;
 
-    svg {
-      width: 32px;
-      height: 32px;
-    }
   }
 
   .dialogue,

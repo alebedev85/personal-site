@@ -2,6 +2,7 @@
 
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
+import Image from "next/image";
 import type { RootState } from "../../../store";
 import { FaHeart } from "react-icons/fa"
 import styles from "./BioSection.module.scss";
@@ -33,10 +34,14 @@ const BioSection = () => {
 
         <div className={styles.bioIntro}>
           <div className={styles.avatar} aria-hidden="true">
+            <Image
+              src="/assets/arcade/myFoto.jpg"
+              alt=""
+              fill
+              sizes="(max-width: 480px) 52px, 64px"
+              className={styles.avatarImage}
+            />
             <span>AL</span>
-            <svg viewBox="0 0 24 24" fill="currentColor">
-              <path d="M4 2h16v2H4V2zm2 4h12v2H6V6zm-2 4h16v8H4v-8zm4 2v4h2v-4H8zm6 0v4h2v-4h-2zm-8 8h12v2H6v-2z" />
-            </svg>
           </div>
           <div className={styles.dialogue}>
             <strong>&gt; STATUS: JUNIOR+ / READY FOR QUEST</strong>
