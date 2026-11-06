@@ -18,7 +18,8 @@
   font-family: var(--font-pixel);
 
   &:hover,
-  &:focus-visible {
+  &:focus-visible,
+  &.skillCardSelected {
     border-color: var(--arcade-yellow);
   }
 
@@ -246,39 +247,71 @@
 }
 
 .dpad {
-  position: relative;
-  width: 45px;
-  height: 45px;
-  flex: 0 0 45px;
-  border: 2px solid var(--arcade-detail);
-  background: var(--arcade-control);
+  display: grid;
+  width: 48px;
+  height: 48px;
+  flex: 0 0 48px;
+  padding: 3px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  border: 2px solid #4b5563;
+  background: #18181b;
 
-  &::before,
-  &::after,
-  span {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: var(--arcade-control-mid);
-    content: "";
+  button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border: 1px solid #52525b;
+    background: #3F3F46;
+    cursor: pointer;
+    font-size: 9px;
+    transition:
+      background-color 80ms ease,
+      box-shadow 80ms ease,
+      transform 80ms ease;
   }
 
-  &::before {
-    width: 32px;
-    height: 10px;
+  button:hover {
+    // background: #52525b;
   }
 
-  &::after {
-    width: 10px;
-    height: 32px;
+  button:active {
+    background: #71717a;
+    box-shadow: inset 1px 1px 2px #27272a;
+  }
+
+  button:focus-visible {
+    outline: 1px solid var(--arcade-yellow);
+    outline-offset: -2px;
+  }
+
+  button:nth-child(1) {
+    grid-row: 1;
+    grid-column: 2;
+  }
+
+  button:nth-child(2) {
+    grid-row: 2;
+    grid-column: 1;
+  }
+
+  button:nth-child(3) {
+    grid-row: 2;
+    grid-column: 3;
+  }
+
+  button:nth-child(4) {
+    grid-row: 3;
+    grid-column: 2;
   }
 
   span {
     z-index: 1;
-    width: 10px;
-    height: 10px;
-    background: var(--arcade-control-dark);
+    grid-row: 2;
+    grid-column: 2;
+    background: #27272A;
+    pointer-events: none;
   }
 }
 
@@ -293,6 +326,9 @@
   align-items: center;
   justify-content: center;
   border: 2px solid var(--arcade-white);
+  padding: 0;
+  cursor: pointer;
+  font-family: var(--font-pixel);
   font-size: 10px;
   font-weight: 700;
   transition: transform 100ms ease;
@@ -331,6 +367,12 @@
 
 [data-theme="light"] .skillCard {
   border-color: var(--arcade-light-border);
+}
+
+[data-theme="light"] .skillCard:hover,
+[data-theme="light"] .skillCard:focus-visible,
+[data-theme="light"] .skillCard.skillCardSelected {
+  border-color: var(--arcade-yellow);
 }
 
 [data-theme="light"] .skillCard strong {
