@@ -144,6 +144,30 @@
   }
 }
 
+[data-theme="light"] .avatar,
+[data-theme="light"] .dialogue,
+[data-theme="light"] .bioCopy,
+[data-theme="light"] .spec {
+  background: var(--arcade-light-panel);
+}
+
+[data-theme="light"] .dialogue,
+[data-theme="light"] .bioCopy {
+  color: var(--arcade-light-text);
+}
+
+[data-theme="light"] .dialogue {
+  border-color: var(--arcade-light-border);
+}
+
+[data-theme="light"] .bioCopy {
+  border-color: var(--arcade-light-border);
+}
+
+[data-theme="light"] .spec > span {
+  color: var(--arcade-light-muted);
+}
+
 @media (max-width: $bp-mobile-small) {
   .bioIntro {
     gap: 12px;

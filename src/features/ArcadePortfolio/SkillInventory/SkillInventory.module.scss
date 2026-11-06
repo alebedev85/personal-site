@@ -366,7 +366,7 @@
 }
 
 [data-theme="light"] .skillCard {
-  border-color: var(--arcade-light-border);
+  border-color: var(--arcade-light-text);
 }
 
 [data-theme="light"] .skillCard:hover,
@@ -379,10 +379,37 @@
   color: var(--arcade-light-text);
 }
 
+[data-theme="light"] .skillAccentNext .skillIndex,
+[data-theme="light"] .skillAccentNext .skillIcon {
+  color: var(--arcade-light-text);
+}
+
+[data-theme="light"] .skillAccentNext .skillIcon {
+  border-color: var(--arcade-light-text);
+}
+
 [data-theme="light"] .skillDescription,
 [data-theme="light"] .controllerInfo strong,
 [data-theme="light"] .controllerActions > span {
   color: var(--arcade-light-muted);
+}
+
+[data-theme="light"] .controller {
+  border-color: var(--arcade-light-border);
+}
+
+[data-theme="light"] .dpad {
+  border-color: var(--arcade-light-border);
+  background: #dedee9;
+}
+
+[data-theme="light"] .dpad button {
+  border-color: #abb3c7;
+  background: #c5cbdb;
+}
+
+[data-theme="light"] .dpad span {
+  background: #abb3c7;
 }
 
 @media (max-width: $bp-tablet) {

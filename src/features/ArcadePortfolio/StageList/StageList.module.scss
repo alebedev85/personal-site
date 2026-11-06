@@ -320,14 +320,45 @@
   color: var(--arcade-light-muted);
 }
 
+[data-theme="light"] .stageCard {
+  border-color: var(--arcade-light-text);
+  background-color: var(--arcade-light-panel);
+  box-shadow:
+    inset 2px 2px 0 #fff,
+    inset -2px -2px 0 #c5cbdb,
+    4px 4px 0 var(--arcade-light-text);
+}
+
 [data-theme="light"] .monitor {
   border-color: var(--arcade-light-border);
   background-color: var(--arcade-light-panel);
+  box-shadow: 4px 4px 0 var(--arcade-light-text);
+}
+
+[data-theme="light"] .technologyList li {
+  border-color: var(--arcade-light-border);
+  background: var(--arcade-light-panel);
+  color: var(--arcade-light-muted);
 }
 
 [data-theme="light"] .stageFooter {
   border-color: var(--arcade-border);
   background-color: var(--arcade-light-panel);
+}
+
+[data-theme="light"] .stageNavigation a,
+[data-theme="light"] .disabledControl {
+  border-color: var(--arcade-light-border);
+  background: #dedee9;
+  color: var(--arcade-light-nav);
+}
+
+[data-theme="light"] .disabledControl {
+  color: var(--arcade-detail-muted);
+}
+
+[data-theme="light"] .actionButton {
+  color: var(--arcade-light-text);
 }
 
 [data-theme="light"] .hardwareLabel {

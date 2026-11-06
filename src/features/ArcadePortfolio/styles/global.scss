@@ -146,6 +146,22 @@
   border-color: var(--arcade-yellow);
 }
 
+.arcadePage[data-theme="light"] .arcadePanel {
+  border-color: var(--arcade-light-text);
+  background: var(--arcade-light-panel);
+  box-shadow:
+    inset 2px 2px 0 #fff,
+    inset -2px -2px 0 #c5cbdb,
+    4px 4px 0 var(--arcade-light-text);
+}
+
+.arcadePage[data-theme="light"] .arcadePanelGold {
+  box-shadow:
+    inset 2px 2px 0 var(--arcade-yellow),
+    inset -2px -2px 0 #cca01d,
+    4px 4px 0 var(--arcade-light-text);
+}
+
 .arcadePage .arcadePanelStatus {
   display: flex;
   align-items: center;

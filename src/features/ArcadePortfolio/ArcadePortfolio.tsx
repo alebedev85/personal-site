@@ -54,7 +54,7 @@ const ArcadePortfolio = () => {
 
   return (
     <div className={`${styles.page} arcadePage`} data-theme={theme}>
-      <Starfield />
+      <Starfield theme={theme} />
       <Header score={score} />
       <div className={styles.shell}>
         <div className={styles.columns}>

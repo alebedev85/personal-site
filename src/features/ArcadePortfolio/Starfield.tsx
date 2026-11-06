@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import styles from "./ArcadePortfolio.module.scss";
+import type { ThemeType } from "../../types";
 
 /**
  * Количество звёзд, одновременно отображаемых на canvas.
@@ -52,7 +53,7 @@ const createStar = (): Star => ({
  * Анимация работает только на клиенте: обращение к окну браузера и canvas
  * выполняется в эффекте после монтирования компонента.
  */
-const Starfield = () => {
+const Starfield = ({ theme }: { theme: ThemeType }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
@@ -101,9 +102,12 @@ const Starfield = () => {
         : 0;
       lastFrameTime = timestamp;
 
-      context.clearRect(0, 0, width, height);
+      context.fillStyle = theme === "light" ? "#e8eaf6" : "#0a0a0c";
+      context.fillRect(0, 0, width, height);
+
       const reducedMotion = motionPreference.matches;
       const focalLength = Math.max(width, height) * 0.5;
+      const starColor = theme === "light" ? "#50596e" : "#fff";
 
       stars.forEach((star) => {
         if (reducedMotion) {
@@ -111,7 +115,7 @@ const Starfield = () => {
           // Нормализованные координаты переводятся в границы viewport.
           const x = ((star.x + 1) / 2) * width;
           const y = ((star.y + 1) / 2) * height;
-          context.fillStyle = "#fff";
+          context.fillStyle = starColor;
           context.fillRect(Math.round(x), Math.round(y), 2, 2);
           return;
         }
@@ -136,7 +140,7 @@ const Starfield = () => {
 
         // Ближние звёзды становятся крупнее; округление сохраняет резкие пиксели.
         const size = Math.max(1, Math.round((1 - star.depth) * 4));
-        context.fillStyle = "#fff";
+        context.fillStyle = starColor;
         context.fillRect(Math.round(x), Math.round(y), size, size);
       });
 
@@ -180,7 +184,7 @@ const Starfield = () => {
         handleMotionPreferenceChange,
       );
     };
-  }, []);
+  }, [theme]);
 
   // Canvas не перехватывает ввод и скрыт от вспомогательных технологий как декор.
   return (

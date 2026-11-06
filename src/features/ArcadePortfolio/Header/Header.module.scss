@@ -8,7 +8,8 @@
   transition: background-color 180ms ease;
 
   [data-theme="light"] & {
-    background: var(--arcade-black);
+    border-bottom-color: var(--arcade-light-text);
+    background: rgb(var(--arcade-light-background-rgb) / 95%);
   }
 }
 
@@ -115,6 +116,11 @@
   font-weight: 700;
   letter-spacing: 0.1em;
   transition: color 150ms ease;
+}
+
+[data-theme="light"] .highScoreLink,
+[data-theme="light"] .scoreValue {
+  color: var(--arcade-light-text);
 }
 
 .scoreLabel {

@@ -199,15 +199,44 @@
   background: linear-gradient(to top, var(--arcade-panel), transparent 80%);
 }
 
+[data-theme="light"] .cabinet {
+  border-color: var(--arcade-light-text);
+  background: #faf9f2;
+  box-shadow:
+    inset 2px 2px 0 var(--arcade-yellow),
+    inset -2px -2px 0 #cca01d,
+    4px 4px 0 var(--arcade-light-text);
+}
+
+[data-theme="light"] .arcadeTitle {
+  color: #e69500;
+  text-shadow:
+    3px 3px 0 var(--arcade-red),
+    6px 6px 0 #4a1525,
+    8px 8px 0 var(--arcade-light-text);
+}
+
+[data-theme="light"] .gridPlane {
+  background-image:
+    linear-gradient(to right, rgb(0 160 210 / 35%) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(220 60 80 / 35%) 1px, transparent 1px);
+}
+
 [data-theme="light"] .navTab {
   background-color: var(--arcade-light-panel);
   color: var(--arcade-light-nav);
+  border-color: var(--arcade-light-border);
 }
 
 [data-theme="light"] .navTabActive {
+  border-color: var(--arcade-light-text);
   background-color: var(--arcade-light-active);
   color: var(--arcade-light-text);
   box-shadow: 3px 3px 0 var(--arcade-light-text);
+}
+
+[data-theme="light"] .navTabActive .navArrow {
+  color: var(--arcade-light-text);
 }
 
 @media (max-width: $bp-tablet) {
