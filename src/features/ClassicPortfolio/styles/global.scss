@@ -7,6 +7,27 @@
   box-sizing: border-box;
 }
 
+html,
+body {
+  cursor: url("/assets/arcade/cursors/cursor-32.png") 5 5, auto;
+}
+
+a,
+button:not(:disabled),
+[role="button"]:not([aria-disabled="true"]),
+[role="link"]:not([aria-disabled="true"]),
+input[type="button"]:not(:disabled),
+input[type="submit"]:not(:disabled),
+input[type="reset"]:not(:disabled),
+select:not(:disabled),
+summary {
+  cursor: url("/assets/arcade/cursors/pointer-48.png") 20 7, pointer !important;
+
+  &:active {
+    cursor: url("/assets/arcade/cursors/pointer-click-48.png") 20 8, pointer !important;
+  }
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -44,4 +65,3 @@ a {
 ul {
   list-style-type: none;
 }
-

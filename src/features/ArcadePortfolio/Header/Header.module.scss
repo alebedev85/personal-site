@@ -97,11 +97,6 @@
   text-decoration: none;
   font-family: var(--font-pixel);
   font-size: var(--font-size-nav);
-
-  &:hover,
-  &:focus-visible {
-    filter: brightness(1.15);
-  }
 }
 
 .highScoreLabel {
