@@ -1,10 +1,7 @@
 "use client";
 
-import Image from "next/image";
-import { useTranslation } from "react-i18next";
-import { FaCircle } from "react-icons/fa";
 import { projects } from "../../../data/projects";
-import ControllerActions from "../ui/ControllerActions";
+import StageCard from "../StageCard/StageCard";
 import styles from "./StageList.module.scss";
 
 const statusLabels = [
@@ -27,125 +24,45 @@ const screenColors = [
   "screenYellow",
   "screenCyan",
   "screenGreen",
-];
+] as const;
 
-const StageList = () => {
-  const { t } = useTranslation();
+const stageAccents = [
+  "accentRed",
+  "accentGreen",
+  "accentOrange",
+  "accentRed",
+  "accentPurple",
+  "accentOrange",
+  "accentGreen",
+  "accentCyan",
+] as const;
 
-  return (
-    <section className="arcadeSection" id="stages">
-      <div className="arcadeSectionHeader">
-        <div className="arcadeSectionHeading">
-          <span className="arcadeSectionMarker arcadeMarkerCyan" />
-          <h2>СПИСОК ИГР / STAGES</h2>
-        </div>
-        <span className="arcadeStatusBadge arcadeStatusCyan">
-          {projects.length} STAGES AVAILABLE
-        </span>
+const StageList = () => (
+  <section className="arcadeSection" id="stages">
+    <div className="arcadeSectionHeader">
+      <div className="arcadeSectionHeading">
+        <span className="arcadeSectionMarker arcadeMarkerCyan" />
+        <h2>СПИСОК ИГР / STAGES</h2>
       </div>
+      <span className="arcadeStatusBadge arcadeStatusCyan">
+        {projects.length} STAGES AVAILABLE
+      </span>
+    </div>
 
-      <div className={styles.stageList}>
-        {projects.map((project, index) => {
-          const stageNumber = index + 1;
-          const previousStage = stageNumber - 1;
-          const nextStage = stageNumber + 1;
-          const title = t(`projects.${project.id}.title`);
-
-          return (
-            <article
-              className={styles.stageCard}
-              id={`stage-${stageNumber}`}
-              key={project.id}
-            >
-              <div className={styles.stageMeta}>
-                <span>STAGE {String(stageNumber).padStart(2, "0")} / 08</span>
-                <span className={styles.stageStatus}>
-                  <FaCircle /> {statusLabels[index]}
-                </span>
-              </div>
-
-              <div className={styles.stageMain}>
-                <div className={styles.monitorColumn}>
-                  <div className={styles.monitor}>
-                    <div
-                      className={`${styles.monitorScreen} ${styles[screenColors[index]]}`}
-                    >
-                      <Image
-                        src={project.imgSrc}
-                        alt={project.imgAlt}
-                        fill
-                        sizes="(max-width: 768px) 80vw, 240px"
-                        className={styles.projectImage}
-                      />
-                      <span className={styles.scanlines} aria-hidden="true" />
-                    </div>
-                    <div className={styles.monitorControls} aria-hidden="true">
-                      <span />
-                      <span />
-                      <span />
-                    </div>
-                  </div>
-                  <span className={styles.hardwareLabel}>
-                    &gt; HARDWARE: RETRO_TERMINAL_
-                    {String(stageNumber).padStart(2, "0")}
-                  </span>
-                </div>
-
-                <div className={styles.stageInfo}>
-                  <div>
-                    <h3>{title}</h3>
-                    <p>{t(`projects.${project.id}.description`)}</p>
-                  </div>
-                  <ul
-                    className={styles.technologyList}
-                    aria-label="Technologies"
-                  >
-                    {project.technologies.map((technology) => (
-                      <li key={technology}>{technology}</li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-
-              <div className={styles.stageFooter}>
-                <div className={styles.stageNavigation}>
-                  {previousStage > 0 ? (
-                    <a href={`#stage-${previousStage}`}>▲ PREV</a>
-                  ) : (
-                    <span className={styles.disabledControl}>▲ PREV</span>
-                  )}
-                  {nextStage <= projects.length ? (
-                    <a href={`#stage-${nextStage}`}>▼ NEXT</a>
-                  ) : (
-                    <span className={styles.disabledControl}>▼ END</span>
-                  )}
-                </div>
-                <ControllerActions
-                  className={styles.stageActions}
-                  actions={[
-                    {
-                      value: "A",
-                      label: "PLAY MISSION",
-                      ariaLabel: "Открыть проект",
-                      variant: "red",
-                      href: project.projectLink,
-                    },
-                    {
-                      value: "B",
-                      label: "CODE",
-                      ariaLabel: "Открыть исходный код",
-                      variant: "yellow",
-                      href: project.gitHubLink,
-                    },
-                  ]}
-                />
-              </div>
-            </article>
-          );
-        })}
-      </div>
-    </section>
-  );
-};
+    <div className={styles.stageList}>
+      {projects.map((project, index) => (
+        <StageCard
+          key={project.id}
+          project={project}
+          stageNumber={index + 1}
+          totalStages={projects.length}
+          statusLabel={statusLabels[index]}
+          screenColor={screenColors[index]}
+          stageAccent={stageAccents[index]}
+        />
+      ))}
+    </div>
+  </section>
+);
 
 export default StageList;

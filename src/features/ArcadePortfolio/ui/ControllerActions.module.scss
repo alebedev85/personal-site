@@ -29,6 +29,7 @@
   &:hover,
   &:focus-visible {
     color: var(--accent);
+    border-color: var(--accent);
   }
 
   &:active {

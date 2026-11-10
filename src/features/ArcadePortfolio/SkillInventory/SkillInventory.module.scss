@@ -62,7 +62,7 @@
 
 .skillAccentHtml {
   .skillIndex {
-    color: var(--arcade-red);
+    color: var(--skill-accent-color);
   }
 
   .skillIcon {
@@ -74,7 +74,7 @@
 
 .skillAccentCss {
   .skillIndex {
-    color: #60a5fa;
+    color: var(--skill-accent-color);
   }
 
   .skillIcon {
@@ -86,7 +86,7 @@
 
 .skillAccentJavaScript {
   .skillIndex {
-    color: var(--arcade-yellow);
+    color: var(--skill-accent-color);
   }
 
   .skillIcon {
@@ -98,7 +98,7 @@
 
 .skillAccentTypeScript {
   .skillIndex {
-    color: #60a5fa;
+    color: var(--skill-accent-color);
   }
 
   .skillIcon {
@@ -110,7 +110,7 @@
 
 .skillAccentReact {
   .skillIndex {
-    color: #22d3ee;
+    color: var(--skill-accent-color);
   }
 
   .skillIcon {
@@ -122,7 +122,7 @@
 
 .skillAccentRedux {
   .skillIndex {
-    color: #c084fc;
+    color: var(--skill-accent-color);
   }
 
   .skillIcon {
@@ -134,7 +134,7 @@
 
 .skillAccentNext {
   .skillIndex {
-    color: #d1d5db;
+    color: var(--skill-accent-color);
   }
 
   .skillIcon {
@@ -146,7 +146,7 @@
 
 .skillAccentScss {
   .skillIndex {
-    color: #f472b6;
+    color: var(--skill-accent-color);
   }
 
   .skillIcon {
@@ -158,7 +158,7 @@
 
 .skillAccentVite {
   .skillIndex {
-    color: #818cf8;
+    color: var(--skill-accent-color);
   }
 
   .skillIcon {
@@ -170,7 +170,7 @@
 
 .skillAccentNode {
   .skillIndex {
-    color: #34d399;
+    color: var(--skill-accent-color);
   }
 
   .skillIcon {
@@ -182,7 +182,7 @@
 
 .skillAccentWebpack {
   .skillIndex {
-    color: #38bdf8;
+    color: var(--skill-accent-color);
   }
 
   .skillIcon {
@@ -194,7 +194,7 @@
 
 .skillAccentGit {
   .skillIndex {
-    color: #fb923c;
+    color: var(--skill-accent-color);
   }
 
   .skillIcon {

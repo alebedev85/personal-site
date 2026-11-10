@@ -1,9 +1,10 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useRef, useState, type CSSProperties } from "react";
 import Image from "next/image";
 import { useTranslation } from "react-i18next";
 import { skills } from "../../../data/skills";
+import { skillAccentColors } from "../../../data/skillAccents";
 import ControllerActions from "../ui/ControllerActions";
 import styles from "./SkillInventory.module.scss";
 
@@ -96,6 +97,11 @@ const SkillInventory = () => {
                   ? styles.skillCardSelected
                   : ""
               }`}
+              style={
+                {
+                  "--skill-accent-color": skillAccentColors[label],
+                } as CSSProperties
+              }
               href={link}
               target="_blank"
               rel="noreferrer noopener"
