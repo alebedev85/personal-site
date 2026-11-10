@@ -10,6 +10,7 @@ import styles from "./SkillInventory.module.scss";
 
 type Direction = "left" | "right" | "up" | "down";
 
+// Короткие подписи навыков: показываются на карточках и входят в aria-label ссылок.
 const descriptions: Record<string, string> = {
   HTML: "Semantic & A11y",
   CSS: "Responsive / FX",
@@ -25,6 +26,7 @@ const descriptions: Record<string, string> = {
   Git: "Branching & CI",
 };
 
+// Связывает название навыка с CSS-классом его цветового оформления.
 const skillAccentClasses: Record<string, string> = {
   HTML: styles.skillAccentHtml,
   CSS: styles.skillAccentCss,
@@ -52,6 +54,7 @@ const SkillInventory = () => {
     const grid = skillGridRef.current;
     if (!grid) return;
 
+    // Число колонок берется из текущего CSS, чтобы навигация соответствовала адаптивной сетке.
     const columns = getComputedStyle(grid).gridTemplateColumns.split(" ").length;
     const row = Math.floor(selectedSkillIndex / columns);
     const column = selectedSkillIndex % columns;
@@ -75,10 +78,10 @@ const SkillInventory = () => {
     <section className="arcadeSection" id="skills">
       <div className="arcadeSectionHeader">
         <div className="arcadeSectionHeading">
-          <span className="arcadeSectionMarker arcadeMarkerYellow" />
+          <span className="arcadeSectionMarker arcadeMarkerRed" />
           <h2>POWER-UPS &amp; SKILLS</h2>
         </div>
-        <span className="arcadeStatusBadge arcadeStatusYellow">
+        <span className="arcadeStatusBadge arcadeStatusPurple">
           12 / 12 SLOTS EQUIPPED
         </span>
       </div>
@@ -99,6 +102,7 @@ const SkillInventory = () => {
               }`}
               style={
                 {
+                  // Передаем базовый цвет навыка в SCSS через CSS-переменную.
                   "--skill-accent-color": skillAccentColors[label],
                 } as CSSProperties
               }

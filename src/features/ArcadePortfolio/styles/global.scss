@@ -130,6 +130,10 @@
   background: var(--arcade-cyan);
 }
 
+.arcadePage .arcadeMarkerPurple {
+  background: var(--arcade-purple);
+}
+
 .arcadePage .arcadeStatusBadge {
   flex: 0 0 auto;
   padding: 2px 6px;
@@ -149,6 +153,10 @@
 
 .arcadePage .arcadeStatusCyan {
   color: var(--arcade-cyan);
+}
+
+.arcadePage .arcadeStatusPurple {
+  color: var(--arcade-purple);
 }
 
 .arcadePage .arcadePanel {

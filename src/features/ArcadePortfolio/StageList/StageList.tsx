@@ -4,6 +4,7 @@ import { projects } from "../../../data/projects";
 import StageCard from "../StageCard/StageCard";
 import styles from "./StageList.module.scss";
 
+// Подпись состояния каждой карточки; индекс соответствует порядку проекта в списке.
 const statusLabels = [
   "AI BOSS LEVEL",
   "FULLSTACK ZONE",
@@ -15,6 +16,7 @@ const statusLabels = [
   "WORLD DATA",
 ];
 
+// CSS-класс цвета рамки экрана монитора для каждой StageCard.
 const screenColors = [
   "screenGreen",
   "screenCyan",
@@ -26,6 +28,7 @@ const screenColors = [
   "screenGreen",
 ] as const;
 
+// Цветовые акценты карточек (статус и hover-рамка), в том же порядке, что и проекты.
 const stageAccents = [
   "accentRed",
   "accentGreen",
@@ -41,8 +44,8 @@ const StageList = () => (
   <section className="arcadeSection" id="stages">
     <div className="arcadeSectionHeader">
       <div className="arcadeSectionHeading">
-        <span className="arcadeSectionMarker arcadeMarkerCyan" />
-        <h2>СПИСОК ИГР / STAGES</h2>
+        <span className="arcadeSectionMarker arcadeMarkerRed" />
+        <h2>GAMES LIST / STAGES</h2>
       </div>
       <span className="arcadeStatusBadge arcadeStatusCyan">
         {projects.length} STAGES AVAILABLE
@@ -54,6 +57,7 @@ const StageList = () => (
         <StageCard
           key={project.id}
           project={project}
+          // Нумерация карточек начинается с 1, а навигация использует число проектов.
           stageNumber={index + 1}
           totalStages={projects.length}
           statusLabel={statusLabels[index]}
