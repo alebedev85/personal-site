@@ -33,7 +33,7 @@
   padding-bottom: 8px;
   border-bottom: 1px solid var(--arcade-border);
   color: var(--arcade-yellow);
-  font-size: var(--font-size-xs);
+  font-size: var(--font-size-nav);
   font-weight: 700;
 }
 
@@ -170,36 +170,16 @@
     margin: 0;
     color: var(--arcade-white);
     font-family: var(--font-russo);
-    font-size: var(--font-size-title);
+    font-size: var(--font-size-lg);
+    font-weight: 400;
     letter-spacing: 0.02em;
-
-    a {
-      display: flex;
-      width: 100%;
-      justify-content: space-between;
-      gap: 8px;
-      color: inherit;
-
-      &:hover,
-      &:focus-visible {
-        color: var(--arcade-yellow);
-      }
-    }
-
-    span {
-      flex: 0 0 auto;
-      color: var(--arcade-cyan);
-      font-family: var(--font-mono);
-      font-size: 14px;
-    }
   }
 
   p {
     margin: 10px 0 0;
     color: var(--arcade-copy);
-    font-family: var(--font-silk);
-    font-size: var(--font-size-base);
-    line-height: 1.65;
+    font-size: var(--font-size-lg);
+    line-height: 1.2;
   }
 }
 
@@ -216,7 +196,7 @@
     border: 1px solid var(--arcade-detail);
     background: var(--arcade-black);
     color: var(--arcade-text);
-    font-size: var(--font-size-xs);
+    font-size: var(--font-size-md);
     line-height: 1.5;
 
     &:nth-child(4n + 1) {
@@ -242,8 +222,7 @@
   background: var(--arcade-black);
 }
 
-.stageNavigation,
-.stageActions {
+.stageNavigation {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
@@ -255,8 +234,9 @@
   padding: 4px 7px;
   border: 1px solid var(--arcade-detail);
   background: var(--arcade-neutral);
-  color: var(--arcade-cyan);
-  font-size: var(--font-size-xs);
+  color: var(--arcade-muted);
+  font-size: var(--font-size-md);
+  font-family: var(--font-pixel);
 
   &:hover,
   &:focus-visible {
@@ -268,44 +248,6 @@
 .disabledControl {
   color: var(--arcade-detail-muted);
   cursor: not-allowed;
-}
-
-.actionButton {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  padding: 5px 9px;
-  border: 1px solid rgb(var(--arcade-white-rgb) / 65%);
-  color: var(--arcade-white);
-  font-size: var(--font-size-xs);
-  font-weight: 700;
-  transition:
-    transform 100ms ease,
-    filter 150ms ease;
-
-  &:hover,
-  &:focus-visible {
-    filter: brightness(1.15);
-  }
-
-  &:active {
-    transform: translateY(2px);
-  }
-}
-
-.actionButton span {
-  font-family: var(--font-russo);
-}
-
-.missionButton {
-  background: var(--arcade-red);
-  box-shadow: 3px 3px 0 var(--arcade-shadow-red);
-}
-
-.codeButton {
-  background: var(--arcade-yellow);
-  box-shadow: 3px 3px 0 var(--arcade-shadow-yellow);
-  color: var(--arcade-shadow);
 }
 
 [data-theme="light"] .stageInfo h3 {
@@ -355,10 +297,6 @@
 
 [data-theme="light"] .disabledControl {
   color: var(--arcade-detail-muted);
-}
-
-[data-theme="light"] .actionButton {
-  color: var(--arcade-light-text);
 }
 
 [data-theme="light"] .hardwareLabel {

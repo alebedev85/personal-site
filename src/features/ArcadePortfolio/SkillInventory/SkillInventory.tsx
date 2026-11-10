@@ -4,6 +4,7 @@ import { useRef, useState } from "react";
 import Image from "next/image";
 import { useTranslation } from "react-i18next";
 import { skills } from "../../../data/skills";
+import ControllerActions from "../ui/ControllerActions";
 import styles from "./SkillInventory.module.scss";
 
 type Direction = "left" | "right" | "up" | "down";
@@ -166,26 +167,25 @@ const SkillInventory = () => {
               <span>STATUS: CONNECTED (PORT 1)</span>
             </div>
           </div>
-          <div className={styles.controllerActions}>
-            <button
-              type="button"
-              className={`${styles.controlButton} ${styles.buttonRed}`}
-              aria-label="Открыть выбранный навык (A)"
-              onClick={activateSelectedSkill}
-            >
-              A
-            </button>
-            <span>EXEC</span>
-            <button
-              type="button"
-              className={`${styles.controlButton} ${styles.buttonYellow}`}
-              aria-label="Открыть выбранный навык (B)"
-              onClick={activateSelectedSkill}
-            >
-              B
-            </button>
-            <span>INFO</span>
-          </div>
+          <ControllerActions
+            className={styles.controllerActions}
+            actions={[
+              {
+                value: "A",
+                label: "EXEC",
+                ariaLabel: "Открыть выбранный навык (A)",
+                variant: "red",
+                onClick: activateSelectedSkill,
+              },
+              {
+                value: "B",
+                label: "INFO",
+                ariaLabel: "Открыть выбранный навык (B)",
+                variant: "yellow",
+                onClick: activateSelectedSkill,
+              },
+            ]}
+          />
         </div>
       </div>
       <span className={styles.visuallyHidden}>{t("skills.title")}</span>

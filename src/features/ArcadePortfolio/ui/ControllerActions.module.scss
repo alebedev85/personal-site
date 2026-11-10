@@ -1,0 +1,53 @@
+.controllerActions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.controllerActions > span {
+  color: var(--arcade-muted);
+  font-size: var(--font-size-sm);
+}
+
+.controlButton {
+  display: flex;
+  width: 34px;
+  height: 34px;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--arcade-white);
+  padding: 0;
+  cursor: pointer;
+  font-family: var(--font-pixel);
+  font-size: 10px;
+  font-weight: 700;
+  text-decoration: none;
+  transition:
+    color 100ms ease,
+    transform 100ms ease;
+
+  &:hover,
+  &:focus-visible {
+    color: var(--accent);
+  }
+
+  &:active {
+    transform: translateY(2px);
+  }
+}
+
+.buttonRed {
+  background: var(--arcade-red);
+  box-shadow: 3px 3px 0 var(--arcade-shadow-red);
+  color: var(--arcade-white);
+}
+
+.buttonYellow {
+  background: var(--arcade-yellow);
+  box-shadow: 3px 3px 0 var(--arcade-shadow-yellow);
+  color: var(--arcade-shadow);
+}
+
+[data-theme="light"] .controllerActions > span {
+  color: var(--arcade-light-muted);
+}

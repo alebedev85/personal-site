@@ -2,7 +2,9 @@
 
 import Image from "next/image";
 import { useTranslation } from "react-i18next";
+import { FaCircle } from "react-icons/fa";
 import { projects } from "../../../data/projects";
+import ControllerActions from "../ui/ControllerActions";
 import styles from "./StageList.module.scss";
 
 const statusLabels = [
@@ -58,7 +60,7 @@ const StageList = () => {
               <div className={styles.stageMeta}>
                 <span>STAGE {String(stageNumber).padStart(2, "0")} / 08</span>
                 <span className={styles.stageStatus}>
-                  ● {statusLabels[index]}
+                  <FaCircle /> {statusLabels[index]}
                 </span>
               </div>
 
@@ -84,25 +86,20 @@ const StageList = () => {
                     </div>
                   </div>
                   <span className={styles.hardwareLabel}>
-                    &gt; HARDWARE: RETRO_TERMINAL_{String(stageNumber).padStart(2, "0")}
+                    &gt; HARDWARE: RETRO_TERMINAL_
+                    {String(stageNumber).padStart(2, "0")}
                   </span>
                 </div>
 
                 <div className={styles.stageInfo}>
                   <div>
-                    <h3>
-                      <a
-                        href={project.projectLink}
-                        target="_blank"
-                        rel="noreferrer noopener"
-                      >
-                        {title}
-                        <span aria-hidden="true">↗</span>
-                      </a>
-                    </h3>
+                    <h3>{title}</h3>
                     <p>{t(`projects.${project.id}.description`)}</p>
                   </div>
-                  <ul className={styles.technologyList} aria-label="Technologies">
+                  <ul
+                    className={styles.technologyList}
+                    aria-label="Technologies"
+                  >
                     {project.technologies.map((technology) => (
                       <li key={technology}>{technology}</li>
                     ))}
@@ -123,24 +120,25 @@ const StageList = () => {
                     <span className={styles.disabledControl}>▼ END</span>
                   )}
                 </div>
-                <div className={styles.stageActions}>
-                  <a
-                    className={`${styles.actionButton} ${styles.missionButton}`}
-                    href={project.projectLink}
-                    target="_blank"
-                    rel="noreferrer noopener"
-                  >
-                    <span>A</span> PLAY MISSION
-                  </a>
-                  <a
-                    className={`${styles.actionButton} ${styles.codeButton}`}
-                    href={project.gitHubLink}
-                    target="_blank"
-                    rel="noreferrer noopener"
-                  >
-                    <span>B</span> CODE ↗
-                  </a>
-                </div>
+                <ControllerActions
+                  className={styles.stageActions}
+                  actions={[
+                    {
+                      value: "A",
+                      label: "PLAY MISSION",
+                      ariaLabel: "Открыть проект",
+                      variant: "red",
+                      href: project.projectLink,
+                    },
+                    {
+                      value: "B",
+                      label: "CODE",
+                      ariaLabel: "Открыть исходный код",
+                      variant: "yellow",
+                      href: project.gitHubLink,
+                    },
+                  ]}
+                />
               </div>
             </article>
           );
