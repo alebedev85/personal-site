@@ -10,7 +10,7 @@
 
 .arcadePage {
   cursor:
-    url("/assets/arcade/cursors/cursor-32.png") 5 5,
+    url("/assets/arcade/cursors/cursor-42.png") 5 5,
     auto;
   min-height: 100vh;
   background: var(--arcade-black);
@@ -32,12 +32,12 @@
   select:not(:disabled),
   summary {
     cursor:
-      url("/assets/arcade/cursors/pointer-48.png") 20 7,
+      url("/assets/arcade/cursors/pointer-58.png") 10 0,
       pointer !important;
 
     &:active {
       cursor:
-        url("/assets/arcade/cursors/pointer-click-48.png") 20 8,
+        url("/assets/arcade/cursors/pointer-click-58.png") 13 9,
         pointer !important;
     }
   }
