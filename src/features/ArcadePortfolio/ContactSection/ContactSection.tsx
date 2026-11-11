@@ -8,7 +8,6 @@ const ContactSection = () => {
   const { t } = useTranslation();
   const telegram = contacts.find(({ label }) => label === "Telegram");
   const github = contacts.find(({ label }) => label === "GitHub");
-  const email = contacts.find(({ label }) => label === "GMail");
 
   return (
     <section className="arcadeSection" id="contact">
@@ -22,7 +21,7 @@ const ContactSection = () => {
           Нажмите кнопку подключения:
         </p>
         <div className={styles.contactActions}>
-          {[telegram, github, email].map(
+          {[telegram, github].map(
             (contact, index) =>
               contact && (
                 <a
@@ -57,7 +56,7 @@ const ContactSection = () => {
         </div>
 
         <div className={styles.endCredits}>
-          <strong>再見游戏时代</strong>
+          <strong>さらば、ゲームの時代</strong>
           <span>THANK YOU FOR PLAYING!</span>
           <small>
             © 2026 {t("footer.rights")} · Adapted for
