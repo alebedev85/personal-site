@@ -16,18 +16,6 @@ const statusLabels = [
   "WORLD DATA",
 ];
 
-// CSS-класс цвета рамки экрана монитора для каждой StageCard.
-const screenColors = [
-  "screenGreen",
-  "screenCyan",
-  "screenYellow",
-  "screenRed",
-  "screenPurple",
-  "screenYellow",
-  "screenCyan",
-  "screenGreen",
-] as const;
-
 // Цветовые акценты карточек (статус и hover-рамка), в том же порядке, что и проекты.
 const stageAccents = [
   "accentRed",
@@ -61,7 +49,6 @@ const StageList = () => (
           stageNumber={index + 1}
           totalStages={projects.length}
           statusLabel={statusLabels[index]}
-          screenColor={screenColors[index]}
           stageAccent={stageAccents[index]}
         />
       ))}

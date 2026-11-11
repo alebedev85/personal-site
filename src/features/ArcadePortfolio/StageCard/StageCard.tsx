@@ -3,18 +3,12 @@
 import Image from "next/image";
 import { useTranslation } from "react-i18next";
 import { FaCircle } from "react-icons/fa";
-import { getSkillAccentColor } from "../../../data/skillAccents";
 import type { projects } from "../../../data/projects";
-import ControllerActions from "../ui/ControllerActions";
+import { getSkillAccentColor } from "../../../data/skillAccents";
+import ControllerActions from "../ui/ControllerActions/ControllerActions";
 import styles from "./StageCard.module.scss";
 
 type StageProject = (typeof projects)[number];
-type ScreenColor =
-  | "screenGreen"
-  | "screenCyan"
-  | "screenYellow"
-  | "screenRed"
-  | "screenPurple";
 type StageAccent =
   | "accentGreen"
   | "accentCyan"
@@ -27,7 +21,6 @@ interface StageCardProps {
   stageNumber: number;
   totalStages: number;
   statusLabel: string;
-  screenColor: ScreenColor;
   stageAccent: StageAccent;
 }
 
@@ -36,7 +29,6 @@ const StageCard = ({
   stageNumber,
   totalStages,
   statusLabel,
-  screenColor,
   stageAccent,
 }: StageCardProps) => {
   const { t } = useTranslation();
@@ -58,25 +50,24 @@ const StageCard = ({
       <div className={styles.stageMain}>
         <div className={styles.monitorColumn}>
           <div className={styles.monitor}>
-            <div className={`${styles.monitorScreen} ${styles[screenColor]}`}>
+            <div className={styles.monitorScreen}>
               <Image
-                src={project.imgSrc}
+                src={project.imgArcadeSrc}
                 alt={project.imgAlt}
                 fill
                 sizes="(max-width: 768px) 80vw, 240px"
                 className={styles.projectImage}
               />
-              <span className={styles.scanlines} aria-hidden="true" />
             </div>
-            <div className={styles.monitorControls} aria-hidden="true">
-              <span />
-              <span />
-              <span />
-            </div>
+            <Image
+              src="/assets/arcade/Arcade%20Retro%20Computer.png"
+              alt=""
+              aria-hidden="true"
+              fill
+              sizes="(max-width: 768px) 210px, 240px"
+              className={styles.monitorShell}
+            />
           </div>
-          <span className={styles.hardwareLabel}>
-            &gt; HARDWARE: RETRO_TERMINAL_{String(stageNumber).padStart(2, "0")}
-          </span>
         </div>
 
         <div className={styles.stageInfo}>

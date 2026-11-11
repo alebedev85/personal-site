@@ -5,6 +5,7 @@ export const projects = [
   gitHubLink: "https://github.com/alebedev85/linguaboost", // замени на свой точный путь к репозиторию
   technologies: ["React", "Redux-toolkit", "Next.js", "TypeScript", "Axios", "SCSS Modules", "Gemini API", "FLUX.1-schnell"],
   imgSrc: "/assets/images/linguaboost.png",
+  imgArcadeSrc: "/assets/arcade/projects/Пиксельная тренировка памяти LinguaBoost.png",
   imgAlt: "linguaboost",
   },
   {
@@ -13,6 +14,7 @@ export const projects = [
     gitHubLink: "https://github.com/alebedev85/hotel-booking",
     technologies: ["React", "Redux-toolkit", "Next.js", "Prisma ORM", "PostgreSQL", "JWT", "RTK Query", "Thunk"],
     imgSrc: "/assets/images/boogorok.png",
+    imgArcadeSrc: "/assets/arcade/projects/Пиксельный бугорок_ путешествие за стену.png",
     imgAlt: "boogorok",
   },
   {
@@ -21,6 +23,7 @@ export const projects = [
     gitHubLink: "https://github.com/alebedev85/the-wassermans-games",
     technologies: ["React", "Redux-toolkit", "dnd", "Firebase", "Cloudinary", "Vite"],
     imgSrc: "/assets/images/the-wassermans-games.png",
+    imgArcadeSrc: "/assets/arcade/projects/Пиксельный календарь игр на июль 2025.png",
     imgAlt: "the-wassermans-games",
   },
   {
@@ -29,6 +32,7 @@ export const projects = [
     gitHubLink: "https://github.com/alebedev85/mytrello",
     technologies: ["React", "Redux-toolkit", "dnd", "Firebase", "Firebase-auth", "Vite"],
     imgSrc: "/assets/images/myTrello.png",
+    imgArcadeSrc: "/assets/arcade/projects/Пиксельный канбан-дашборд задач.png",
     imgAlt: "myTrello",
   },
   {
@@ -37,6 +41,7 @@ export const projects = [
     gitHubLink: "https://github.com/alebedev85/mypiano",
     technologies: ["React", "Redux-toolkit", "Tone.js", "FSD", "requestAnimationFrame"],
     imgSrc: "/assets/images/myPiano.png",
+    imgArcadeSrc: "/assets/arcade/projects/Ретро-пиксельное виртуальное пианино.png",
     imgAlt: "mypiano",
   },
   {
@@ -45,6 +50,7 @@ export const projects = [
     gitHubLink: "https://github.com/alebedev85/fourhorsesclub",
     technologies: ["JavaScript", "html", "css", "Webpack", "ООП"],
     imgSrc: "/assets/images/fourhorsesclub.png",
+    imgArcadeSrc: "/assets/arcade/projects/Пиксельный плакат шахматного турнира.png",
     imgAlt: "fourhorsesclub",
   },
   {
@@ -53,6 +59,7 @@ export const projects = [
     gitHubLink: "https://github.com/alebedev85/GitHubUserSearchApp",
     technologies: ["React", "TypeScript", "GitHub API"],
     imgSrc: "/assets/images/GitHubUserSearchApp.png",
+    imgArcadeSrc: "/assets/arcade/projects/Пиксельный профиль devFinder с аватаром.png",
     imgAlt: "GitHubUserSearchApp",
   },
   {
@@ -61,6 +68,7 @@ export const projects = [
     gitHubLink: "https://github.com/alebedev85/countries-api",
     technologies: ["React", "Redux-toolkit", "TypeScript"],
     imgSrc: "/assets/images/countries-api.png",
+    imgArcadeSrc: "/assets/arcade/projects/Пиксельный браузер стран мира.png",
     imgAlt: "countries-api",
   },
 ];

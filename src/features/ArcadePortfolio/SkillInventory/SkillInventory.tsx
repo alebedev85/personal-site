@@ -1,11 +1,11 @@
 "use client";
 
-import { useRef, useState, type CSSProperties } from "react";
 import Image from "next/image";
+import { useRef, useState, type CSSProperties } from "react";
 import { useTranslation } from "react-i18next";
-import { skills } from "../../../data/skills";
 import { skillAccentColors } from "../../../data/skillAccents";
-import ControllerActions from "../ui/ControllerActions";
+import { skills } from "../../../data/skills";
+import ControllerActions from "../ui/ControllerActions/ControllerActions";
 import styles from "./SkillInventory.module.scss";
 
 type Direction = "left" | "right" | "up" | "down";
@@ -55,7 +55,8 @@ const SkillInventory = () => {
     if (!grid) return;
 
     // Число колонок берется из текущего CSS, чтобы навигация соответствовала адаптивной сетке.
-    const columns = getComputedStyle(grid).gridTemplateColumns.split(" ").length;
+    const columns =
+      getComputedStyle(grid).gridTemplateColumns.split(" ").length;
     const row = Math.floor(selectedSkillIndex / columns);
     const column = selectedSkillIndex % columns;
     let nextIndex = selectedSkillIndex;
@@ -150,26 +151,22 @@ const SkillInventory = () => {
                 type="button"
                 aria-label="Вверх"
                 onClick={() => moveSelection("up")}
-              >
-              </button>
+              ></button>
               <button
                 type="button"
                 aria-label="Влево"
                 onClick={() => moveSelection("left")}
-              >
-              </button>
+              ></button>
               <button
                 type="button"
                 aria-label="Вправо"
                 onClick={() => moveSelection("right")}
-              >
-              </button>
+              ></button>
               <button
                 type="button"
                 aria-label="Вниз"
                 onClick={() => moveSelection("down")}
-              >
-              </button>
+              ></button>
               <span aria-hidden="true" />
             </div>
             <div>
