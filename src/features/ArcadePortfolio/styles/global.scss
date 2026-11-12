@@ -195,7 +195,7 @@
 
 .arcadePage .arcadePanelStatus {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   gap: 12px;
   margin-bottom: 16px;
@@ -247,4 +247,10 @@
   .arcadePage .arcadeSectionHeading h2 {
     font-size: 9px;
   }
+
+  .arcadePage .arcadePanelStatus {
+
+  font-size: var(--font-size-md);
+
+}
 }
