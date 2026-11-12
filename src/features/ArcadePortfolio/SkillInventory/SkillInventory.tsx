@@ -46,7 +46,7 @@ const SkillInventory = () => {
   const { t } = useTranslation();
   const [selectedSkillIndex, setSelectedSkillIndex] = useState(0);
   const [controllerActivated, setControllerActivated] = useState(false);
-  const skillGridRef = useRef<HTMLDivElement>(null);
+  const skillGridRef = useRef<HTMLUListElement>(null);
   const skillLinkRefs = useRef<(HTMLAnchorElement | null)[]>([]);
 
   const moveSelection = (direction: Direction) => {
@@ -93,52 +93,53 @@ const SkillInventory = () => {
           <span>SLOTS: 12 LOCKED &amp; LOADED</span>
         </div>
 
-        <div className={styles.skillGrid} ref={skillGridRef}>
+        <ul className={styles.skillGrid} ref={skillGridRef}>
           {skills.map(({ label, imageSrc, link }, index) => (
-            <a
-              className={`${styles.skillCard} ${skillAccentClasses[label]} ${
-                controllerActivated && selectedSkillIndex === index
-                  ? styles.skillCardSelected
-                  : ""
-              }`}
-              style={
-                {
-                  // Передаем базовый цвет навыка в SCSS через CSS-переменную.
-                  "--skill-accent-color": skillAccentColors[label],
-                } as CSSProperties
-              }
-              href={link}
-              target="_blank"
-              rel="noreferrer noopener"
-              key={label}
-              aria-label={`${label} — ${descriptions[label]}`}
-              ref={(element) => {
-                skillLinkRefs.current[index] = element;
-              }}
-              onFocus={() => {
-                if (!controllerActivated) setSelectedSkillIndex(index);
-              }}
-              onMouseEnter={() => {
-                if (!controllerActivated) setSelectedSkillIndex(index);
-              }}
-            >
-              <div className={styles.skillTopline}>
-                <span className={styles.skillIndex}>
-                  {String(index + 1).padStart(2, "0")}
+            <li key={label}>
+              <a
+                className={`${styles.skillCard} ${skillAccentClasses[label]} ${
+                  controllerActivated && selectedSkillIndex === index
+                    ? styles.skillCardSelected
+                    : ""
+                }`}
+                style={
+                  {
+                    // Передаем базовый цвет навыка в SCSS через CSS-переменную.
+                    "--skill-accent-color": skillAccentColors[label],
+                  } as CSSProperties
+                }
+                href={link}
+                target="_blank"
+                rel="noreferrer noopener"
+                aria-label={`${label} — ${descriptions[label]}`}
+                ref={(element) => {
+                  skillLinkRefs.current[index] = element;
+                }}
+                onFocus={() => {
+                  if (!controllerActivated) setSelectedSkillIndex(index);
+                }}
+                onMouseEnter={() => {
+                  if (!controllerActivated) setSelectedSkillIndex(index);
+                }}
+              >
+                <div className={styles.skillTopline}>
+                  <span className={styles.skillIndex}>
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <span className={styles.skillIcon}>
+                    <Image src={imageSrc} alt="" width={30} height={30} />
+                  </span>
+                </div>
+                <strong>
+                  {label === "HTML" ? "HTML5" : label === "CSS" ? "CSS3" : label}
+                </strong>
+                <span className={styles.skillDescription}>
+                  {descriptions[label]}
                 </span>
-                <span className={styles.skillIcon}>
-                  <Image src={imageSrc} alt="" width={30} height={30} />
-                </span>
-              </div>
-              <strong>
-                {label === "HTML" ? "HTML5" : label === "CSS" ? "CSS3" : label}
-              </strong>
-              <span className={styles.skillDescription}>
-                {descriptions[label]}
-              </span>
-            </a>
+              </a>
+            </li>
           ))}
-        </div>
+        </ul>
 
         <div className={styles.controller}>
           <div className={styles.controllerInfo}>
