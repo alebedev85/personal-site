@@ -8,6 +8,10 @@
   width: 410px;
 }
 
+.backToTop {
+  display: none;
+}
+
 .cabinet {
   position: relative;
   overflow: hidden;
@@ -254,6 +258,30 @@
     position: static;
     left: auto;
     width: 100%;
+  }
+
+  .backToTop {
+    position: fixed;
+    z-index: 20;
+    right: 20px;
+    bottom: calc(20px + env(safe-area-inset-bottom));
+    display: grid;
+    width: 66px;
+    height: 66px;
+    place-items: center;
+    border: 2px solid var(--arcade-yellow);
+    border-radius: 50%;
+    background: rgb(var(--arcade-black-rgb) / 55%);
+    backdrop-filter: blur(6px);
+  }
+
+  .backToTopIcon {
+    width: 56px;
+    height: 56px;
+    background: url("/assets/arcade/cursors/cursor.png") center / contain
+      no-repeat;
+    image-rendering: pixelated;
+    transform: rotate(45deg);
   }
 
   .cabinet {

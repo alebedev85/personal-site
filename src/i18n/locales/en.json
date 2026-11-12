@@ -9,7 +9,8 @@
     "about": "About Me",
     "skills": "Skills",
     "projects": "Projects",
-    "ariaLabel": "Page section navigation"
+    "ariaLabel": "Page section navigation",
+    "backToTop": "Back to top"
   },
   "about": {
     "title": "About Me:",
