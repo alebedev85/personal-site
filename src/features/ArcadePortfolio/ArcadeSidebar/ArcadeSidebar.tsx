@@ -7,6 +7,7 @@ import type { RootState } from "../../../store";
 import { FaPlay } from "react-icons/fa";
 import { FaStar } from "react-icons/fa"
 import styles from "./ArcadeSidebar.module.scss";
+import BackToTop from "../ui/BackToTop/BackToTop";
 
 type ArcadeSidebarProps = {
   activeSection: string;
@@ -95,24 +96,7 @@ const ArcadeSidebar = ({ activeSection }: ArcadeSidebarProps) => {
           </div>
         </div>
       </aside>
-      {isSidebarOutOfView && (
-        <button
-          className={styles.backToTop}
-          type="button"
-          aria-label={t("nav.backToTop")}
-          onClick={() =>
-            window.scrollTo({
-              top: 0,
-              behavior: window.matchMedia("(prefers-reduced-motion: reduce)")
-                .matches
-                ? "auto"
-                : "smooth",
-            })
-          }
-        >
-          <span className={styles.backToTopIcon} aria-hidden="true" />
-        </button>
-      )}
+      <BackToTop isVisible={isSidebarOutOfView} />
     </>
   );
 };

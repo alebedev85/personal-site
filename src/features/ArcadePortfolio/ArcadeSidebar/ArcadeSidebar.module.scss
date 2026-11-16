@@ -8,10 +8,6 @@
   width: 410px;
 }
 
-.backToTop {
-  display: none;
-}
-
 .cabinet {
   position: relative;
   overflow: hidden;
@@ -25,7 +21,6 @@
   transition:
     background-color 180ms ease,
     border-color 180ms ease;
-  
 }
 
 .cabinetMeta {
@@ -150,10 +145,12 @@
 }
 
 .navTabActive {
-    border: 2px solid var(--arcade-yellow);
-    background-color: rgba(255, 209, 59, 0.15) ;
-    color: var(--arcade-yellow);
-    box-shadow: 0 0 10px rgba(255, 209, 59, 0.4), inset 1px 1px 0 #fff;
+  border: 2px solid var(--arcade-yellow);
+  background-color: rgba(255, 209, 59, 0.15);
+  color: var(--arcade-yellow);
+  box-shadow:
+    0 0 10px rgba(255, 209, 59, 0.4),
+    inset 1px 1px 0 #fff;
 }
 
 .navLabel {
@@ -191,8 +188,16 @@
   transform: rotateX(68deg);
   transform-origin: top center;
   background-image:
-    linear-gradient(to right, rgb(var(--arcade-cyan-rgb) / 28%) 1px, transparent 1px),
-    linear-gradient(to bottom, rgb(var(--arcade-yellow-rgb) / 25%) 1px, transparent 1px);
+    linear-gradient(
+      to right,
+      rgb(var(--arcade-cyan-rgb) / 28%) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      to bottom,
+      rgb(var(--arcade-yellow-rgb) / 25%) 1px,
+      transparent 1px
+    );
   background-size: 24px 24px;
   mask-image: linear-gradient(var(--arcade-shadow) 15%, transparent 95%);
 }
@@ -258,30 +263,6 @@
     position: static;
     left: auto;
     width: 100%;
-  }
-
-  .backToTop {
-    position: fixed;
-    z-index: 20;
-    right: 20px;
-    bottom: calc(20px + env(safe-area-inset-bottom));
-    display: grid;
-    width: 66px;
-    height: 66px;
-    place-items: center;
-    border: 2px solid var(--arcade-yellow);
-    border-radius: 50%;
-    background: rgb(var(--arcade-black-rgb) / 55%);
-    backdrop-filter: blur(6px);
-  }
-
-  .backToTopIcon {
-    width: 56px;
-    height: 56px;
-    background: url("/assets/arcade/cursors/cursor.png") center / contain
-      no-repeat;
-    image-rendering: pixelated;
-    transform: rotate(45deg);
   }
 
   .cabinet {
