@@ -35,6 +35,9 @@
   "skills": {
     "title": "Skills:"
   },
+  "contact": {
+    "intro": "Ready to start a project together or discuss a team opportunity? Choose how to get in touch:"
+  },
   "projects": {
     "title": "Projects:",
     "linguaboost": {
@@ -72,7 +75,9 @@
   },
   "footer": {
     "description": "The design was prototyped in Figma and hand-coded in Visual Studio Code. The site is built with React using Redux Toolkit for state management, written in TypeScript, and styled with SCSS modules. The build is handled by Vite. The project is deployed on Vercel. The source code is available on",
+    "arcadeDescription": "The design was prototyped in Figma and implemented in Visual Studio Code. The project is built with Next.js and the App Router, uses React and TypeScript, Redux Toolkit for state management, and SCSS modules for styling. It is deployed on Vercel. The source code is available on",
     "font": "Primary font — Inter",
+    "arcadeFonts": "Fonts: Press Start 2P for the interface, Russo One for headings, and Silkscreen for body text",
     "rights": "Andrey Lebedev. All rights reserved"
   }
 }

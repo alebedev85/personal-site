@@ -16,10 +16,7 @@ const ContactSection = () => {
         <div className={styles.continueText}>
           &gt; CONTINUE: <span className="arcadeBlink">9</span> SEC
         </div>
-        <p className={styles.contactIntro}>
-          Готовы начать совместный проект или обсудить позицию в команде?
-          Нажмите кнопку подключения:
-        </p>
+        <p className={styles.contactIntro}>{t("contact.intro")}</p>
         <div className={styles.contactActions}>
           {[telegram, github].map(
             (contact, index) =>
@@ -51,7 +48,7 @@ const ContactSection = () => {
         <div className={styles.systemCredits}>
           <strong>&gt; SYSTEM SPECS &amp; CREDITS:</strong>
           <p>
-            {t("footer.description")} GitHub. {t("footer.font")} / Pixel Fonts.
+            {t("footer.arcadeDescription")} GitHub. {t("footer.arcadeFonts")}.
           </p>
         </div>
 
